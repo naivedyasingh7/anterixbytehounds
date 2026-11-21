@@ -6,13 +6,22 @@ import { MapPin, Layers, FileText, CheckCircle2, User } from 'lucide-react';
 
 export const FarmersAndFarms: React.FC = () => {
   const [selectedFarm, setSelectedFarm] = useState(MOCK_FARMS_DATA[0]);
+  const activeFarm = selectedFarm || MOCK_FARMS_DATA[0];
+
+  if (!activeFarm) {
+    return (
+      <div className="p-8 text-center text-[#68625B] font-sans">
+        No registered land parcels found in directory.
+      </div>
+    );
+  }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 font-sans selection:bg-[#8B5F4D]/25 selection:text-[#1B1D1C]">
       <div>
-        <h1 className="text-xl font-bold text-slate-900">Farmers & Land Parcels Directory</h1>
-        <p className="text-xs text-slate-500">
-          Cadastral Khasra profiles, mapped geospatial boundaries, and land ownership records
+        <h1 className="text-3xl font-serif font-normal text-[#1B1D1C]">Farmers & Land Parcels Directory</h1>
+        <p className="text-xs sm:text-sm text-[#68625B] mt-1 font-sans">
+          Cadastral Khasra profiles, mapped geospatial boundaries, and legal land ownership records.
         </p>
       </div>
 
@@ -20,29 +29,31 @@ export const FarmersAndFarms: React.FC = () => {
         
         {/* Left Column: Farmers List */}
         <div className="space-y-3">
-          <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Registered Farms</span>
+          <span className="text-xs font-sans font-medium uppercase text-[#68625B] tracking-wider block px-1">
+            Registered Land Parcels
+          </span>
           {MOCK_FARMS_DATA.map((farm) => {
             const isSelected = selectedFarm.id === farm.id;
             return (
               <div
                 key={farm.id}
                 onClick={() => setSelectedFarm(farm)}
-                className={`p-4 rounded-2xl border cursor-pointer transition ${
+                className={`p-5 rounded-3xl border cursor-pointer transition shadow-[0_2px_12px_rgba(27,29,28,0.02)] ${
                   isSelected 
-                    ? 'bg-emerald-50/60 border-emerald-500 shadow-sm ring-1 ring-emerald-500/30' 
-                    : 'bg-white border-slate-200 hover:bg-slate-50'
+                    ? 'bg-[#EAE3D9] border-[#8B5F4D] shadow-sm ring-1 ring-[#8B5F4D]/30' 
+                    : 'bg-[#F5EFE6] border-[#EAE3D9] hover:bg-[#EAE3D9]/50'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <h4 className="font-bold text-xs text-slate-900">{farm.farm_name}</h4>
+                  <h4 className="font-serif font-semibold text-sm text-[#1B1D1C]">{farm.farm_name}</h4>
                   <StatusBadge status={farm.verification_status} size="sm" />
                 </div>
-                <p className="text-[11px] text-slate-500 mt-1 flex items-center gap-1">
-                  <User className="w-3 h-3 text-slate-400" /> {farm.farmer_name}
+                <p className="text-xs text-[#68625B] mt-1 flex items-center gap-1 font-sans">
+                  <User className="w-3.5 h-3.5 text-[#8B5F4D]" /> {farm.farmer_name}
                 </p>
-                <div className="flex items-center justify-between mt-2 pt-2 border-t border-slate-100 text-[11px]">
-                  <span className="text-slate-400">Khasra: <b>{farm.khasra_number}</b></span>
-                  <span className="font-semibold text-emerald-700">{farm.current_crop} ({farm.declared_area_hectares} Ha)</span>
+                <div className="flex items-center justify-between mt-3 pt-3 border-t border-[#CAB4AA]/30 text-xs font-sans">
+                  <span className="text-[#68625B]">Khasra: <b className="text-[#1B1D1C]">{farm.khasra_number}</b></span>
+                  <span className="font-serif font-semibold text-[#5B7553]">{farm.current_crop} ({farm.declared_area_hectares} Ha)</span>
                 </div>
               </div>
             );
@@ -51,73 +62,77 @@ export const FarmersAndFarms: React.FC = () => {
 
         {/* Right Column: Detailed Geospatial & Cadastral Profile */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+          <div className="bg-[#F5EFE6] p-8 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-6">
             
             {/* Header info */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-[#EAE3D9]">
               <div>
-                <div className="flex items-center gap-2">
-                  <h2 className="text-lg font-bold text-slate-900">{selectedFarm.farm_name}</h2>
-                  <StatusBadge status={selectedFarm.verification_status} />
+                <div className="flex items-center gap-3">
+                  <h2 className="text-2xl font-serif font-normal text-[#1B1D1C]">{activeFarm.farm_name}</h2>
+                  <StatusBadge status={activeFarm.verification_status} />
                 </div>
-                <p className="text-xs text-slate-500 mt-1 flex items-center gap-1">
-                  <MapPin className="w-3.5 h-3.5 text-slate-400" />
-                  Village: {selectedFarm.village} · District: {selectedFarm.district}, Madhya Pradesh
+                <p className="text-xs sm:text-sm text-[#68625B] mt-1 flex items-center gap-1.5 font-sans">
+                  <MapPin className="w-3.5 h-3.5 text-[#8B5F4D]" />
+                  Village: {activeFarm.village} · District: {activeFarm.district}, Madhya Pradesh
                 </p>
               </div>
-              <div className="text-right">
-                <span className="text-xs text-slate-400">Cultivation</span>
-                <div className="text-sm font-bold text-emerald-700">{selectedFarm.current_crop} ({selectedFarm.season})</div>
+              <div className="sm:text-right">
+                <span className="text-xs font-sans text-[#68625B] uppercase tracking-wider block">Cultivation</span>
+                <div className="text-base font-serif font-semibold text-[#5B7553] mt-0.5">
+                  {activeFarm.current_crop} ({activeFarm.season})
+                </div>
               </div>
             </div>
 
             {/* Farm Boundary Map (Leaflet Satellite Canvas) */}
-            <div className="space-y-2">
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-semibold text-slate-700 flex items-center gap-1.5">
-                  <Layers className="w-4 h-4 text-emerald-600" /> Delineated Cadastral Boundary (PostGIS Polygon)
+            <div className="space-y-3">
+              <div className="flex items-center justify-between text-xs font-sans">
+                <span className="font-medium text-[#1B1D1C] flex items-center gap-2">
+                  <Layers className="w-4 h-4 text-[#8B5F4D]" /> Delineated Cadastral Boundary (PostGIS Polygon)
                 </span>
-                <span className="text-slate-400">EPSG:4326</span>
+                <span className="text-[#68625B] font-mono">CRS: EPSG:4326 (WGS 84)</span>
               </div>
-              <FarmMapViewer
-                coordinates={selectedFarm.boundary_geojson.coordinates}
-                farmName={selectedFarm.farm_name}
-                khasra={selectedFarm.khasra_number}
-                height="320px"
-              />
+              <div className="rounded-2xl overflow-hidden border border-[#EAE3D9]">
+                <FarmMapViewer
+                  coordinates={activeFarm.boundary_geojson?.coordinates}
+                  farmName={activeFarm.farm_name}
+                  khasra={activeFarm.khasra_number}
+                  height="320px"
+                />
+              </div>
             </div>
 
             {/* Cadastral Comparison Metric Box */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 bg-[#EAE3D9]/60 rounded-2xl border border-[#CAB4AA]/40 text-xs font-sans">
               <div>
-                <span className="text-[11px] text-slate-400 block">Declared Khasra Area</span>
-                <span className="text-sm font-bold text-slate-900">{selectedFarm.declared_area_hectares} Ha</span>
+                <span className="text-[10px] uppercase tracking-wider text-[#68625B] block">Declared Khasra</span>
+                <span className="text-base font-serif font-semibold text-[#1B1D1C] mt-0.5 block">{activeFarm.declared_area_hectares} Ha</span>
               </div>
               <div>
-                <span className="text-[11px] text-slate-400 block">PostGIS Geodesic Area</span>
-                <span className="text-sm font-bold text-emerald-700">{selectedFarm.geodesic_area_hectares} Ha</span>
+                <span className="text-[10px] uppercase tracking-wider text-[#68625B] block">PostGIS Geodesic</span>
+                <span className="text-base font-serif font-semibold text-[#5B7553] mt-0.5 block">{activeFarm.geodesic_area_hectares} Ha</span>
               </div>
               <div>
-                <span className="text-[11px] text-slate-400 block">Area Variance</span>
-                <span className={`text-sm font-bold ${selectedFarm.area_variance_percent > 15 ? 'text-amber-600' : 'text-emerald-600'}`}>
-                  {selectedFarm.area_variance_percent}%
+                <span className="text-[10px] uppercase tracking-wider text-[#68625B] block">Area Variance</span>
+                <span className={`text-base font-serif font-semibold mt-0.5 block ${(activeFarm.area_variance_percent ?? 0) > 15 ? 'text-[#9E3A3A]' : 'text-[#5B7553]'}`}>
+                  {activeFarm.area_variance_percent}%
                 </span>
               </div>
               <div>
-                <span className="text-[11px] text-slate-400 block">Soil Classification</span>
-                <span className="text-sm font-bold text-slate-900">{selectedFarm.soil_type || 'Medium Black'}</span>
+                <span className="text-[10px] uppercase tracking-wider text-[#68625B] block">Soil Class</span>
+                <span className="text-base font-serif font-semibold text-[#1B1D1C] mt-0.5 block">{activeFarm.soil_type || 'Medium Black'}</span>
               </div>
             </div>
 
             {/* Document Vault */}
-            <div className="space-y-2">
-              <h4 className="text-xs font-bold text-slate-700">Uploaded Cadastral Documents</h4>
-              <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between text-xs">
-                <div className="flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-emerald-600" />
-                  <span className="font-semibold text-slate-900">MP_Bhulekh_Khasra_{selectedFarm.khasra_number.replace('/', '_')}_Deed.pdf</span>
+            <div className="space-y-3 pt-2">
+              <h4 className="text-xs font-sans font-medium uppercase tracking-wider text-[#68625B]">Uploaded Cadastral Documents</h4>
+              <div className="p-4 bg-[#EAE3D9]/60 rounded-2xl border border-[#CAB4AA]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-sans">
+                <div className="flex items-center gap-2.5">
+                  <FileText className="w-4 h-4 text-[#8B5F4D]" />
+                  <span className="font-serif font-semibold text-sm text-[#1B1D1C]">MP_Bhulekh_Khasra_{(activeFarm.khasra_number || '48_2').replace('/', '_')}_Deed.pdf</span>
                 </div>
-                <span className="text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                <span className="text-[#5B7553] font-medium bg-[#EBF2EA] px-3 py-1 rounded-full border border-[#5B7553]/30 self-start sm:self-auto">
                   Cadastral Match Confirmed
                 </span>
               </div>

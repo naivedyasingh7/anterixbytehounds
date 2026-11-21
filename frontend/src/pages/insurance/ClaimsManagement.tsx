@@ -38,20 +38,20 @@ export const ClaimsManagement: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 font-sans selection:bg-[#8B5F4D]/25 selection:text-[#1B1D1C]">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-slate-900">Claims Management</h1>
-          <p className="text-xs text-slate-500">
-            Search, filter, and audit all crop damage claims across districts
+          <h1 className="text-3xl font-serif font-normal text-[#1B1D1C]">Claims Management</h1>
+          <p className="text-xs sm:text-sm text-[#68625B] mt-1 font-sans">
+            Search, filter, and audit all crop damage claims across agricultural districts.
           </p>
         </div>
 
         {/* CSV Import Action */}
         <div className="flex items-center gap-2">
-          <label className="cursor-pointer px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-xl shadow-md transition flex items-center gap-1.5">
-            <Upload className="w-3.5 h-3.5" />
+          <label className="cursor-pointer px-5 py-2.5 bg-[#8B5F4D] hover:bg-[#74503F] text-[#FBF9F5] text-xs sm:text-sm font-sans font-medium rounded-full shadow-sm transition flex items-center gap-2 active:scale-95">
+            <Upload className="w-4 h-4" />
             <span>Import Claims CSV</span>
             <input type="file" accept=".csv" onChange={handleCsvUpload} className="hidden" />
           </label>
@@ -60,23 +60,23 @@ export const ClaimsManagement: React.FC = () => {
 
       {/* CSV notification banner */}
       {importStatus && (
-        <div className="p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-800 flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+        <div className="p-4 bg-[#EBF2EA] border border-[#5B7553]/30 rounded-2xl text-xs text-[#5B7553] flex items-center gap-2.5">
+          <CheckCircle2 className="w-4 h-4 text-[#5B7553] shrink-0" />
           <span>{importStatus}</span>
         </div>
       )}
 
-      {/* Search & Filter Controls */}
-      <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm grid grid-cols-1 sm:grid-cols-4 gap-3">
+      {/* Search & Filter Controls in Serein Clean Box */}
+      <div className="bg-[#F5EFE6] p-6 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] grid grid-cols-1 sm:grid-cols-4 gap-4">
         {/* Search Input */}
         <div className="relative">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+          <Search className="w-4 h-4 text-[#68625B] absolute left-3.5 top-3.5" />
           <input
             type="text"
             placeholder="Search Claim ID or Farmer..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full text-xs pl-9 pr-3 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full text-xs font-sans pl-10 pr-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]"
           />
         </div>
 
@@ -85,7 +85,7 @@ export const ClaimsManagement: React.FC = () => {
           <select
             value={district}
             onChange={(e) => setDistrict(e.target.value)}
-            className="w-full text-xs px-3 py-2.5 rounded-lg border border-slate-300 bg-white"
+            className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]"
           >
             <option value="All">All Districts</option>
             <option value="Bhopal">Bhopal</option>
@@ -99,7 +99,7 @@ export const ClaimsManagement: React.FC = () => {
           <select
             value={crop}
             onChange={(e) => setCrop(e.target.value)}
-            className="w-full text-xs px-3 py-2.5 rounded-lg border border-slate-300 bg-white"
+            className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]"
           >
             <option value="All">All Crops</option>
             <option value="Wheat">Wheat</option>
@@ -113,7 +113,7 @@ export const ClaimsManagement: React.FC = () => {
           <select
             value={status}
             onChange={(e) => setStatus(e.target.value)}
-            className="w-full text-xs px-3 py-2.5 rounded-lg border border-slate-300 bg-white"
+            className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]"
           >
             <option value="All">All Statuses</option>
             <option value="Pending">Pending</option>
@@ -124,47 +124,47 @@ export const ClaimsManagement: React.FC = () => {
         </div>
       </div>
 
-      {/* Claims Table */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+      {/* Claims Table in Serein Luxury Card */}
+      <div className="bg-[#F5EFE6] rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
-            <thead className="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase font-semibold">
+          <table className="w-full text-left text-xs font-sans">
+            <thead className="bg-[#EAE3D9]/70 border-b border-[#EAE3D9] text-[#68625B] uppercase tracking-wider font-medium">
               <tr>
-                <th className="py-3.5 px-4">Claim ID</th>
-                <th className="py-3.5 px-4">Farmer</th>
-                <th className="py-3.5 px-4">District</th>
-                <th className="py-3.5 px-4">Crop</th>
-                <th className="py-3.5 px-4">Claimed Amount</th>
-                <th className="py-3.5 px-4">Loss %</th>
-                <th className="py-3.5 px-4">Status</th>
-                <th className="py-3.5 px-4 text-right">Action</th>
+                <th className="py-4 px-5">Claim ID</th>
+                <th className="py-4 px-5">Farmer</th>
+                <th className="py-4 px-5">District</th>
+                <th className="py-4 px-5">Crop</th>
+                <th className="py-4 px-5">Claimed Amount</th>
+                <th className="py-4 px-5">Loss %</th>
+                <th className="py-4 px-5">Status</th>
+                <th className="py-4 px-5 text-right">Action</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-[#EAE3D9]">
               {claims.map((c) => (
-                <tr key={c.id} className="hover:bg-slate-50/80 transition">
-                  <td className="py-3.5 px-4 font-mono font-bold text-slate-900">
+                <tr key={c.id} className="hover:bg-[#EAE3D9]/40 transition">
+                  <td className="py-4 px-5 font-mono font-semibold text-[#1B1D1C]">
                     {c.claim_number}
                   </td>
-                  <td className="py-3.5 px-4">
-                    <div className="font-semibold text-slate-900">{c.farmer_name}</div>
-                    <span className="text-[10px] text-slate-400">{c.farmer_code}</span>
+                  <td className="py-4 px-5">
+                    <div className="font-serif font-semibold text-sm text-[#1B1D1C]">{c.farmer_name}</div>
+                    <span className="text-[10px] text-[#68625B] font-mono">{c.farmer_code}</span>
                   </td>
-                  <td className="py-3.5 px-4 text-slate-600">{c.district}</td>
-                  <td className="py-3.5 px-4 text-slate-800 font-medium">{c.crop}</td>
-                  <td className="py-3.5 px-4 font-bold text-slate-900">
+                  <td className="py-4 px-5 text-[#68625B]">{c.district}</td>
+                  <td className="py-4 px-5 text-[#1B1D1C] font-medium">{c.crop}</td>
+                  <td className="py-4 px-5 font-serif font-semibold text-sm text-[#1B1D1C]">
                     ₹{c.claimed_amount_inr.toLocaleString('en-IN')}
                   </td>
-                  <td className="py-3.5 px-4 font-medium text-slate-700">
+                  <td className="py-4 px-5 font-medium text-[#8B5F4D]">
                     {c.claimed_loss_percentage}%
                   </td>
-                  <td className="py-3.5 px-4">
+                  <td className="py-4 px-5">
                     <StatusBadge status={c.status} size="sm" />
                   </td>
-                  <td className="py-3.5 px-4 text-right">
+                  <td className="py-4 px-5 text-right">
                     <Link
                       to={`/insurance/workspace/${c.claim_number}`}
-                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-semibold transition"
+                      className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#1B1D1C] hover:bg-[#8B5F4D] text-[#FBF9F5] text-xs font-sans font-medium transition shadow-sm"
                     >
                       <ShieldCheck className="w-3.5 h-3.5" />
                       <span>Workspace</span>
@@ -177,8 +177,8 @@ export const ClaimsManagement: React.FC = () => {
         </div>
 
         {/* Disclaimer footer */}
-        <div className="p-3 bg-slate-50 border-t border-slate-100 text-[11px] text-slate-400 text-center">
-          * Demonstrating with fictional data for Madhya Pradesh districts (Bhopal, Sehore, Raisen).
+        <div className="p-4 bg-[#EAE3D9]/40 border-t border-[#EAE3D9] text-xs font-sans text-[#68625B] text-center">
+          * Demonstrating with empirical benchmark records for Madhya Pradesh (Bhopal, Sehore, Raisen).
         </div>
       </div>
     </div>

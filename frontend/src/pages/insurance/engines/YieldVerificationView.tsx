@@ -10,18 +10,18 @@ export const YieldVerificationView: React.FC = () => {
   const scenes = yield_verification.sentinel_scenes || [];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 font-sans selection:bg-[#8B5F4D]/25 selection:text-[#1B1D1C]">
       <div>
         <div className="flex items-center gap-2">
-          <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+          <span className="text-[10px] font-sans font-medium uppercase tracking-wider text-[#8B5F4D] bg-[#EAE3D9] px-3 py-1 rounded-full border border-[#CAB4AA]">
             Verification Engine 2
           </span>
           <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-200 flex items-center gap-1">
             <Satellite className="w-3 h-3" /> Sentinel-2 L2A Active
           </span>
         </div>
-        <h1 className="text-xl font-bold text-slate-900 mt-1">Crop Yield & Phenological Health Verification</h1>
-        <p className="text-xs text-slate-500">
+        <h1 className="text-3xl font-serif font-normal text-[#1B1D1C] mt-2">Crop Yield & Phenological Health Verification</h1>
+        <p className="text-xs sm:text-sm text-[#68625B] mt-1 font-sans">
           Multi-spectral Sentinel-2 NDVI vegetative trajectory tracking combined with IMD precipitation grids and XGBoost yield loss benchmarking.
         </p>
 
@@ -51,33 +51,35 @@ export const YieldVerificationView: React.FC = () => {
       {/* Primary Graphs */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="space-y-4">
-          <NdviChart data={yield_verification.ndvi_timeline} height={260} />
-          
-          <div className="p-4 bg-white rounded-2xl border border-slate-200 shadow-sm text-xs space-y-2">
-            <h4 className="font-bold text-slate-900">Phenological Vegetation Trajectory</h4>
-            <p className="text-slate-600 leading-relaxed">
-              Normal peak canopy greenness was recorded on <b>Sep 30 (0.69 NDVI)</b>. Subsequently, an abrupt crash to <b>0.25 NDVI</b> was registered by Oct 30, confirming acute drought-induced foliage desiccation.
+          <div className="bg-[#F5EFE6] p-6 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-3">
+            <h4 className="text-lg font-serif font-normal text-[#1B1D1C]">Phenological Vegetation Trajectory (NDVI)</h4>
+            <div className="rounded-2xl overflow-hidden border border-[#EAE3D9] bg-[#FBF9F5] p-2">
+              <NdviChart data={yield_verification.ndvi_timeline} height={240} />
+            </div>
+            <p className="text-xs font-sans text-[#68625B] leading-relaxed pt-1">
+              Normal peak canopy greenness was recorded on <b className="text-[#1B1D1C]">Sep 30 (0.69 NDVI)</b>. Subsequently, an abrupt crash to <b className="text-[#8B5F4D]">0.25 NDVI</b> was registered by Oct 30, confirming acute drought-induced foliage desiccation.
             </p>
           </div>
         </div>
 
         <div className="space-y-4">
-          <WeatherChart data={yield_verification.weather_summary.weekly_records} height={260} />
-
-          <div className="p-4 bg-white rounded-2xl border border-slate-200 shadow-sm text-xs space-y-2">
-            <h4 className="font-bold text-slate-900">Agro-Meteorological Anomaly Metrics</h4>
-            <div className="grid grid-cols-3 gap-2 text-center pt-1">
-              <div className="p-2 bg-slate-50 rounded-lg">
-                <span className="text-[10px] text-slate-400 block">Dry Days</span>
-                <span className="font-bold text-rose-600">31 Days</span>
+          <div className="bg-[#F5EFE6] p-6 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-3">
+            <h4 className="text-lg font-serif font-normal text-[#1B1D1C]">Agro-Meteorological Anomaly Metrics</h4>
+            <div className="rounded-2xl overflow-hidden border border-[#EAE3D9] bg-[#FBF9F5] p-2">
+              <WeatherChart data={yield_verification.weather_summary.weekly_records} height={240} />
+            </div>
+            <div className="grid grid-cols-3 gap-2 text-center pt-1 text-xs font-sans">
+              <div className="p-3 bg-[#EAE3D9]/60 rounded-2xl border border-[#CAB4AA]/30">
+                <span className="text-[10px] text-[#68625B] uppercase tracking-wider block">Dry Days</span>
+                <span className="font-serif font-semibold text-sm text-[#9E3A3A] mt-0.5 block">31 Days</span>
               </div>
-              <div className="p-2 bg-slate-50 rounded-lg">
-                <span className="text-[10px] text-slate-400 block">Rain Deficit</span>
-                <span className="font-bold text-amber-600">51.3%</span>
+              <div className="p-3 bg-[#EAE3D9]/60 rounded-2xl border border-[#CAB4AA]/30">
+                <span className="text-[10px] text-[#68625B] uppercase tracking-wider block">Rain Deficit</span>
+                <span className="font-serif font-semibold text-sm text-[#A26744] mt-0.5 block">51.3%</span>
               </div>
-              <div className="p-2 bg-slate-50 rounded-lg">
-                <span className="text-[10px] text-slate-400 block">Heat Spikes</span>
-                <span className="font-bold text-slate-800">12 Days &gt;35°C</span>
+              <div className="p-3 bg-[#EAE3D9]/60 rounded-2xl border border-[#CAB4AA]/30">
+                <span className="text-[10px] text-[#68625B] uppercase tracking-wider block">Heat Spikes</span>
+                <span className="font-serif font-semibold text-sm text-[#1B1D1C] mt-0.5 block">12 Days &gt;35°C</span>
               </div>
             </div>
           </div>
@@ -156,40 +158,40 @@ export const YieldVerificationView: React.FC = () => {
       </div>
 
       {/* Yield Model Evaluation Box */}
-      <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-        <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+      <div className="bg-[#F5EFE6] p-8 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-5">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#EAE3D9]">
           <div>
-            <h3 className="font-bold text-sm text-slate-900">Machine Learning Yield Benchmark Model (XGBoost)</h3>
-            <p className="text-xs text-slate-500">Advisory crop loss prediction calibrated against historical regional yields</p>
+            <h3 className="text-2xl font-serif font-normal text-[#1B1D1C]">Machine Learning Yield Benchmark Model (XGBoost)</h3>
+            <p className="text-xs sm:text-sm text-[#68625B] mt-0.5 font-sans">Advisory crop loss prediction calibrated against historical regional yields</p>
           </div>
-          <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+          <span className="text-xs font-sans font-medium text-[#5B7553] bg-[#EBF2EA] px-3.5 py-1 rounded-full border border-[#5B7553]/30 self-start">
             Model Confidence: {(yield_verification.confidence_score * 100).toFixed(0)}%
           </span>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
-          <div>
-            <span className="text-slate-400 block text-[11px]">Historical Normal Yield</span>
-            <span className="font-bold text-slate-900">{yield_verification.yield_evaluation.historical_benchmark_yield_kg_ha} kg/ha</span>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-sans">
+          <div className="p-4 bg-[#EAE3D9]/60 rounded-2xl border border-[#CAB4AA]/30">
+            <span className="text-[#68625B] block text-[10px] uppercase tracking-wider">Historical Normal Yield</span>
+            <span className="font-serif font-semibold text-base text-[#1B1D1C] mt-0.5 block">{yield_verification.yield_evaluation.historical_benchmark_yield_kg_ha} kg/ha</span>
           </div>
-          <div>
-            <span className="text-slate-400 block text-[11px]">Farmer Reported Yield</span>
-            <span className="font-bold text-slate-900">{yield_verification.yield_evaluation.reported_yield_kg_ha} kg/ha (65% Loss)</span>
+          <div className="p-4 bg-[#EAE3D9]/60 rounded-2xl border border-[#CAB4AA]/30">
+            <span className="text-[#68625B] block text-[10px] uppercase tracking-wider">Farmer Reported Yield</span>
+            <span className="font-serif font-semibold text-base text-[#1B1D1C] mt-0.5 block">{yield_verification.yield_evaluation.reported_yield_kg_ha} kg/ha (65% Loss)</span>
           </div>
-          <div>
-            <span className="text-slate-400 block text-[11px]">AI Estimated Yield</span>
-            <span className="font-bold text-emerald-700">{yield_verification.yield_evaluation.estimated_yield_kg_ha} kg/ha (62.6% Loss)</span>
+          <div className="p-4 bg-[#EAE3D9]/60 rounded-2xl border border-[#CAB4AA]/30">
+            <span className="text-[#68625B] block text-[10px] uppercase tracking-wider">AI Estimated Yield</span>
+            <span className="font-serif font-semibold text-base text-[#5B7553] mt-0.5 block">{yield_verification.yield_evaluation.estimated_yield_kg_ha} kg/ha (62.6% Loss)</span>
           </div>
-          <div>
-            <span className="text-slate-400 block text-[11px]">Loss Discrepancy</span>
-            <span className="font-bold text-emerald-600">{yield_verification.yield_evaluation.loss_discrepancy_percent}% (High Congruence)</span>
+          <div className="p-4 bg-[#EAE3D9]/60 rounded-2xl border border-[#CAB4AA]/30">
+            <span className="text-[#68625B] block text-[10px] uppercase tracking-wider">Loss Discrepancy</span>
+            <span className="font-serif font-semibold text-base text-[#5B7553] mt-0.5 block">{yield_verification.yield_evaluation.loss_discrepancy_percent}% (High Congruence)</span>
           </div>
         </div>
 
-        <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2">
-          <AlertCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+        <div className="p-4 bg-[#EAE3D9]/60 border border-[#CAB4AA]/40 rounded-2xl text-xs font-sans text-[#68625B] flex items-start gap-2.5">
+          <AlertCircle className="w-4 h-4 text-[#8B5F4D] shrink-0 mt-0.5" />
           <span>
-            <b>Mandatory Advisory Disclaimer:</b> AI yield estimates are experimental and intended to assist assessor judgment. Statutory claim settlements remain subject to official State CCE protocols.
+            <b className="text-[#1B1D1C]">Mandatory Advisory Disclaimer:</b> AI yield estimates are experimental and intended to assist assessor judgment. Statutory claim settlements remain subject to official State CCE protocols.
           </span>
         </div>
       </div>

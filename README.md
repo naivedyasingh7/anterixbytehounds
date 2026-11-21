@@ -1,22 +1,22 @@
-# AgriVerify AI – AI-Powered Agricultural Insurance Verification Platform
+# DHARA — AI-Powered Agricultural Intelligence & Insurance Verification Platform
 
-> **Empowering Fair, Fast, and Evidence-Backed Crop Insurance Settlements**  
-> AgriVerify AI bridges the trust gap between farmers and insurance underwriters using high-resolution satellite imagery (Sentinel-2), geospatial boundary validation, historical agro-meteorological analytics, and automated claims workflow auditing.
+> **One Platform | Two Ecosystems | Evidence-Based Decisions**  
+> **DHARA** (Sanskrit for *The Earth*) bridges the trust gap between cultivators and insurance underwriters using high-resolution Sentinel-2 multispectral satellite imagery, cadastral Khasra GIS boundary validation, historical agro-meteorological analytics, computer vision crop disease diagnostics, and automated claims workflow auditing.
 
 ---
 
 ## 🌟 Executive Summary & Value Proposition
 
-Traditional crop insurance (e.g., PM Fasal Bima Yojana, multi-peril crop insurance) suffers from:
-1. **Slow Ground Surveys:** Manual crop cutting experiments (CCE) take weeks to months.
-2. **Area Discrepancies:** Inflated land declarations, overlapping plots, or non-existent fields.
-3. **Yield Estimation Ambiguity:** Lack of empirical vegetation health data leading to claim disputes.
-4. **Administrative Bottlenecks:** Claims getting stuck in bureaucratic pipelines without audit trails.
+Traditional agricultural insurance (e.g., India's *Pradhan Mantri Fasal Bima Yojana - PMFBY*, multi-peril crop insurance) suffers from:
+1. **Slow Ground Surveys:** Manual crop cutting experiments (CCE) take weeks to months, delaying critical disaster relief.
+2. **Acreage Discrepancies:** Inflated land declarations, overlapping plots, or non-existent fields.
+3. **Yield Estimation Ambiguity:** Lack of plot-level vegetation health data leading to protracted dispute cycles.
+4. **Administrative Bottlenecks:** Claims getting stuck in bureaucratic pipelines without tamper-proof audit trails.
 
-**AgriVerify AI solves this through three specialized engines:**
-- 🛰️ **Engine 1: Farm Verification:** Satellite polygon delineation, Khasra land record cross-checking, and automatic area variance scoring (`Verified`, `Mismatch`, `Insufficient Data`, `Manual Review`).
-- 🌾 **Engine 2: Crop Yield Verification:** Multi-temporal Sentinel-2 NDVI vegetative trajectory tracking, rainfall & temperature timeseries correlation, and machine learning yield loss benchmark estimation.
-- ⏱️ **Engine 3: Insurance Process Audit:** Automated ingestion of claim logs to flag institutional delays, missing mandatory documents, and suspicious processing patterns.
+**DHARA solves this by connecting ground-level crop observations, satellite-based farmland intelligence, and insurance verification through three specialized engines:**
+- 🛰️ **Engine 1: Farm Boundary Verification:** Satellite polygon delineation, Khasra revenue record cross-checking, and equal-area UTM Zone 43N geodesic variance scoring (`Verified`, `Mismatch`, `Insufficient Data`, `Manual Review`).
+- 🌾 **Engine 2: Crop Yield Verification:** Multi-temporal Sentinel-2 NDVI vegetative trajectory tracking, rainfall & temperature timeseries correlation, and machine learning yield loss benchmark estimation (XGBoost).
+- ⏱️ **Engine 3: Insurance Process Audit:** Automated ingestion of claim logs to flag statutory SLA breaches (> 21 days), missing mandatory documents, and anomalous processing patterns.
 - 🎯 **Unified Claim Workspace:** A single cockpit where insurance assessors examine AI-synthesized evidence and record legally defensible approval, rejection, or investigation decisions.
 
 ---
@@ -24,11 +24,11 @@ Traditional crop insurance (e.g., PM Fasal Bima Yojana, multi-peril crop insuran
 ## 🗺️ Platform Sitemap & User Journeys
 
 ```
-                                      AgriVerify AI
+                                          DHARA
                                             │
                ┌────────────────────────────┴────────────────────────────┐
                ▼                                                         ▼
-       Farmer Portal                                             Insurance Portal
+       DHARA FARMER                                              DHARA INSURE
    (Empowerment & Claim Filing)                                (Auditing & Settlement)
          │                                                         │
    ┌─────┴─────────────────────┐                             ┌─────┴──────────────────────┐
@@ -37,9 +37,11 @@ Traditional crop insurance (e.g., PM Fasal Bima Yojana, multi-peril crop insuran
    │ • Farmer Dashboard        │                             │ • Claims Management Table  │
    │ • My Registered Farms     │                             │ • Unified Claim Workspace  │
    │ • Register New Farm (Map) │                             │ • Engine 1: Farm Verifier  │
-   │ • Submit Claim Wizard     │                             │ • Engine 2: Yield Verifier │
-   │ • Track Claim Status      │                             │ • Engine 3: Process Audit  │
-   │ • Upload Land / Crop Docs │                             │ • Assessment PDF Reports   │
+   │ • AI Disease Scanner      │                             │ • Engine 2: Yield Verifier │
+   │ • Sentinel-2 NDVI Monitor │                             │ • Engine 3: Process Audit  │
+   │ • Submit Claim Wizard     │                             │ • Assessment PDF Reports   │
+   │ • Track Claim Status      │                             │                            │
+   │ • Health Dossiers         │                             │                            │
    └───────────────────────────┘                             └────────────────────────────┘
                │                                                         │
                └────────────────────────────┬────────────────────────────┘
@@ -52,8 +54,6 @@ Traditional crop insurance (e.g., PM Fasal Bima Yojana, multi-peril crop insuran
 ---
 
 ## 🏗️ Repository Architecture
-
-The project is structured into clear, decoupled modules:
 
 ```
 anterixbytehounds/
@@ -97,9 +97,9 @@ anterixbytehounds/
 │           │   └── reports.py     # Downloadable audit-ready PDF report builder
 │           └── router.py          # Unified v1 API routing
 │
-├── frontend/                       # React 18 + TypeScript + Vite + Tailwind CSS
+├── frontend/                       # React 18 + TypeScript + Vite + Tailwind CSS + GSAP
 │   ├── README.md                  # Frontend development & build instructions
-│   ├── package.json               # Node dependencies (Leaflet, Recharts, Lucide, Tailwind)
+│   ├── package.json               # Node dependencies (Leaflet, Recharts, Lucide, Tailwind, GSAP)
 │   ├── tsconfig.json              # TypeScript configuration
 │   ├── vite.config.ts             # Vite bundler config
 │   ├── tailwind.config.js         # Tailwind styling design tokens
@@ -107,15 +107,17 @@ anterixbytehounds/
 │       ├── types/                 # Strong TypeScript type definitions
 │       ├── context/               # AuthContext (Role-based state management)
 │       ├── services/              # Axios API client & mock data fallback
-│       ├── components/            # Reusable UI widgets
-│       │   ├── common/            # Navbar, Sidebar, Badges, Modals
+│       ├── components/            # Reusable UI widgets & cinematic modules
+│       │   ├── cinematic/         # Serein-inspired Hero, Pinned Space-to-Earth sequence, Ecosystems
+│       │   ├── common/            # DharaNav, FarmerNav, InsureNav, Sidebar
 │       │   ├── maps/              # Leaflet GIS farm polygon viewer & drawing canvas
 │       │   └── charts/            # NDVI temporal line charts, weather rainfall graphs
 │       └── pages/                 # Routing views
-│           ├── LandingPage.tsx    # High-converting informative landing page
-│           ├── auth/              # Login & Registration pages
-│           ├── farmer/            # Farmer portal (Dashboard, Farms, Claims Wizard)
-│           └── insurance/         # Insurance portal (Dashboard, Workspace, Engines, Reports)
+│           ├── LandingPage.tsx    # Cinematic scroll-driven experience
+│           ├── VisionPage.tsx     # Editorial philosophy & vision
+│           ├── TechnologyPage.tsx # Technical deep-dive on remote sensing & ML
+│           ├── farmer/            # DHARA Farmer portal (Hub, Disease AI, Satellite NDVI, Reports)
+│           └── insurance/         # DHARA Insure portal (Cockpit, Verification, Audit, Workspace)
 │
 ├── ml_models/                      # Machine Learning Training & Inference
 │   ├── README.md                  # Model benchmarks, feature engineering & notes
@@ -134,10 +136,10 @@ anterixbytehounds/
 ## ⚙️ The Three Core Verification Engines
 
 ### 1. Engine 1: Farm Verification
-- **Core Problem:** Does the claimed farm actually exist where reported, and does the declared acreage match ground geometry?
+- **Core Problem:** Does the claimed farm actually exist where reported, and does declared acreage match ground geometry?
 - **How it Works:** 
   1. Integrates cadastral Khasra survey records with interactive Leaflet/PostGIS polygon delineation.
-  2. Calculates geodesic plot area using Shapely / PostGIS `ST_Area`.
+  2. Calculates geodesic plot area using Shapely / PostGIS `ST_Area` in UTM Zone 43N (EPSG:32643).
   3. Computes discrepancy percentage:  
      $$\Delta_{\text{area}} = \frac{|\text{Declared Area} - \text{Geodesic Mapped Area}|}{\text{Declared Area}} \times 100$$
   4. Classifies status:
@@ -152,6 +154,7 @@ anterixbytehounds/
   1. Pulls multi-date Sentinel-2 Bottom-of-Atmosphere (BOA) surface reflectance for the farm polygon.
   2. Computes Normalized Difference Vegetation Index (NDVI):
      $$\text{NDVI} = \frac{\text{NIR} - \text{RED}}{\text{NIR} + \text{RED}}$$
+     *(Scientific note: NDVI is an empirical optical index measuring canopy chlorophyll absorption and vegetative vigour, not subterranean soil fertility).*
   3. Overlays daily precipitation and temperature timeseries (detecting droughts, unseasonal heatwaves, or flash flooding).
   4. Compares the farmer's self-reported harvest yield against an ML estimated yield (XGBoost model trained on historical agro-climatic indices).
   5. Outputs model confidence level and flags experimental estimates with clear disclaimers.
@@ -159,11 +162,11 @@ anterixbytehounds/
 ### 3. Engine 3: Insurance Process Audit
 - **Core Problem:** Are claim settlements languishing in administrative delays, or showing signs of non-compliance?
 - **How it Works:**
-  1. Ingests claim lifecycle events (`Submitted` $\rightarrow$ `Survey Scheduled` $\rightarrow$ `Loss Assessed` $\rightarrow$ `Approved` $\rightarrow$ `Disbursed`).
+  1. Ingests claim lifecycle events (`Submitted` $\rightarrow$ `Document Check` $\rightarrow$ `E1/E2 Assessment` $\rightarrow$ `Officer Review` $\rightarrow$ `Disbursed`).
   2. Measures Service Level Agreement (SLA) turnaround times at each milestone.
   3. Detects anomalies:
      - Regulatory breach (> 21 days from filing to assessment).
-     - Missing mandatory evidentiary records (e.g. absent sowing certificate or photo proof).
+     - Missing mandatory evidentiary records (e.g. absent sowing certificate, Khasra deed, or photo proof).
      - Out-of-sequence timestamps (e.g. payment approved prior to survey date).
 
 ---
@@ -185,76 +188,14 @@ When an Insurance Officer opens a claim (e.g. `CLM001`), the **Unified Claim Wor
 
 ---
 
-## 🚀 Quickstart Guide
-
-### Prerequisites
-- **Node.js** (v18+)
-- **Python** (v3.10+)
-- **PostgreSQL 14+ with PostGIS** (or Docker)
-
-### Option A: Running with Docker Compose (Recommended)
-```bash
-# Clone and enter directory
-cd anterixbytehounds
-
-# Spin up Database, FastAPI backend, and React frontend
-docker-compose up --build
-```
-- Frontend: `http://localhost:5173`
-- Backend API Docs: `http://localhost:8000/docs`
-- Database: `localhost:5432` (`postgres` / `agriverify_password`)
-
-### Option B: Local Development
-
-#### 1. Setup Database
-```bash
-# Connect to your PostgreSQL instance and execute:
-psql -U postgres -d agriverify -f database/migrations/001_initial_schema.sql
-psql -U postgres -d agriverify -f database/migrations/002_seed_demo_data.sql
-```
-
-#### 2. Setup Backend (FastAPI)
-```bash
-cd backend
-python -m venv .venv
-# Windows:
-.venv\Scripts\activate
-# Linux/macOS:
-source .venv/bin/activate
-
-pip install -r requirements.txt
-cp .env.example .env
-python main.py
-```
-Backend runs on `http://localhost:8000`.
-
-#### 3. Setup Frontend (React + Vite)
-```bash
-cd frontend
-npm install
-npm run dev
-```
-Frontend runs on `http://localhost:5173`.
-
----
-
 ## 👥 Demo Credentials (Pre-seeded)
 
 | Role | Email | Password | Access Rights |
 |---|---|---|---|
-| **Farmer (Demo)** | `farmer.rajesh@agriverify.in` | `Farmer@123` | Farm registration, Claim filing, Claim tracking |
-| **Insurance Officer** | `officer.sharma@agriverify.in` | `Officer@123` | Claims management, 3 Engines, Workspace, PDF Reports |
-
----
-
-## 📋 MVP Development Roadmap
-
-- [x] **Phase 1: Architecture & Foundations** (Relational & geospatial schemas, API contract, folder layout, demo seed data).
-- [x] **Phase 2: Core Verification Engines** (Cadastral polygon geometry, NDVI timeseries simulator, process SLA auditor).
-- [x] **Phase 3: Unified Claim Workspace** (Evidence aggregation, interactive Leaflet view, decision recording).
-- [x] **Phase 4: Reporting & Batch Processing** (CSV claim importer, downloadable summary assessment PDF).
+| **Farmer (Demo)** | `farmer.rajesh@agriverify.in` | `Farmer@123` | Farm registration, Disease AI, Satellite NDVI, Claim filing |
+| **Insurance Officer** | `officer.sharma@agriverify.in` | `Officer@123` | Claims management, 3 Engines, Unified Workspace, PDF Reports |
 
 ---
 
 ## 📄 License & Attribution
-Developed for the **AgriVerify AI** MVP Initiative. Built with open-source tools: FastAPI, React, Leaflet, PostGIS, Recharts, and Scikit-learn.
+Developed for the **DHARA** Initiative. Built with open-source tools: FastAPI, React, Leaflet, PostGIS, Recharts, and Scikit-learn.

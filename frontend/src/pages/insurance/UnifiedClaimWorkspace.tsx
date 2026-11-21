@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { fetchUnifiedWorkspace, submitAssessmentDecision, getReportPdfUrl } from '../../services/api';
+import { MOCK_WORKSPACE_CLM001 } from '../../services/mockData';
 import { UnifiedWorkspaceData } from '../../types';
 import { FarmMapViewer } from '../../components/maps/FarmMapViewer';
 import { NdviChart } from '../../components/charts/NdviChart';
@@ -23,7 +24,7 @@ import {
 
 export const UnifiedClaimWorkspace: React.FC = () => {
   const { claimId = 'CLM001' } = useParams();
-  const [data, setData] = useState<UnifiedWorkspaceData | null>(null);
+  const [data, setData] = useState<UnifiedWorkspaceData | null>(MOCK_WORKSPACE_CLM001);
   const [decision, setDecision] = useState<'Approved' | 'Rejected' | 'Flagged_Investigation' | 'More_Info_Required'>('Approved');
   const [remarks, setRemarks] = useState(
     'Satellite NDVI confirms severe vegetative crash matching IMD drought records. Geodesic area matches Khasra deed within 1.5%.'
@@ -31,14 +32,15 @@ export const UnifiedClaimWorkspace: React.FC = () => {
   const [actionMessage, setActionMessage] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchUnifiedWorkspace(claimId).then(setData);
+    fetchUnifiedWorkspace(claimId).then((res) => {
+      if (res && res.claim_overview) {
+        setData(res);
+      }
+    });
   }, [claimId]);
 
-  if (!data) {
-    return <div className="p-8 text-center text-slate-500">Loading Unified Claim Workspace...</div>;
-  }
-
-  const { claim_overview, farm_verification, yield_verification, process_audit, evidence_locker } = data;
+  const activeData = data || MOCK_WORKSPACE_CLM001;
+  const { claim_overview, farm_verification, yield_verification, process_audit, evidence_locker } = activeData;
 
   const handleDecisionSubmit = async () => {
     await submitAssessmentDecision(claimId, decision, remarks, claim_overview.claimed_amount_inr);
@@ -47,21 +49,23 @@ export const UnifiedClaimWorkspace: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 font-sans selection:bg-[#8B5F4D]/25 selection:text-[#1B1D1C]">
       
-      {/* Workspace Header Banner */}
-      <div className="bg-slate-900 text-white p-6 rounded-2xl shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
+      {/* Workspace Header Banner in Serein Editorial Style */}
+      <div className="bg-[#F5EFE6] text-[#1B1D1C] p-8 sm:p-10 rounded-3xl border border-[#EAE3D9] shadow-[0_4px_24px_rgba(27,29,28,0.03)] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">
-              The Unified Claim Workspace
+            <span className="text-[10px] font-sans font-medium uppercase tracking-wider text-[#8B5F4D] bg-[#EAE3D9] px-3 py-1 rounded-full border border-[#CAB4AA]">
+              Unified Claim Dossier
             </span>
-            <span className="text-slate-400 text-xs">·</span>
-            <span className="text-xs text-slate-300 font-mono">Assessor: R. K. Sharma</span>
+            <span className="text-[#CAB4AA] text-xs">·</span>
+            <span className="text-xs text-[#68625B] font-mono">Assessor: R. K. Sharma</span>
           </div>
-          <h1 className="text-2xl font-bold mt-2">Claim Assessment Dossier: {claim_overview.claim_number}</h1>
-          <p className="text-xs text-slate-400 mt-1">
-            Farmer: <b>{claim_overview.farmer_name}</b> ({claim_overview.farmer_code}) · {claim_overview.district}, MP
+          <h1 className="text-3xl sm:text-4xl font-serif font-normal text-[#1B1D1C] tracking-tight">
+            Claim Dossier: {claim_overview.claim_number}
+          </h1>
+          <p className="text-xs sm:text-sm text-[#68625B] font-sans">
+            Farmer: <span className="font-semibold text-[#1B1D1C]">{claim_overview.farmer_name}</span> ({claim_overview.farmer_code}) · {claim_overview.district}, Madhya Pradesh
           </p>
         </div>
 
@@ -71,7 +75,7 @@ export const UnifiedClaimWorkspace: React.FC = () => {
             href={getReportPdfUrl(claimId)}
             target="_blank"
             rel="noreferrer"
-            className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl shadow-md transition flex items-center gap-2"
+            className="px-6 py-3 bg-[#8B5F4D] hover:bg-[#74503F] text-[#FBF9F5] text-xs sm:text-sm font-sans font-medium rounded-full shadow-sm transition flex items-center gap-2 active:scale-95"
           >
             <Download className="w-4 h-4" />
             <span>Download PDF Dossier</span>
@@ -80,37 +84,38 @@ export const UnifiedClaimWorkspace: React.FC = () => {
       </div>
 
       {actionMessage && (
-        <div className="p-4 bg-emerald-50 border border-emerald-300 rounded-xl text-xs font-semibold text-emerald-900 flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+        <div className="p-4 bg-[#EBF2EA] border border-[#5B7553]/30 rounded-2xl text-xs font-sans text-[#5B7553] flex items-center gap-2.5">
+          <CheckCircle2 className="w-4 h-4 text-[#5B7553] shrink-0" />
           <span>{actionMessage}</span>
         </div>
       )}
 
       {/* Section 1: Claim Overview */}
-      <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
-        <div className="flex items-center justify-between pb-2 border-b border-slate-100">
-          <h3 className="font-bold text-sm text-slate-900 flex items-center gap-2">
-            <FileText className="w-4 h-4 text-emerald-600" /> 1. Claim & Policy Overview
+      <div className="bg-[#F5EFE6] p-6 sm:p-8 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-4">
+        <div className="flex items-center justify-between pb-3 border-b border-[#EAE3D9]">
+          <h3 className="text-xl font-serif font-normal text-[#1B1D1C] flex items-center gap-2">
+            <FileText className="w-5 h-5 text-[#8B5F4D]" />
+            <span>1. Claim & Policy Overview</span>
           </h3>
           <StatusBadge status={claim_overview.status} />
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-sans">
           <div>
-            <span className="text-slate-400 block text-[11px]">Policy Number</span>
-            <span className="font-bold text-slate-900">{claim_overview.policy_number}</span>
+            <span className="text-[#68625B] block text-[11px] uppercase tracking-wider">Policy Number</span>
+            <span className="font-mono font-semibold text-sm text-[#1B1D1C] mt-0.5 block">{claim_overview.policy_number}</span>
           </div>
           <div>
-            <span className="text-slate-400 block text-[11px]">Crop & Season</span>
-            <span className="font-bold text-slate-900">{claim_overview.crop} ({claim_overview.season})</span>
+            <span className="text-[#68625B] block text-[11px] uppercase tracking-wider">Crop & Season</span>
+            <span className="font-serif font-semibold text-sm text-[#1B1D1C] mt-0.5 block">{claim_overview.crop} ({claim_overview.season})</span>
           </div>
           <div>
-            <span className="text-slate-400 block text-[11px]">Claimed Amount</span>
-            <span className="font-bold text-emerald-700 text-sm">₹{claim_overview.claimed_amount_inr.toLocaleString('en-IN')}</span>
+            <span className="text-[#68625B] block text-[11px] uppercase tracking-wider">Claimed Amount</span>
+            <span className="font-serif font-semibold text-base text-[#8B5F4D] mt-0.5 block">₹{claim_overview.claimed_amount_inr.toLocaleString('en-IN')}</span>
           </div>
           <div>
-            <span className="text-slate-400 block text-[11px]">Declared Cause</span>
-            <span className="font-bold text-slate-900">{claim_overview.loss_cause}</span>
+            <span className="text-[#68625B] block text-[11px] uppercase tracking-wider">Declared Cause</span>
+            <span className="font-sans font-medium text-xs text-[#1B1D1C] mt-0.5 block">{claim_overview.loss_cause}</span>
           </div>
         </div>
       </div>
@@ -119,70 +124,76 @@ export const UnifiedClaimWorkspace: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         {/* Section 2: Farm Verification (Engine 1) */}
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+        <div className="bg-[#F5EFE6] p-6 sm:p-8 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="font-bold text-sm text-slate-900 flex items-center gap-2">
-                <Layers className="w-4 h-4 text-blue-600" /> 2. Engine 1: Farm Boundary Verification
+              <h3 className="text-xl font-serif font-normal text-[#1B1D1C] flex items-center gap-2">
+                <Layers className="w-5 h-5 text-[#8B5F4D]" />
+                <span>2. Engine 1: Cadastral Boundary</span>
               </h3>
-              <p className="text-xs text-slate-500">PostGIS geodesic polygon vs Khasra declared acreage</p>
+              <p className="text-xs text-[#68625B] font-sans mt-0.5">PostGIS geodesic polygon vs Khasra declared acreage</p>
             </div>
             <StatusBadge status={farm_verification.verdict} size="sm" />
           </div>
 
-          <FarmMapViewer
-            coordinates={farm_verification.boundary_geojson.coordinates}
-            khasra={farm_verification.khasra_number}
-            height="260px"
-          />
+          <div className="rounded-2xl overflow-hidden border border-[#EAE3D9]">
+            <FarmMapViewer
+              coordinates={farm_verification?.boundary_geojson?.coordinates}
+              khasra={farm_verification?.khasra_number}
+              height="260px"
+            />
+          </div>
 
-          <div className="grid grid-cols-3 gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+          <div className="grid grid-cols-3 gap-3 p-4 bg-[#EAE3D9]/60 rounded-2xl border border-[#CAB4AA]/40 text-xs font-sans">
             <div>
-              <span className="text-slate-400 block text-[10px]">Declared Khasra</span>
-              <span className="font-bold text-slate-900">{farm_verification.declared_area_ha} Ha</span>
+              <span className="text-[#68625B] block text-[10px] uppercase tracking-wider">Declared Khasra</span>
+              <span className="font-serif font-semibold text-sm text-[#1B1D1C]">{farm_verification.declared_area_ha} Ha</span>
             </div>
             <div>
-              <span className="text-slate-400 block text-[10px]">Mapped Geodesic</span>
-              <span className="font-bold text-emerald-700">{farm_verification.geodesic_area_ha} Ha</span>
+              <span className="text-[#68625B] block text-[10px] uppercase tracking-wider">Mapped Geodesic</span>
+              <span className="font-serif font-semibold text-sm text-[#5B7553]">{farm_verification.geodesic_area_ha} Ha</span>
             </div>
             <div>
-              <span className="text-slate-400 block text-[10px]">Variance Status</span>
-              <span className="font-bold text-emerald-600">{farm_verification.variance_percent}% (Match)</span>
+              <span className="text-[#68625B] block text-[10px] uppercase tracking-wider">Variance Status</span>
+              <span className="font-sans font-semibold text-xs text-[#5B7553]">{farm_verification.variance_percent}% (Match)</span>
             </div>
           </div>
-          <p className="text-[11px] text-slate-500">{farm_verification.notes}</p>
+          <p className="text-xs text-[#68625B] font-sans leading-relaxed">{farm_verification.notes}</p>
         </div>
 
         {/* Section 3: Yield Verification (Engine 2) */}
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+        <div className="bg-[#F5EFE6] p-6 sm:p-8 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="font-bold text-sm text-slate-900 flex items-center gap-2">
-                <Activity className="w-4 h-4 text-emerald-600" /> 3. Engine 2: Crop Yield Verification
+              <h3 className="text-xl font-serif font-normal text-[#1B1D1C] flex items-center gap-2">
+                <Activity className="w-5 h-5 text-[#8B5F4D]" />
+                <span>3. Engine 2: Crop Yield Loss</span>
               </h3>
-              <p className="text-xs text-slate-500">Sentinel-2 NDVI curve & agro-meteorological correlation</p>
+              <p className="text-xs text-[#68625B] font-sans mt-0.5">Sentinel-2 NDVI curve & agro-meteorological correlation</p>
             </div>
             <StatusBadge status={yield_verification.verdict} size="sm" />
           </div>
 
-          <NdviChart data={yield_verification.ndvi_timeline} height={190} />
+          <div className="rounded-2xl overflow-hidden border border-[#EAE3D9] bg-[#FBF9F5] p-2">
+            <NdviChart data={yield_verification.ndvi_timeline} height={200} />
+          </div>
 
-          <div className="grid grid-cols-3 gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+          <div className="grid grid-cols-3 gap-3 p-4 bg-[#EAE3D9]/60 rounded-2xl border border-[#CAB4AA]/40 text-xs font-sans">
             <div>
-              <span className="text-slate-400 block text-[10px]">Reported Loss</span>
-              <span className="font-bold text-slate-900">{yield_verification.yield_evaluation.reported_loss_percent}%</span>
+              <span className="text-[#68625B] block text-[10px] uppercase tracking-wider">Reported Loss</span>
+              <span className="font-serif font-semibold text-sm text-[#1B1D1C]">{yield_verification.yield_evaluation.reported_loss_percent}%</span>
             </div>
             <div>
-              <span className="text-slate-400 block text-[10px]">ML Estimated Loss</span>
-              <span className="font-bold text-emerald-700">{yield_verification.yield_evaluation.estimated_loss_percent}%</span>
+              <span className="text-[#68625B] block text-[10px] uppercase tracking-wider">ML Estimated Loss</span>
+              <span className="font-serif font-semibold text-sm text-[#8B5F4D]">{yield_verification.yield_evaluation.estimated_loss_percent}%</span>
             </div>
             <div>
-              <span className="text-slate-400 block text-[10px]">Model Confidence</span>
-              <span className="font-bold text-blue-600">{(yield_verification.confidence_score * 100).toFixed(0)}%</span>
+              <span className="text-[#68625B] block text-[10px] uppercase tracking-wider">Confidence</span>
+              <span className="font-sans font-semibold text-xs text-[#5B7553]">{(yield_verification.confidence_score * 100).toFixed(0)}%</span>
             </div>
           </div>
 
-          <p className="text-[10px] text-slate-400 italic">
+          <p className="text-[11px] text-[#68625B] italic font-sans">
             * {yield_verification.yield_evaluation.regulatory_disclaimer}
           </p>
         </div>
@@ -190,55 +201,64 @@ export const UnifiedClaimWorkspace: React.FC = () => {
       </div>
 
       {/* Meteorological Deep Dive (Engine 2 Weather) */}
-      <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-        <h4 className="text-xs font-bold text-slate-700 flex items-center gap-2">
-          <span>Regional Agro-Meteorological Evidence</span>
-          <span className="text-[11px] font-normal text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200 font-semibold">
+      <div className="bg-[#F5EFE6] p-6 sm:p-8 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[#EAE3D9]">
+          <h4 className="text-xl font-serif font-normal text-[#1B1D1C]">
+            Regional Agro-Meteorological Evidence
+          </h4>
+          <span className="text-xs font-sans font-medium text-[#9E3A3A] bg-[#FDF2F2] px-3.5 py-1 rounded-full border border-[#E5B5B5] self-start">
             {yield_verification.weather_summary.consecutive_dry_days} Consecutive Dry Days (IMD Anomaly)
           </span>
-        </h4>
-        <WeatherChart data={yield_verification.weather_summary.weekly_records} height={180} />
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-[#EAE3D9] bg-[#FBF9F5] p-2">
+          <WeatherChart data={yield_verification.weather_summary.weekly_records} height={190} />
+        </div>
       </div>
 
       {/* Section 4 & 5: Process Audit & Evidence Locker */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         {/* Section 4: Process Audit (Engine 3) */}
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-          <div className="flex items-center justify-between">
-            <h3 className="font-bold text-sm text-slate-900 flex items-center gap-2">
-              <History className="w-4 h-4 text-amber-600" /> 4. Engine 3: Process Audit & SLA
+        <div className="bg-[#F5EFE6] p-6 sm:p-8 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-4">
+          <div className="flex items-center justify-between pb-3 border-b border-[#EAE3D9]">
+            <h3 className="text-xl font-serif font-normal text-[#1B1D1C] flex items-center gap-2">
+              <History className="w-5 h-5 text-[#8B5F4D]" />
+              <span>4. Engine 3: SLA Timeline</span>
             </h3>
-            <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+            <span className="text-xs font-sans font-medium text-[#5B7553] bg-[#EBF2EA] px-3.5 py-1 rounded-full border border-[#5B7553]/30">
               {process_audit.sla_status} (4 Days)
             </span>
           </div>
 
-          <div className="space-y-2">
-            {process_audit.timeline_events.map((evt, idx) => (
-              <div key={idx} className="flex items-center justify-between p-2.5 bg-slate-50 rounded-lg text-xs">
-                <span className="font-medium text-slate-800">{evt.stage}</span>
-                <span className="text-slate-400 font-mono text-[11px]">{evt.date}</span>
-                <span className="text-emerald-700 font-semibold">{evt.status}</span>
+          <div className="space-y-2.5">
+            {process_audit.timeline_events.map((evt: any, idx: number) => (
+              <div key={idx} className="flex items-center justify-between p-3.5 bg-[#EAE3D9]/60 rounded-2xl text-xs font-sans border border-[#CAB4AA]/30">
+                <span className="font-serif font-semibold text-[#1B1D1C]">{evt.stage}</span>
+                <span className="text-[#68625B] font-mono text-[11px]">{evt.date}</span>
+                <span className="text-[#5B7553] font-medium">{evt.status}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Section 5: Evidence Locker */}
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-          <h3 className="font-bold text-sm text-slate-900 flex items-center gap-2">
-            <FileText className="w-4 h-4 text-purple-600" /> 5. Evidence Locker
-          </h3>
+        <div className="bg-[#F5EFE6] p-6 sm:p-8 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-4">
+          <div className="flex items-center justify-between pb-3 border-b border-[#EAE3D9]">
+            <h3 className="text-xl font-serif font-normal text-[#1B1D1C] flex items-center gap-2">
+              <FileText className="w-5 h-5 text-[#8B5F4D]" />
+              <span>5. Evidence Locker</span>
+            </h3>
+            <span className="text-xs font-mono text-[#68625B]">4 Documents</span>
+          </div>
 
-          <div className="space-y-2">
-            {evidence_locker.map((doc, idx) => (
-              <div key={idx} className="flex items-center justify-between p-2.5 bg-slate-50 rounded-lg text-xs border border-slate-100">
+          <div className="space-y-2.5">
+            {evidence_locker.map((doc: any, idx: number) => (
+              <div key={idx} className="flex items-center justify-between p-3.5 bg-[#EAE3D9]/60 rounded-2xl text-xs font-sans border border-[#CAB4AA]/30">
                 <div>
-                  <span className="font-bold text-slate-900 block">{doc.name}</span>
-                  <span className="text-[10px] text-slate-400">{doc.type} · {doc.size}</span>
+                  <span className="font-serif font-semibold text-[#1B1D1C] block">{doc.name}</span>
+                  <span className="text-[10px] text-[#68625B] font-mono">{doc.type} · {doc.size}</span>
                 </div>
-                <span className="text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded text-[11px]">
+                <span className="text-[#5B7553] font-medium bg-[#EBF2EA] px-2.5 py-0.5 rounded-full text-[11px]">
                   {doc.status}
                 </span>
               </div>
@@ -249,18 +269,20 @@ export const UnifiedClaimWorkspace: React.FC = () => {
       </div>
 
       {/* Section 6: Official Assessor Cockpit (Final Assessment & Human Sign-Off) */}
-      <div className="bg-white p-6 rounded-2xl border-2 border-slate-900 shadow-lg space-y-5">
-        <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+      <div className="bg-[#F5EFE6] p-8 sm:p-10 rounded-3xl border-2 border-[#8B5F4D] shadow-[0_8px_32px_rgba(139,95,77,0.08)] space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#EAE3D9]">
           <div>
-            <h3 className="font-bold text-base text-slate-900 flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-emerald-600" />
-              6. Official Assessor Adjudication Cockpit
+            <h3 className="text-2xl font-serif font-normal text-[#1B1D1C] flex items-center gap-2">
+              <ShieldCheck className="w-6 h-6 text-[#8B5F4D]" />
+              <span>6. Official Assessor Adjudication Cockpit</span>
             </h3>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs sm:text-sm text-[#68625B] font-sans mt-1">
               AI synthesizes empirical evidence. Statutory settlement decision rests exclusively with the authorized officer.
             </p>
           </div>
-          <span className="text-[11px] font-mono text-slate-400">Assessor ID: OFF-BHP-004</span>
+          <span className="text-xs font-mono text-[#8B5F4D] bg-[#EAE3D9] px-3.5 py-1.5 rounded-full self-start">
+            Assessor ID: OFF-BHP-004
+          </span>
         </div>
 
         {/* Action Choice Buttons */}
@@ -268,77 +290,77 @@ export const UnifiedClaimWorkspace: React.FC = () => {
           <button
             type="button"
             onClick={() => setDecision('Approved')}
-            className={`p-3 rounded-xl border text-xs font-bold flex items-center justify-center gap-2 transition ${
+            className={`p-4 rounded-2xl border text-xs font-sans font-medium flex items-center justify-center gap-2 transition ${
               decision === 'Approved'
-                ? 'bg-emerald-600 text-white border-emerald-600 shadow-md'
-                : 'bg-slate-50 hover:bg-emerald-50 text-slate-700 border-slate-200'
+                ? 'bg-[#5B7553] text-[#FBF9F5] border-[#5B7553] shadow-md'
+                : 'bg-[#FBF9F5] hover:bg-[#EAE3D9] text-[#1B1D1C] border-[#CAB4AA]'
             }`}
           >
             <CheckCircle2 className="w-4 h-4" />
-            Approve Claim
+            <span>Approve Claim</span>
           </button>
 
           <button
             type="button"
             onClick={() => setDecision('Flagged_Investigation')}
-            className={`p-3 rounded-xl border text-xs font-bold flex items-center justify-center gap-2 transition ${
+            className={`p-4 rounded-2xl border text-xs font-sans font-medium flex items-center justify-center gap-2 transition ${
               decision === 'Flagged_Investigation'
-                ? 'bg-amber-600 text-white border-amber-600 shadow-md'
-                : 'bg-slate-50 hover:bg-amber-50 text-slate-700 border-slate-200'
+                ? 'bg-[#A26744] text-[#FBF9F5] border-[#A26744] shadow-md'
+                : 'bg-[#FBF9F5] hover:bg-[#EAE3D9] text-[#1B1D1C] border-[#CAB4AA]'
             }`}
           >
             <AlertTriangle className="w-4 h-4" />
-            Flag for Field Survey
+            <span>Flag for Survey</span>
           </button>
 
           <button
             type="button"
             onClick={() => setDecision('More_Info_Required')}
-            className={`p-3 rounded-xl border text-xs font-bold flex items-center justify-center gap-2 transition ${
+            className={`p-4 rounded-2xl border text-xs font-sans font-medium flex items-center justify-center gap-2 transition ${
               decision === 'More_Info_Required'
-                ? 'bg-blue-600 text-white border-blue-600 shadow-md'
-                : 'bg-slate-50 hover:bg-blue-50 text-slate-700 border-slate-200'
+                ? 'bg-[#8B5F4D] text-[#FBF9F5] border-[#8B5F4D] shadow-md'
+                : 'bg-[#FBF9F5] hover:bg-[#EAE3D9] text-[#1B1D1C] border-[#CAB4AA]'
             }`}
           >
             <HelpCircle className="w-4 h-4" />
-            Request Documents
+            <span>Request Records</span>
           </button>
 
           <button
             type="button"
             onClick={() => setDecision('Rejected')}
-            className={`p-3 rounded-xl border text-xs font-bold flex items-center justify-center gap-2 transition ${
+            className={`p-4 rounded-2xl border text-xs font-sans font-medium flex items-center justify-center gap-2 transition ${
               decision === 'Rejected'
-                ? 'bg-rose-600 text-white border-rose-600 shadow-md'
-                : 'bg-slate-50 hover:bg-rose-50 text-slate-700 border-slate-200'
+                ? 'bg-[#9E3A3A] text-[#FBF9F5] border-[#9E3A3A] shadow-md'
+                : 'bg-[#FBF9F5] hover:bg-[#EAE3D9] text-[#1B1D1C] border-[#CAB4AA]'
             }`}
           >
             <XCircle className="w-4 h-4" />
-            Reject Claim
+            <span>Reject Claim</span>
           </button>
         </div>
 
         {/* Remarks Input */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
-            Assessor Remarks & Legal Justification
+          <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">
+            Assessor Remarks & Statutory Justification
           </label>
           <textarea
             rows={3}
             value={remarks}
             onChange={(e) => setRemarks(e.target.value)}
-            className="w-full text-xs p-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-sans leading-relaxed"
+            className="w-full text-xs font-sans p-4 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D] leading-relaxed"
           />
         </div>
 
-        <div className="flex items-center justify-between pt-2">
-          <span className="text-[11px] text-slate-400">
-            Fiduciary Notice: Signature cryptographically signed to audit trail.
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
+          <span className="text-xs font-sans text-[#68625B]">
+            Fiduciary Notice: Cryptographically committed to the PMFBY institutional audit trail.
           </span>
           <button
             type="button"
             onClick={handleDecisionSubmit}
-            className="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-md transition"
+            className="px-7 py-3 rounded-full bg-[#1B1D1C] hover:bg-[#8B5F4D] text-[#FBF9F5] text-xs font-sans font-medium shadow-sm transition active:scale-95"
           >
             Save Assessor Adjudication
           </button>

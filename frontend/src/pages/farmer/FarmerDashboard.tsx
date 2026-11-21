@@ -1,108 +1,116 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { Sprout, MapPin, FileCheck2, Clock, PlusCircle, ArrowUpRight, ShieldCheck } from 'lucide-react';
+import { Sprout, MapPin, FileCheck2, Clock, PlusCircle, ArrowUpRight, ShieldCheck, Layers, FileText } from 'lucide-react';
 import { StatusBadge } from '../../components/common/StatusBadge';
 
 export const FarmerDashboard: React.FC = () => {
   const { user } = useAuth();
 
   return (
-    <div className="space-y-6">
-      {/* Welcome Banner */}
-      <div className="bg-gradient-to-r from-emerald-800 to-green-700 text-white rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div>
-          <span className="text-xs font-semibold text-emerald-200 uppercase tracking-wider">Farmer Self-Service Portal</span>
-          <h1 className="text-2xl font-bold mt-1">Namaste, {user?.full_name || 'Rajesh Kumar'}!</h1>
-          <p className="text-xs text-emerald-100 mt-1">
-            Village Berasia · District Bhopal, Madhya Pradesh · Farmer ID: FAR-MP-BHP-001
+    <div className="space-y-8 font-sans selection:bg-[#8B5F4D]/25 selection:text-[#1B1D1C]">
+      {/* Welcome Banner in Serein Editorial Style */}
+      <div className="bg-[#F5EFE6] border border-[#EAE3D9] text-[#1B1D1C] rounded-3xl p-8 sm:p-10 shadow-[0_4px_24px_rgba(27,29,28,0.03)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div className="space-y-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAE3D9] text-[#68625B] text-xs font-sans font-medium uppercase tracking-wider">
+            <span className="w-2 h-2 rounded-full bg-[#5B7553]"></span>
+            <span>Farmer Self-Service Portal</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-serif font-normal text-[#1B1D1C] tracking-tight">
+            Namaste, <span className="font-semibold">{user?.full_name || 'Rajesh Kumar'}</span>
+          </h1>
+          <p className="text-xs sm:text-sm text-[#68625B] font-sans">
+            Village Berasia · District Bhopal, Madhya Pradesh · Farmer ID: <span className="font-mono text-[#8B5F4D]">FAR-MP-BHP-001</span>
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-3">
           <Link
             to="/farmer/submit-claim"
-            className="px-4 py-2 bg-white text-emerald-800 text-xs font-bold rounded-xl shadow-md hover:bg-emerald-50 transition flex items-center gap-1.5"
+            className="px-5 py-2.5 bg-[#8B5F4D] hover:bg-[#74503F] text-[#FBF9F5] text-xs sm:text-sm font-sans font-medium rounded-full shadow-sm transition flex items-center gap-1.5 active:scale-95"
           >
             <FileCheck2 className="w-4 h-4" />
-            File Crop Claim
+            <span>File Crop Claim</span>
           </Link>
           <Link
             to="/farmer/register-farm"
-            className="px-4 py-2 bg-emerald-900/60 hover:bg-emerald-900 text-white text-xs font-semibold rounded-xl border border-emerald-400/30 transition flex items-center gap-1.5"
+            className="px-5 py-2.5 bg-[#EAE3D9] hover:bg-[#DED5CA] text-[#1B1D1C] text-xs sm:text-sm font-sans font-medium rounded-full border border-[#CAB4AA] transition flex items-center gap-1.5 active:scale-95"
           >
-            <PlusCircle className="w-4 h-4" />
-            Add New Farm
+            <PlusCircle className="w-4 h-4 text-[#8B5F4D]" />
+            <span>Add New Farm</span>
           </Link>
         </div>
       </div>
 
-      {/* Metrics Row */}
-      <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-          <span className="text-xs text-slate-400 font-medium">Registered Farms</span>
-          <div className="text-2xl font-bold text-slate-900 mt-1">1 Plot</div>
-          <span className="text-[11px] text-emerald-600 font-semibold mt-1 inline-block">2.5 Hectares (Verified)</span>
+      {/* Metrics Row in Serein Clean Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="bg-[#F5EFE6] p-6 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)]">
+          <span className="text-xs font-sans uppercase tracking-wider text-[#68625B] font-medium">Registered Farms</span>
+          <div className="text-3xl font-serif font-normal text-[#1B1D1C] mt-2">1 Plot</div>
+          <span className="text-xs text-[#5B7553] font-medium mt-1 inline-block">2.5 Hectares (Verified)</span>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-          <span className="text-xs text-slate-400 font-medium">Active Policy</span>
-          <div className="text-xl font-bold text-slate-900 mt-1 truncate">POL-PMFBY-BHP</div>
-          <span className="text-[11px] text-blue-600 font-semibold mt-1 inline-block">Sum Insured: ₹1,75,000</span>
+        <div className="bg-[#F5EFE6] p-6 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)]">
+          <span className="text-xs font-sans uppercase tracking-wider text-[#68625B] font-medium">Active Policy</span>
+          <div className="text-2xl font-serif font-normal text-[#1B1D1C] mt-2 truncate">POL-PMFBY-BHP</div>
+          <span className="text-xs text-[#8B5F4D] font-medium mt-1 inline-block">Sum Insured: ₹1,75,000</span>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-          <span className="text-xs text-slate-400 font-medium">Filed Claims</span>
-          <div className="text-2xl font-bold text-slate-900 mt-1">1 Claim</div>
-          <span className="text-[11px] text-amber-600 font-semibold mt-1 inline-block">CLM001 (Under Review)</span>
+        <div className="bg-[#F5EFE6] p-6 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)]">
+          <span className="text-xs font-sans uppercase tracking-wider text-[#68625B] font-medium">Filed Claims</span>
+          <div className="text-3xl font-serif font-normal text-[#1B1D1C] mt-2">1 Claim</div>
+          <span className="text-xs text-[#8B5F4D] font-medium mt-1 inline-block">CLM001 (Under Review)</span>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-          <span className="text-xs text-slate-400 font-medium">Claim Settlement Est.</span>
-          <div className="text-2xl font-bold text-emerald-700 mt-1">₹1,13,750</div>
-          <span className="text-[11px] text-slate-400 mt-1 inline-block">Pending Assessor Sign-Off</span>
+        <div className="bg-[#F5EFE6] p-6 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)]">
+          <span className="text-xs font-sans uppercase tracking-wider text-[#68625B] font-medium">Settlement Estimate</span>
+          <div className="text-3xl font-serif font-normal text-[#1B1D1C] mt-2">₹1,13,750</div>
+          <span className="text-xs text-[#68625B] mt-1 inline-block">Pending Assessor Sign-Off</span>
         </div>
       </div>
 
-      {/* Active Claim Spotlight */}
-      <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-4">
-        <div className="flex items-center justify-between">
+      {/* Active Claim Spotlight in Serein Editorial Layout */}
+      <div className="bg-[#F5EFE6] rounded-3xl border border-[#EAE3D9] p-8 shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#EAE3D9]">
           <div>
-            <h3 className="font-bold text-base text-slate-900">Current Claim Status (CLM001)</h3>
-            <p className="text-xs text-slate-500">Rabi 2026 Wheat Crop Loss · Incident Date: Nov 05, 2026</p>
+            <h3 className="text-2xl font-serif font-normal text-[#1B1D1C]">Current Claim Status: CLM001</h3>
+            <p className="text-xs sm:text-sm text-[#68625B] font-sans mt-0.5">
+              Rabi 2026 Wheat Crop Loss · Incident Date: Nov 05, 2026
+            </p>
           </div>
           <StatusBadge status="Pending Review" />
         </div>
 
         {/* Milestone Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 pt-2">
-          <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl">
-            <span className="text-[10px] font-bold text-emerald-700 uppercase">Stage 1</span>
-            <h4 className="text-xs font-bold text-slate-900 mt-0.5">Submitted</h4>
-            <p className="text-[11px] text-slate-500">Nov 06, 10:30 IST</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="p-4 bg-[#EAE3D9]/60 border border-[#CAB4AA]/40 rounded-2xl">
+            <span className="text-[10px] font-mono uppercase text-[#5B7553] font-semibold">Stage 1</span>
+            <h4 className="text-sm font-serif font-semibold text-[#1B1D1C] mt-0.5">Submitted</h4>
+            <p className="text-xs text-[#68625B] mt-0.5">Nov 06, 10:30 IST</p>
           </div>
-          <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl">
-            <span className="text-[10px] font-bold text-emerald-700 uppercase">Stage 2</span>
-            <h4 className="text-xs font-bold text-slate-900 mt-0.5">Cadastral Matched</h4>
-            <p className="text-[11px] text-slate-500">Khasra 48/2 Area: 1.5% Δ</p>
+          <div className="p-4 bg-[#EAE3D9]/60 border border-[#CAB4AA]/40 rounded-2xl">
+            <span className="text-[10px] font-mono uppercase text-[#5B7553] font-semibold">Stage 2</span>
+            <h4 className="text-sm font-serif font-semibold text-[#1B1D1C] mt-0.5">Cadastral Matched</h4>
+            <p className="text-xs text-[#68625B] mt-0.5">Khasra 48/2 Area: 1.5% Δ</p>
           </div>
-          <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl">
-            <span className="text-[10px] font-bold text-emerald-700 uppercase">Stage 3</span>
-            <h4 className="text-xs font-bold text-slate-900 mt-0.5">Satellite Verified</h4>
-            <p className="text-[11px] text-slate-500">NDVI Drought Stress Confirmed</p>
+          <div className="p-4 bg-[#EAE3D9]/60 border border-[#CAB4AA]/40 rounded-2xl">
+            <span className="text-[10px] font-mono uppercase text-[#5B7553] font-semibold">Stage 3</span>
+            <h4 className="text-sm font-serif font-semibold text-[#1B1D1C] mt-0.5">Satellite Verified</h4>
+            <p className="text-xs text-[#68625B] mt-0.5">NDVI Drought Crash Confirmed</p>
           </div>
-          <div className="p-3 bg-blue-50 border border-blue-200 rounded-xl">
-            <span className="text-[10px] font-bold text-blue-700 uppercase">Stage 4</span>
-            <h4 className="text-xs font-bold text-slate-900 mt-0.5">Assessor Review</h4>
-            <p className="text-[11px] text-blue-600 font-semibold">Under Final Verification</p>
+          <div className="p-4 bg-[#EAE3D9]/90 border border-[#8B5F4D]/40 rounded-2xl">
+            <span className="text-[10px] font-mono uppercase text-[#8B5F4D] font-semibold">Stage 4</span>
+            <h4 className="text-sm font-serif font-semibold text-[#1B1D1C] mt-0.5">Assessor Review</h4>
+            <p className="text-xs text-[#8B5F4D] font-medium mt-0.5">Under Final Adjudication</p>
           </div>
         </div>
 
         <div className="flex justify-end pt-2">
           <Link
             to="/farmer/track-claim"
-            className="text-xs text-emerald-700 font-semibold hover:underline flex items-center gap-1"
+            className="text-xs sm:text-sm font-sans font-medium text-[#8B5F4D] hover:text-[#1B1D1C] flex items-center gap-1.5 transition-colors"
           >
-            Track detailed timeline & view evidence <ArrowUpRight className="w-3.5 h-3.5" />
+            <span>Track detailed timeline & view evidence</span>
+            <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

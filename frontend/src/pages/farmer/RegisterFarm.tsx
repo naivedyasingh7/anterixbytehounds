@@ -45,19 +45,19 @@ export const RegisterFarm: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto space-y-8 font-sans selection:bg-[#8B5F4D]/25 selection:text-[#1B1D1C]">
       <div>
-        <h1 className="text-xl font-bold text-slate-900">Register New Farm Parcel</h1>
-        <p className="text-xs text-slate-500">
-          Engine 1 Farm Verification: Delineate boundary polygon and link Khasra records.
+        <h1 className="text-3xl font-serif font-normal text-[#1B1D1C]">Register New Farm Parcel</h1>
+        <p className="text-xs sm:text-sm text-[#68625B] mt-1 font-sans">
+          Engine 1 Cadastral Verification: Delineate boundary polygon and link Khasra land revenue records.
         </p>
       </div>
 
       {submitted ? (
-        <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center space-y-3">
-          <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
-          <h3 className="text-lg font-bold text-emerald-950">Farm Registered & Verified!</h3>
-          <p className="text-xs text-emerald-700">
+        <div className="bg-[#EBF2EA] border border-[#5B7553]/30 rounded-3xl p-10 text-center space-y-4 shadow-[0_4px_24px_rgba(27,29,28,0.03)]">
+          <CheckCircle2 className="w-12 h-12 text-[#5B7553] mx-auto" />
+          <h3 className="text-2xl font-serif font-normal text-[#1B1D1C]">Farm Registered & Verified!</h3>
+          <p className="text-xs sm:text-sm text-[#5B7553] font-sans">
             Geodesic area calculation confirmed {mappedArea} Ha ({variance}% variance). Redirecting to your farms...
           </p>
         </div>
@@ -65,65 +65,65 @@ export const RegisterFarm: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           
           {/* Card 1: Cadastral Details */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <h3 className="font-bold text-sm text-slate-900 flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-emerald-600" />
-              1. Land Record & Khasra Information
+          <div className="bg-[#F5EFE6] p-8 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-5">
+            <h3 className="text-xl font-serif font-normal text-[#1B1D1C] flex items-center gap-2">
+              <MapPin className="w-5 h-5 text-[#8B5F4D]" />
+              <span>1. Land Record & Khasra Information</span>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Farm Name</label>
+                <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">Farm Name</label>
                 <input
                   type="text"
                   value={farmName}
                   onChange={(e) => setFarmName(e.target.value)}
                   required
-                  className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500"
+                  className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Khasra / Survey Number</label>
+                <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">Khasra / Survey Number</label>
                 <input
                   type="text"
                   value={khasraNumber}
                   onChange={(e) => setKhasraNumber(e.target.value)}
                   required
-                  className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500"
+                  className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Declared Area (Hectares)</label>
+                <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">Declared Area (Hectares)</label>
                 <input
                   type="number"
                   step="0.01"
                   value={declaredArea}
                   onChange={(e) => setDeclaredArea(parseFloat(e.target.value) || 0)}
                   required
-                  className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-500 font-bold"
+                  className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] font-semibold focus:outline-none focus:border-[#8B5F4D]"
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">District</label>
+                <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">District</label>
                 <input
                   type="text"
                   defaultValue="Bhopal"
                   disabled
-                  className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-600"
+                  className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#EAE3D9] bg-[#EAE3D9]/60 text-[#68625B]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Sown Crop</label>
+                <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">Sown Crop</label>
                 <select
                   value={crop}
                   onChange={(e) => setCrop(e.target.value)}
-                  className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 bg-white"
+                  className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]"
                 >
                   <option>Wheat</option>
                   <option>Soybean</option>
@@ -133,11 +133,11 @@ export const RegisterFarm: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Season</label>
+                <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">Season</label>
                 <select
                   value={season}
                   onChange={(e) => setSeason(e.target.value)}
-                  className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 bg-white"
+                  className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]"
                 >
                   <option>Rabi 2026</option>
                   <option>Kharif 2026</option>
@@ -163,65 +163,68 @@ export const RegisterFarm: React.FC = () => {
           </div>
 
           {/* Card 2: Interactive Satellite Polygon Tool */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <div className="flex items-center justify-between">
+          <div className="bg-[#F5EFE6] p-8 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
-                <h3 className="font-bold text-sm text-slate-900 flex items-center gap-2">
-                  <Layers className="w-4 h-4 text-emerald-600" />
-                  2. Satellite Boundary Delineation (Engine 1)
+                <h3 className="text-xl font-serif font-normal text-[#1B1D1C] flex items-center gap-2">
+                  <Layers className="w-5 h-5 text-[#8B5F4D]" />
+                  <span>2. Satellite Boundary Delineation (Engine 1)</span>
                 </h3>
-                <p className="text-xs text-slate-500">Interactive polygon vertices mapped on high-res Sentinel-2 / ESRI canvas</p>
+                <p className="text-xs text-[#68625B] mt-0.5">Interactive polygon vertices mapped on high-res Sentinel-2 / ESRI canvas</p>
               </div>
-              <span className="text-[11px] font-mono text-emerald-600 bg-emerald-50 px-2 py-1 rounded border border-emerald-200">
+              <span className="text-[11px] font-mono text-[#5B7553] bg-[#EBF2EA] px-3 py-1 rounded-full border border-[#5B7553]/30 self-start">
                 Polygon Closed (5 Nodes)
               </span>
             </div>
 
-            <FarmMapViewer height="320px" interactive={true} />
+            <div className="rounded-2xl overflow-hidden border border-[#EAE3D9]">
+              <FarmMapViewer height="320px" interactive={true} />
+            </div>
 
             {/* Area Comparison Widget */}
-            <div className="p-4 bg-emerald-50/70 border border-emerald-200 rounded-xl flex items-center justify-between">
-              <div className="text-xs">
-                <span className="text-slate-500">Declared Area:</span> <b className="text-slate-900">{declaredArea} Ha</b>
-                <span className="mx-2 text-slate-300">|</span>
-                <span className="text-slate-500">PostGIS Geodesic:</span> <b className="text-emerald-800">{mappedArea} Ha</b>
+            <div className="p-4 bg-[#EAE3D9]/60 border border-[#CAB4AA]/40 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="text-xs font-sans">
+                <span className="text-[#68625B]">Declared Area:</span> <b className="text-[#1B1D1C]">{declaredArea} Ha</b>
+                <span className="mx-2 text-[#CAB4AA]">|</span>
+                <span className="text-[#68625B]">PostGIS Geodesic:</span> <b className="text-[#5B7553]">{mappedArea} Ha</b>
               </div>
-              <div className="text-xs font-bold text-emerald-700">
+              <div className="text-xs font-sans font-semibold text-[#5B7553]">
                 Variance: {variance}% (Status: Verified)
               </div>
             </div>
           </div>
 
           {/* Card 3: Document Upload */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <h3 className="font-bold text-sm text-slate-900 flex items-center gap-2">
-              <UploadCloud className="w-4 h-4 text-emerald-600" />
-              3. Upload Land & Cultivation Documents
+          <div className="bg-[#F5EFE6] p-8 rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] space-y-4">
+            <h3 className="text-xl font-serif font-normal text-[#1B1D1C] flex items-center gap-2">
+              <UploadCloud className="w-5 h-5 text-[#8B5F4D]" />
+              <span>3. Upload Land & Cultivation Documents</span>
             </h3>
             
-            <div className="border-2 border-dashed border-slate-200 rounded-xl p-6 text-center space-y-2 hover:border-emerald-500 transition">
-              <UploadCloud className="w-8 h-8 text-slate-400 mx-auto" />
-              <div className="text-xs text-slate-600">
-                <span className="font-semibold text-emerald-600 cursor-pointer">Click to upload Khasra document</span> or drag & drop
+            <div className="border-2 border-dashed border-[#CAB4AA] rounded-2xl p-8 text-center space-y-2 hover:border-[#8B5F4D] transition bg-[#FBF9F5]">
+              <UploadCloud className="w-8 h-8 text-[#8B5F4D] mx-auto" />
+              <div className="text-xs font-sans text-[#1B1D1C]">
+                <span className="font-semibold text-[#8B5F4D] cursor-pointer">Click to upload Khasra document</span> or drag & drop
               </div>
-              <p className="text-[10px] text-slate-400">PDF, JPG, PNG up to 10MB (Bhopal Land Record Extract)</p>
+              <p className="text-[11px] font-sans text-[#68625B]">PDF, JPG, PNG up to 10MB (Bhopal Land Record Extract)</p>
             </div>
           </div>
 
-          <div className="flex justify-end gap-3">
+          <div className="flex justify-end gap-3 pt-2">
             <button
               type="button"
               onClick={() => navigate('/farmer/farms')}
-              className="px-5 py-2.5 rounded-xl border border-slate-300 text-xs font-semibold text-slate-600 hover:bg-slate-50"
+              className="px-6 py-2.5 rounded-full border border-[#CAB4AA] text-xs font-sans font-medium text-[#68625B] hover:bg-[#EAE3D9] transition"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={submitting}
-              className="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white text-xs font-bold shadow-md transition flex items-center gap-1.5"
+              className="px-7 py-2.5 rounded-full bg-[#8B5F4D] hover:bg-[#74503F] disabled:opacity-50 text-[#FBF9F5] text-xs font-sans font-medium shadow-sm transition flex items-center gap-2 active:scale-95"
             >
-              {submitting ? 'Verifying with Engine 1...' : 'Submit & Verify Farm Boundary'} <ArrowRight className="w-4 h-4" />
+              <span>{submitting ? 'Verifying with Engine 1...' : 'Submit & Verify Farm Boundary'}</span>
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
 

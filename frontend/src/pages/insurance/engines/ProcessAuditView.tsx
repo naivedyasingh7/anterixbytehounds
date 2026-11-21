@@ -14,21 +14,21 @@ export const ProcessAuditView: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 font-sans selection:bg-[#8B5F4D]/25 selection:text-[#1B1D1C]">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+          <span className="text-[10px] font-sans font-medium uppercase tracking-wider text-[#8B5F4D] bg-[#EAE3D9] px-3 py-1 rounded-full border border-[#CAB4AA]">
             Verification Engine 3
           </span>
-          <h1 className="text-xl font-bold text-slate-900 mt-1">Insurance Process & Timeline SLA Audit</h1>
-          <p className="text-xs text-slate-500">
+          <h1 className="text-3xl font-serif font-normal text-[#1B1D1C] mt-2">Insurance Process & Timeline SLA Audit</h1>
+          <p className="text-xs sm:text-sm text-[#68625B] mt-1 font-sans">
             Ingests claim lifecycle timestamps to identify institutional bottlenecks, regulatory SLA breaches, and missing records.
           </p>
         </div>
 
-        <label className="cursor-pointer px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-xl shadow-md transition flex items-center gap-1.5 self-start">
-          <Upload className="w-3.5 h-3.5" />
-          <span>Upload Audit CSV / Excel</span>
+        <label className="cursor-pointer px-6 py-2.5 bg-[#8B5F4D] hover:bg-[#74503F] text-[#FBF9F5] text-xs sm:text-sm font-sans font-medium rounded-full shadow-sm transition flex items-center gap-2 self-start active:scale-95">
+          <Upload className="w-4 h-4" />
+          <span>Upload Audit CSV</span>
           <input 
             type="file" 
             accept=".csv,.xlsx" 
@@ -39,46 +39,46 @@ export const ProcessAuditView: React.FC = () => {
       </div>
 
       {batchFileUploaded && (
-        <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-800 flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-          <span><b>Batch Analysis Complete:</b> Ingested 5 records. Detected 2 SLA breaches and missing mandatory records.</span>
+        <div className="p-4 bg-[#EBF2EA] border border-[#5B7553]/30 rounded-2xl text-xs font-sans text-[#5B7553] flex items-center gap-2.5">
+          <CheckCircle2 className="w-4 h-4 text-[#5B7553] shrink-0" />
+          <span><b>Batch Analysis Complete:</b> Ingested 5 records. Detected 2 statutory SLA breaches and missing mandatory records.</span>
         </div>
       )}
 
       {/* Batch Audit Table */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden space-y-4 p-5">
-        <h3 className="font-bold text-sm text-slate-900 flex items-center gap-2">
-          <FileSpreadsheet className="w-4 h-4 text-amber-600" />
-          Claim Lifecycle Audit Batch Stream
+      <div className="bg-[#F5EFE6] rounded-3xl border border-[#EAE3D9] shadow-[0_2px_12px_rgba(27,29,28,0.02)] overflow-hidden space-y-4 p-6 sm:p-8">
+        <h3 className="text-xl font-serif font-normal text-[#1B1D1C] flex items-center gap-2">
+          <FileSpreadsheet className="w-5 h-5 text-[#8B5F4D]" />
+          <span>Claim Lifecycle Audit Batch Stream</span>
         </h3>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
-            <thead className="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold uppercase">
+          <table className="w-full text-left text-xs font-sans">
+            <thead className="bg-[#EAE3D9]/70 border-b border-[#EAE3D9] text-[#68625B] uppercase tracking-wider font-medium">
               <tr>
-                <th className="py-3 px-3">Claim ID</th>
-                <th className="py-3 px-3">Farmer</th>
-                <th className="py-3 px-3">Days Elapsed</th>
-                <th className="py-3 px-3">SLA Status</th>
-                <th className="py-3 px-3">Detected Audit Flags</th>
+                <th className="py-4 px-4">Claim ID</th>
+                <th className="py-4 px-4">Farmer</th>
+                <th className="py-4 px-4">Days Elapsed</th>
+                <th className="py-4 px-4">SLA Status</th>
+                <th className="py-4 px-4">Detected Audit Flags</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-[#EAE3D9]">
               {sampleBatchResults.map((row, idx) => (
-                <tr key={idx} className="hover:bg-slate-50 transition">
-                  <td className="py-3 px-3 font-mono font-bold text-slate-900">{row.claim_id}</td>
-                  <td className="py-3 px-3 font-medium text-slate-800">{row.farmer}</td>
-                  <td className="py-3 px-3 font-bold">{row.days} Days</td>
-                  <td className="py-3 px-3">
+                <tr key={idx} className="hover:bg-[#EAE3D9]/40 transition">
+                  <td className="py-4 px-4 font-mono font-semibold text-[#1B1D1C]">{row.claim_id}</td>
+                  <td className="py-4 px-4 font-serif font-semibold text-sm text-[#1B1D1C]">{row.farmer}</td>
+                  <td className="py-4 px-4 font-sans font-medium text-[#1B1D1C]">{row.days} Days</td>
+                  <td className="py-4 px-4">
                     <StatusBadge status={row.status} size="sm" />
                   </td>
-                  <td className="py-3 px-3">
+                  <td className="py-4 px-4">
                     {row.anomalies === "None" ? (
-                      <span className="text-emerald-700 font-medium">No Anomalies</span>
+                      <span className="text-[#5B7553] font-medium">No Anomalies</span>
                     ) : (
-                      <span className="text-rose-700 font-medium flex items-center gap-1">
-                        <AlertTriangle className="w-3.5 h-3.5 text-rose-500 shrink-0" />
-                        {row.anomalies}
+                      <span className="text-[#9E3A3A] font-medium flex items-center gap-1.5">
+                        <AlertTriangle className="w-4 h-4 text-[#9E3A3A] shrink-0" />
+                        <span>{row.anomalies}</span>
                       </span>
                     )}
                   </td>

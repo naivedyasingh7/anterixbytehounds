@@ -11,7 +11,10 @@ import {
   ShieldAlert, 
   Activity,
   Layers,
-  History
+  History,
+  Scan,
+  Satellite,
+  Sprout
 } from 'lucide-react';
 
 export const Sidebar: React.FC = () => {
@@ -19,35 +22,35 @@ export const Sidebar: React.FC = () => {
   const isOfficer = role === 'insurance_officer' || role === 'admin';
 
   return (
-    <aside className="w-64 bg-white border-r border-slate-200 min-h-[calc(100vh-4rem)] p-4 flex flex-col justify-between">
+    <aside className="w-64 bg-[#F5EFE6] border-r border-[#EAE3D9] min-h-[calc(100vh-5rem)] p-5 flex flex-col justify-between text-[#1B1D1C]">
       <div className="space-y-6">
         
         {/* Navigation Group */}
         <div>
-          <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3 mb-2">
-            {isOfficer ? 'Insurance Underwriting' : 'Farmer Self-Service'}
+          <div className="text-[10px] font-sans uppercase tracking-[0.2em] text-[#8B5F4D] px-3 mb-3 font-semibold">
+            {isOfficer ? 'DHARA INSURE • WORKSPACE' : 'DHARA FARMER • SELF-SERVICE'}
           </div>
 
           <div className="space-y-1">
             {isOfficer ? (
               <>
                 <NavLink
-                  to="/insurance/dashboard"
+                  to="/insure"
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isActive ? 'bg-emerald-50 text-emerald-700 font-semibold' : 'text-slate-600 hover:bg-slate-100'
+                    `flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-sans transition-all ${
+                      isActive ? 'bg-[#1B1D1C] text-[#FBF9F5] font-medium shadow-sm' : 'text-[#68625B] hover:bg-[#EAE3D9] hover:text-[#1B1D1C]'
                     }`
                   }
                 >
                   <LayoutDashboard className="w-4 h-4" />
-                  Overview Dashboard
+                  Insure Cockpit
                 </NavLink>
 
                 <NavLink
-                  to="/insurance/claims"
+                  to="/insure/claims"
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isActive ? 'bg-emerald-50 text-emerald-700 font-semibold' : 'text-slate-600 hover:bg-slate-100'
+                    `flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-sans transition-all ${
+                      isActive ? 'bg-[#1B1D1C] text-[#FBF9F5] font-medium shadow-sm' : 'text-[#68625B] hover:bg-[#EAE3D9] hover:text-[#1B1D1C]'
                     }`
                   }
                 >
@@ -56,162 +59,116 @@ export const Sidebar: React.FC = () => {
                 </NavLink>
 
                 <NavLink
-                  to="/insurance/farmers-and-farms"
+                  to="/insure/verification"
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isActive ? 'bg-emerald-50 text-emerald-700 font-semibold' : 'text-slate-600 hover:bg-slate-100'
+                    `flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-sans transition-all ${
+                      isActive ? 'bg-[#1B1D1C] text-[#FBF9F5] font-medium shadow-sm' : 'text-[#68625B] hover:bg-[#EAE3D9] hover:text-[#1B1D1C]'
                     }`
                   }
                 >
-                  <MapPin className="w-4 h-4" />
-                  Farmers & Farms
+                  <Activity className="w-4 h-4" />
+                  E1 & E2 Verification
+                </NavLink>
+
+                <NavLink
+                  to="/insure/audit"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-sans transition-all ${
+                      isActive ? 'bg-[#1B1D1C] text-[#FBF9F5] font-medium shadow-sm' : 'text-[#68625B] hover:bg-[#EAE3D9] hover:text-[#1B1D1C]'
+                    }`
+                  }
+                >
+                  <Clock className="w-4 h-4" />
+                  E3 Process Audit
                 </NavLink>
 
                 <NavLink
                   to="/insurance/workspace/CLM001"
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isActive ? 'bg-emerald-50 text-emerald-700 font-semibold' : 'text-slate-600 hover:bg-slate-100'
+                    `flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-sans transition-all ${
+                      isActive ? 'bg-[#8B5F4D] text-[#FBF9F5] font-medium shadow-sm' : 'text-[#8B5F4D] hover:bg-[#EAE3D9]'
                     }`
                   }
                 >
-                  <ShieldAlert className="w-4 h-4 text-emerald-600" />
-                  Unified Workspace
+                  <ShieldAlert className="w-4 h-4" />
+                  Claim Dossier CLM001
                 </NavLink>
               </>
             ) : (
               <>
                 <NavLink
-                  to="/farmer/dashboard"
+                  to="/farmer"
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isActive ? 'bg-emerald-50 text-emerald-700 font-semibold' : 'text-slate-600 hover:bg-slate-100'
+                    `flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-sans transition-all ${
+                      isActive ? 'bg-[#1B1D1C] text-[#FBF9F5] font-medium shadow-sm' : 'text-[#68625B] hover:bg-[#EAE3D9] hover:text-[#1B1D1C]'
                     }`
                   }
                 >
-                  <LayoutDashboard className="w-4 h-4" />
-                  Farmer Dashboard
+                  <Sprout className="w-4 h-4" />
+                  Farmer Overview
+                </NavLink>
+
+                <NavLink
+                  to="/farmer/disease"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-sans transition-all ${
+                      isActive ? 'bg-[#1B1D1C] text-[#FBF9F5] font-medium shadow-sm' : 'text-[#68625B] hover:bg-[#EAE3D9] hover:text-[#1B1D1C]'
+                    }`
+                  }
+                >
+                  <Scan className="w-4 h-4" />
+                  AI Disease Detection
                 </NavLink>
 
                 <NavLink
                   to="/farmer/farms"
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isActive ? 'bg-emerald-50 text-emerald-700 font-semibold' : 'text-slate-600 hover:bg-slate-100'
+                    `flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-sans transition-all ${
+                      isActive ? 'bg-[#1B1D1C] text-[#FBF9F5] font-medium shadow-sm' : 'text-[#68625B] hover:bg-[#EAE3D9] hover:text-[#1B1D1C]'
                     }`
                   }
                 >
                   <MapPin className="w-4 h-4" />
-                  My Farms
+                  My Farms & Boundaries
                 </NavLink>
 
                 <NavLink
-                  to="/farmer/register-farm"
+                  to="/farmer/satellite"
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isActive ? 'bg-emerald-50 text-emerald-700 font-semibold' : 'text-slate-600 hover:bg-slate-100'
+                    `flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-sans transition-all ${
+                      isActive ? 'bg-[#1B1D1C] text-[#FBF9F5] font-medium shadow-sm' : 'text-[#68625B] hover:bg-[#EAE3D9] hover:text-[#1B1D1C]'
                     }`
                   }
                 >
-                  <Layers className="w-4 h-4" />
-                  Register New Farm
+                  <Satellite className="w-4 h-4" />
+                  Satellite Monitoring
                 </NavLink>
 
                 <NavLink
-                  to="/farmer/submit-claim"
+                  to="/farmer/reports"
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isActive ? 'bg-emerald-50 text-emerald-700 font-semibold' : 'text-slate-600 hover:bg-slate-100'
+                    `flex items-center gap-3 px-3.5 py-2.5 rounded-2xl text-xs font-sans transition-all ${
+                      isActive ? 'bg-[#1B1D1C] text-[#FBF9F5] font-medium shadow-sm' : 'text-[#68625B] hover:bg-[#EAE3D9] hover:text-[#1B1D1C]'
                     }`
                   }
                 >
-                  <FileCheck className="w-4 h-4" />
-                  Submit Claim
-                </NavLink>
-
-                <NavLink
-                  to="/farmer/track-claim"
-                  className={({ isActive }) =>
-                    `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isActive ? 'bg-emerald-50 text-emerald-700 font-semibold' : 'text-slate-600 hover:bg-slate-100'
-                    }`
-                  }
-                >
-                  <Clock className="w-4 h-4" />
-                  Track Claim
+                  <FileText className="w-4 h-4" />
+                  Health Reports
                 </NavLink>
               </>
             )}
           </div>
         </div>
 
-        {/* Verification Engines Section (Available to Officers) */}
-        {isOfficer && (
-          <div>
-            <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3 mb-2">
-              Verification Engines
-            </div>
-            <div className="space-y-1">
-              <NavLink
-                to="/insurance/engines/farm"
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    isActive ? 'bg-emerald-50 text-emerald-700 font-semibold' : 'text-slate-600 hover:bg-slate-100'
-                  }`
-                }
-              >
-                <Layers className="w-4 h-4 text-blue-500" />
-                1. Farm Verification
-              </NavLink>
-
-              <NavLink
-                to="/insurance/engines/yield"
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    isActive ? 'bg-emerald-50 text-emerald-700 font-semibold' : 'text-slate-600 hover:bg-slate-100'
-                  }`
-                }
-              >
-                <Activity className="w-4 h-4 text-emerald-500" />
-                2. Yield Verification
-              </NavLink>
-
-              <NavLink
-                to="/insurance/engines/audit"
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    isActive ? 'bg-emerald-50 text-emerald-700 font-semibold' : 'text-slate-600 hover:bg-slate-100'
-                  }`
-                }
-              >
-                <History className="w-4 h-4 text-amber-500" />
-                3. Process Audit
-              </NavLink>
-
-              <NavLink
-                to="/insurance/reports"
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    isActive ? 'bg-emerald-50 text-emerald-700 font-semibold' : 'text-slate-600 hover:bg-slate-100'
-                  }`
-                }
-              >
-                <FileText className="w-4 h-4 text-purple-500" />
-                Assessment Reports
-              </NavLink>
-            </div>
+        {/* Quick System Badge */}
+        <div className="p-4 rounded-2xl bg-[#FBF9F5] border border-[#EAE3D9] text-[11px] font-sans text-[#68625B] space-y-1.5 shadow-sm">
+          <div className="flex items-center gap-2 font-medium text-[#1B1D1C]">
+            <span className="w-2 h-2 rounded-full bg-[#5B7553]"></span>
+            <span>Sentinel-2 L2A Online</span>
           </div>
-        )}
-
-      </div>
-
-      {/* System Status Footnote */}
-      <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs space-y-1">
-        <div className="flex items-center justify-between text-slate-500">
-          <span>Sentinel-2 L2A</span>
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <p>Revisit: 5 days • Resolution: 10m</p>
         </div>
-        <div className="text-[11px] text-slate-400">PostGIS Geometry: Connected</div>
+
       </div>
     </aside>
   );

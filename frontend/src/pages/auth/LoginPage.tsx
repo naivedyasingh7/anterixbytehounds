@@ -12,116 +12,104 @@ export const LoginPage: React.FC = () => {
   const handleDemoLogin = (role: UserRole) => {
     loginAs(role);
     if (role === 'insurance_officer') {
-      navigate('/insurance/dashboard');
+      navigate('/insure');
     } else {
-      navigate('/farmer/dashboard');
+      navigate('/farmer');
     }
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-4 bg-slate-50">
-      <div className="max-w-md w-full bg-white rounded-2xl border border-slate-200 shadow-xl p-8 space-y-6">
+    <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center p-6 bg-[#FBF9F5] font-sans selection:bg-[#8B5F4D]/25 selection:text-[#1B1D1C]">
+      <div className="max-w-md w-full bg-[#F5EFE6] rounded-3xl border border-[#EAE3D9] shadow-[0_12px_40px_rgba(27,29,28,0.04)] p-8 sm:p-10 space-y-6">
         
         {/* Header */}
         <div className="text-center space-y-2">
-          <div className="w-12 h-12 rounded-xl bg-emerald-600 text-white mx-auto flex items-center justify-center shadow-md">
-            <Sprout className="w-6 h-6" />
+          <div className="w-14 h-14 rounded-full bg-[#1B1D1C] text-[#FBF9F5] mx-auto flex items-center justify-center font-serif text-2xl font-bold shadow-sm">
+            D
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Sign in to AgriVerify AI</h2>
-          <p className="text-xs text-slate-500">Select your portal or use a one-click demo profile</p>
+          <h2 className="text-3xl font-serif font-normal text-[#1B1D1C]">Sign in to DHARA</h2>
+          <p className="text-xs sm:text-sm text-[#68625B]">Select your operating portal or access a demo persona</p>
         </div>
 
         {/* Demo Account Switcher Card */}
         <div className="space-y-3">
-          <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Quick Demo Sign-In</label>
+          <label className="text-[10px] font-sans font-medium text-[#8B5F4D] uppercase tracking-wider block">One-Click Demo Personas</label>
           <div className="grid grid-cols-2 gap-3">
             <button
               onClick={() => handleDemoLogin('insurance_officer')}
-              className="p-4 rounded-xl border-2 border-blue-600/30 bg-blue-50/50 hover:bg-blue-50 text-left transition flex flex-col justify-between group"
+              className="p-4 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] hover:bg-[#EAE3D9] text-left transition flex flex-col justify-between group active:scale-95"
             >
               <div>
-                <ShieldCheck className="w-5 h-5 text-blue-600 mb-2" />
-                <h4 className="font-bold text-xs text-slate-900">Insurance Officer</h4>
-                <p className="text-[11px] text-slate-500">R. K. Sharma (Assessor)</p>
+                <ShieldCheck className="w-5 h-5 text-[#8B5F4D] mb-2" />
+                <h4 className="font-serif font-semibold text-sm text-[#1B1D1C]">DHARA Insure</h4>
+                <p className="text-[11px] text-[#68625B] font-sans">Officer Sharma (Assessor)</p>
               </div>
-              <span className="text-[10px] text-blue-600 font-semibold mt-3 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
-                Sign In <ArrowRight className="w-3 h-3" />
+              <span className="text-xs text-[#8B5F4D] font-medium mt-3 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                Sign In <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </button>
 
             <button
               onClick={() => handleDemoLogin('farmer')}
-              className="p-4 rounded-xl border-2 border-emerald-600/30 bg-emerald-50/50 hover:bg-emerald-50 text-left transition flex flex-col justify-between group"
+              className="p-4 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] hover:bg-[#EAE3D9] text-left transition flex flex-col justify-between group active:scale-95"
             >
               <div>
-                <Sprout className="w-5 h-5 text-emerald-600 mb-2" />
-                <h4 className="font-bold text-xs text-slate-900">Farmer Portal</h4>
-                <p className="text-[11px] text-slate-500">Rajesh Kumar (Bhopal)</p>
+                <Sprout className="w-5 h-5 text-[#5B7553] mb-2" />
+                <h4 className="font-serif font-semibold text-sm text-[#1B1D1C]">DHARA Farmer</h4>
+                <p className="text-[11px] text-[#68625B] font-sans">Rajesh Patel (Cultivator)</p>
               </div>
-              <span className="text-[10px] text-emerald-600 font-semibold mt-3 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
-                Sign In <ArrowRight className="w-3 h-3" />
+              <span className="text-xs text-[#5B7553] font-medium mt-3 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                Sign In <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </button>
           </div>
         </div>
 
         <div className="relative flex items-center justify-center">
-          <div className="border-t border-slate-200 w-full" />
-          <span className="bg-white px-3 text-[11px] text-slate-400 uppercase font-medium">Or email sign-in</span>
+          <span className="border-t border-[#EAE3D9] w-full" />
+          <span className="bg-[#F5EFE6] px-3 text-[10px] font-sans uppercase tracking-widest text-[#68625B] absolute">Or with email</span>
         </div>
 
-        {/* Form */}
         <form onSubmit={(e) => { e.preventDefault(); handleDemoLogin(selectedRole); }} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">Role</label>
-            <select
-              value={selectedRole}
-              onChange={(e) => setSelectedRole(e.target.value as UserRole)}
-              className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white"
-            >
-              <option value="insurance_officer">Insurance Officer</option>
-              <option value="farmer">Farmer</option>
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">Email Address</label>
-            <input
-              type="email"
-              defaultValue={selectedRole === 'insurance_officer' ? 'officer.sharma@agriverify.in' : 'farmer.rajesh@agriverify.in'}
-              className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              required
-            />
-          </div>
-
-          <div>
-            <div className="flex items-center justify-between mb-1">
-              <label className="block text-xs font-semibold text-slate-700">Password</label>
-              <a href="#" className="text-[11px] text-emerald-600 hover:underline">Forgot password?</a>
+            <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">Email Address</label>
+            <div className="relative">
+              <User className="w-4 h-4 text-[#68625B] absolute left-3.5 top-3.5" />
+              <input
+                type="email"
+                defaultValue="rajesh.patel@dhara.ai"
+                required
+                className="w-full text-xs font-sans pl-10 pr-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]"
+              />
             </div>
-            <input
-              type="password"
-              defaultValue="Password123"
-              className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              required
-            />
+          </div>
+
+          <div>
+            <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">Password</label>
+            <div className="relative">
+              <Lock className="w-4 h-4 text-[#68625B] absolute left-3.5 top-3.5" />
+              <input
+                type="password"
+                defaultValue="password123"
+                required
+                className="w-full text-xs font-sans pl-10 pr-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]"
+              />
+            </div>
           </div>
 
           <button
             type="submit"
-            className="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-md transition"
+            className="w-full py-3.5 rounded-full bg-[#8B5F4D] hover:bg-[#74503F] text-[#FBF9F5] text-xs font-sans font-medium uppercase tracking-wider shadow-sm transition active:scale-95"
           >
-            Authenticate & Proceed
+            Authenticate Credentials
           </button>
         </form>
 
-        <div className="text-center text-xs text-slate-500">
-          New farmer?{' '}
-          <Link to="/register" className="text-emerald-600 font-semibold hover:underline">
-            Register your farm here
+        <div className="text-center pt-2">
+          <Link to="/register" className="text-xs font-sans text-[#68625B] hover:text-[#1B1D1C] transition-colors">
+            New cultivator? <span className="text-[#8B5F4D] font-medium">Create a DHARA Farmer Account</span>
           </Link>
         </div>
-
       </div>
     </div>
   );

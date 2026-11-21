@@ -15,103 +15,92 @@ export const RegisterPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-4 bg-slate-50">
-      <div className="max-w-lg w-full bg-white rounded-2xl border border-slate-200 shadow-xl p-8 space-y-6">
+    <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center p-6 bg-[#FBF9F5] font-sans selection:bg-[#8B5F4D]/25 selection:text-[#1B1D1C]">
+      <div className="max-w-lg w-full bg-[#F5EFE6] rounded-3xl border border-[#EAE3D9] shadow-[0_12px_40px_rgba(27,29,28,0.04)] p-8 sm:p-10 space-y-6">
         
         <div className="text-center space-y-2">
-          <div className="w-12 h-12 rounded-xl bg-emerald-600 text-white mx-auto flex items-center justify-center shadow-md">
-            <Sprout className="w-6 h-6" />
+          <div className="w-14 h-14 rounded-full bg-[#1B1D1C] text-[#FBF9F5] mx-auto flex items-center justify-center font-serif text-2xl font-bold shadow-sm">
+            D
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Farmer Registration</h2>
-          <p className="text-xs text-slate-500">Create your account to register land parcels and file claims</p>
+          <h2 className="text-3xl font-serif font-normal text-[#1B1D1C]">DHARA Farmer Registration</h2>
+          <p className="text-xs sm:text-sm text-[#68625B]">Create your cultivator account to register land parcels and file verified claims</p>
         </div>
 
         {submitted ? (
-          <div className="p-6 bg-emerald-50 border border-emerald-200 rounded-xl text-center space-y-2">
-            <CheckCircle2 className="w-8 h-8 text-emerald-600 mx-auto" />
-            <h4 className="font-bold text-sm text-emerald-900">Registration Successful!</h4>
-            <p className="text-xs text-emerald-700">Redirecting to login with pre-configured demo access...</p>
+          <div className="p-8 bg-[#EBF2EA] border border-[#5B7553]/30 rounded-3xl text-center space-y-3">
+            <CheckCircle2 className="w-10 h-10 text-[#5B7553] mx-auto" />
+            <h4 className="text-xl font-serif font-normal text-[#1B1D1C]">Registration Successful!</h4>
+            <p className="text-xs sm:text-sm text-[#5B7553] font-sans">Redirecting to login with pre-configured demo access...</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Full Name</label>
+                <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">Full Name</label>
                 <input
                   type="text"
                   placeholder="e.g. Ramesh Chandra"
                   required
-                  className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]"
                 />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Mobile Number</label>
+                <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">Mobile Number</label>
                 <input
                   type="tel"
-                  placeholder="+91 98XXX XXXXX"
+                  placeholder="+91 98260 00000"
                   required
-                  className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]"
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">District</label>
-                <select className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white">
+                <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">State</label>
+                <input
+                  type="text"
+                  defaultValue="Madhya Pradesh"
+                  disabled
+                  className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#EAE3D9] bg-[#EAE3D9]/60 text-[#68625B]"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">District</label>
+                <select className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]">
                   <option>Bhopal</option>
                   <option>Sehore</option>
                   <option>Raisen</option>
-                  <option>Hoshangabad</option>
                 </select>
               </div>
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Village</label>
-                <input
-                  type="text"
-                  placeholder="e.g. Berasia"
-                  required
-                  className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                />
-              </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Email Address</label>
+              <label className="block text-xs font-sans font-medium text-[#68625B] mb-1.5 uppercase tracking-wider">Aadhaar / Farmer ID</label>
               <input
-                type="email"
-                placeholder="farmer@example.in"
+                type="text"
+                placeholder="XXXX-XXXX-XXXX"
                 required
-                className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-full text-xs font-sans px-4 py-3 rounded-2xl border border-[#CAB4AA] bg-[#FBF9F5] text-[#1B1D1C] focus:outline-none focus:border-[#8B5F4D]"
               />
             </div>
 
-            <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Password</label>
-              <input
-                type="password"
-                placeholder="Create secure password"
-                required
-                className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              />
+            <div className="pt-2">
+              <button
+                type="submit"
+                className="w-full py-3.5 rounded-full bg-[#8B5F4D] hover:bg-[#74503F] text-[#FBF9F5] text-xs font-sans font-medium uppercase tracking-wider shadow-sm transition active:scale-95"
+              >
+                Create Cultivator Profile
+              </button>
             </div>
-
-            <button
-              type="submit"
-              className="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-md transition"
-            >
-              Register & Continue
-            </button>
           </form>
         )}
 
-        <div className="text-center text-xs text-slate-500">
-          Already registered?{' '}
-          <Link to="/login" className="text-emerald-600 font-semibold hover:underline">
-            Sign In
+        <div className="text-center pt-2">
+          <Link to="/login" className="text-xs font-sans text-[#68625B] hover:text-[#1B1D1C] transition-colors">
+            Already have an account? <span className="text-[#8B5F4D] font-medium">Sign in</span>
           </Link>
         </div>
-
       </div>
     </div>
   );

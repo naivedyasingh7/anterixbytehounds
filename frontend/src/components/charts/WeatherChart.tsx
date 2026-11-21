@@ -9,10 +9,10 @@ interface WeatherChartProps {
 
 export const WeatherChart: React.FC<WeatherChartProps> = ({ data, height = 240 }) => {
   return (
-    <div className="w-full bg-white p-3 rounded-xl border border-slate-200">
-      <div className="flex items-center justify-between mb-2">
-        <h4 className="text-xs font-semibold text-slate-700">Precipitation & Dry Spell Distribution</h4>
-        <span className="text-[10px] text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200 font-medium">
+    <div className="w-full bg-[#F5EFE6] p-4 rounded-2xl border border-[#EAE3D9]">
+      <div className="flex items-center justify-between mb-3">
+        <h4 className="text-xs font-sans font-medium text-[#1B1D1C]">Precipitation & Dry Spell Distribution</h4>
+        <span className="text-[10px] font-mono text-[#9E3A3A] bg-[#FDF2F2] px-2.5 py-0.5 rounded-full border border-[#E5B5B5]">
           Drought Stress Window
         </span>
       </div>
@@ -20,25 +20,25 @@ export const WeatherChart: React.FC<WeatherChartProps> = ({ data, height = 240 }
       <div style={{ width: '100%', height }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} margin={{ top: 10, right: 10, left: -25, bottom: 0 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
-            <XAxis dataKey="week" tick={{ fontSize: 11, fill: '#64748b' }} />
-            <YAxis tick={{ fontSize: 11, fill: '#64748b' }} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#EAE3D9" />
+            <XAxis dataKey="week" tick={{ fontSize: 11, fill: '#68625B' }} />
+            <YAxis tick={{ fontSize: 11, fill: '#68625B' }} />
             <Tooltip
               content={({ active, payload, label }) => {
                 if (active && payload && payload.length) {
                   return (
-                    <div className="bg-slate-900 text-white p-2 rounded-lg text-xs shadow-lg">
-                      <p className="font-bold text-sky-400">{label}</p>
-                      <p>Rainfall: <b>{payload[0]?.value} mm</b></p>
-                      <p>Max Temp: <b>{payload[0]?.payload?.temp_max}°C</b></p>
-                      <p>Soil Moisture: <b>{payload[0]?.payload?.soil_moisture}</b></p>
+                    <div className="bg-[#1B1D1C] text-[#FBF9F5] p-3 rounded-2xl text-xs shadow-xl border border-white/10 font-sans space-y-1">
+                      <p className="font-serif font-semibold text-[#CAB4AA]">{label}</p>
+                      <p>Rainfall: <b className="text-[#8B5F4D]">{payload[0]?.value} mm</b></p>
+                      <p>Max Temp: <b className="text-white">{payload[0]?.payload?.temp_max}°C</b></p>
+                      <p>Soil Moisture: <b className="text-[#5B7553]">{payload[0]?.payload?.soil_moisture}</b></p>
                     </div>
                   );
                 }
                 return null;
               }}
             />
-            <Bar dataKey="rainfall_mm" name="Rainfall (mm)" fill="#38bdf8" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="rainfall_mm" name="Rainfall (mm)" fill="#8B5F4D" radius={[6, 6, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>
