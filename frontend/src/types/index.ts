@@ -52,6 +52,8 @@ export interface NdviObservation {
   district_normal_ndvi: number;
   anomaly: number;
   phenology_stage: string;
+  satellite_mission?: string;
+  bands_used?: string;
 }
 
 export interface WeatherWeek {
@@ -59,6 +61,21 @@ export interface WeatherWeek {
   rainfall_mm: number;
   temp_max: number;
   soil_moisture: number;
+}
+
+export interface SentinelScene {
+  scene_id: string;
+  observation_date: string;
+  observation_timestamp?: string;
+  satellite: string;
+  mgrs_tile: string;
+  cloud_coverage_percent: number;
+  sun_elevation_deg?: number;
+  thumbnail_url?: string;
+  visual_tci_url?: string;
+  band_b04_red_url?: string;
+  band_b08_nir_url?: string;
+  status: string;
 }
 
 export interface UnifiedWorkspaceData {
@@ -91,6 +108,8 @@ export interface UnifiedWorkspaceData {
   };
   yield_verification: {
     ndvi_timeline: NdviObservation[];
+    sentinel_satellite_mission?: string;
+    sentinel_scenes?: SentinelScene[];
     weather_summary: {
       district: string;
       total_season_rainfall_mm: number;

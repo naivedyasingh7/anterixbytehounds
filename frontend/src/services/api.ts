@@ -64,6 +64,53 @@ export async function fetchFarms(): Promise<Farm[]> {
   return MOCK_FARMS_DATA;
 }
 
+export async function registerFarm(farmData: any): Promise<Farm> {
+  try {
+    const res = await fetch(`${API_BASE}/farms`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(farmData)
+    });
+    if (res.ok) return await res.json();
+  } catch (e) {
+    console.warn('API unreachable during farm registration.');
+  }
+  return {
+    id: `fa${Date.now()}`,
+    farmer_id: "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+    farmer_name: "Rajesh Kumar Patel",
+    farm_name: farmData.farm_name,
+    khasra_number: farmData.khasra_number,
+    declared_area_hectares: farmData.declared_area_hectares,
+    geodesic_area_hectares: 2.462,
+    area_variance_percent: 1.52,
+    current_crop: farmData.current_crop,
+    season: farmData.season,
+    village: "Berasia",
+    district: "Bhopal",
+    verification_status: "Verified",
+    boundary_geojson: farmData.boundary_geojson
+  };
+}
+
+export async function submitClaim(claimData: any): Promise<any> {
+  try {
+    const res = await fetch(`${API_BASE}/claims`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(claimData)
+    });
+    if (res.ok) return await res.json();
+  } catch (e) {
+    console.warn('API unreachable during claim submission.');
+  }
+  return {
+    id: `c${Date.now()}`,
+    claim_number: "CLM004",
+    status: "Pending"
+  };
+}
+
 export async function fetchUnifiedWorkspace(claimId: string): Promise<UnifiedWorkspaceData> {
   try {
     const res = await fetch(`${API_BASE}/workspace/${claimId}`);

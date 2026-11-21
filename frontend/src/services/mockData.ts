@@ -143,6 +143,35 @@ export const MOCK_WORKSPACE_CLM001: UnifiedWorkspaceData = {
     land_record_matched: true
   },
   yield_verification: {
+    sentinel_satellite_mission: "Copernicus Sentinel-2 L2A (10m Optical)",
+    sentinel_scenes: [
+      {
+        scene_id: "S2A_43QGF_20241126_0_L2A",
+        observation_date: "2026-11-26",
+        satellite: "Sentinel-2A",
+        mgrs_tile: "43QGF",
+        cloud_coverage_percent: 0.09,
+        sun_elevation_deg: 48.2,
+        thumbnail_url: "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/Q/GF/2024/11/S2A_43QGF_20241126_0_L2A/thumbnail.jpg",
+        visual_tci_url: "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/Q/GF/2024/11/S2A_43QGF_20241126_0_L2A/TCI.tif",
+        band_b04_red_url: "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/Q/GF/2024/11/S2A_43QGF_20241126_0_L2A/B04.tif",
+        band_b08_nir_url: "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/Q/GF/2024/11/S2A_43QGF_20241126_0_L2A/B08.tif",
+        status: "Available in STAC Catalog"
+      },
+      {
+        scene_id: "S2B_43QGF_20241121_0_L2A",
+        observation_date: "2026-11-21",
+        satellite: "Sentinel-2B",
+        mgrs_tile: "43QGF",
+        cloud_coverage_percent: 0.31,
+        sun_elevation_deg: 49.5,
+        thumbnail_url: "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/Q/GF/2024/11/S2B_43QGF_20241121_0_L2A/thumbnail.jpg",
+        visual_tci_url: "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/Q/GF/2024/11/S2B_43QGF_20241121_0_L2A/TCI.tif",
+        band_b04_red_url: "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/Q/GF/2024/11/S2B_43QGF_20241121_0_L2A/B04.tif",
+        band_b08_nir_url: "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/43/Q/GF/2024/11/S2B_43QGF_20241121_0_L2A/B08.tif",
+        status: "Available in STAC Catalog"
+      }
+    ],
     ndvi_timeline: [
       { date: "Sep 01", mean_ndvi: 0.28, district_normal_ndvi: 0.30, anomaly: -0.02, phenology_stage: "Germination" },
       { date: "Sep 10", mean_ndvi: 0.42, district_normal_ndvi: 0.45, anomaly: -0.03, phenology_stage: "Early Vegetative" },

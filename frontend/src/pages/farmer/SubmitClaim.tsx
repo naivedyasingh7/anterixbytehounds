@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FileCheck2, AlertCircle, UploadCloud, CheckCircle2 } from 'lucide-react';
 import { MOCK_FARMS_DATA } from '../../services/mockData';
+import { submitClaim } from '../../services/api';
 
 export const SubmitClaim: React.FC = () => {
   const navigate = useNavigate();
@@ -10,13 +11,33 @@ export const SubmitClaim: React.FC = () => {
   const [lossPct, setLossPct] = useState(65);
   const claimedAmount = Math.round(175000 * (lossPct / 100));
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [createdClaimId, setCreatedClaimId] = useState("CLM001");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      navigate('/farmer/track-claim');
-    }, 1500);
+    setSubmitting(true);
+    try {
+      const res = await submitClaim({
+        farm_id: farm.id,
+        policy_id: "POL-PMFBY-BHP-2026-88",
+        loss_cause: lossCause,
+        claimed_loss_percentage: lossPct,
+        claimed_amount_inr: claimedAmount,
+        incident_date: "2026-11-05"
+      });
+      if (res?.claim_number) {
+        setCreatedClaimId(res.claim_number);
+      }
+    } catch (err) {
+      console.warn('Backend offline or simulated response', err);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+      setTimeout(() => {
+        navigate('/farmer/track-claim');
+      }, 1500);
+    }
   };
 
   return (
@@ -31,7 +52,7 @@ export const SubmitClaim: React.FC = () => {
       {submitted ? (
         <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center space-y-3">
           <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
-          <h3 className="text-lg font-bold text-emerald-950">Claim CLM001 Filed Successfully!</h3>
+          <h3 className="text-lg font-bold text-emerald-950">Claim {createdClaimId} Filed Successfully!</h3>
           <p className="text-xs text-emerald-700">
             Assigned to Insurance Officer Sharma for 3-engine verification. Redirecting to tracking...
           </p>
@@ -119,9 +140,10 @@ export const SubmitClaim: React.FC = () => {
             </button>
             <button
               type="submit"
-              className="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md transition"
+              disabled={submitting}
+              className="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white text-xs font-bold shadow-md transition"
             >
-              Submit Claim for Verification
+              {submitting ? 'Submitting...' : 'Submit Claim for Verification'}
             </button>
           </div>
 

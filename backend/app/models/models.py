@@ -2,22 +2,24 @@ import uuid
 from datetime import datetime
 from sqlalchemy import (
     Column, String, Boolean, Numeric, Integer, Date, DateTime, 
-    ForeignKey, Text, JSON
+    ForeignKey, Text, JSON, Uuid
 )
-from sqlalchemy.dialects.postgresql import UUID, JSONB
 from sqlalchemy.orm import relationship
 from app.core.database import Base
 
 class User(Base):
     __tablename__ = "users"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4)
     email = Column(String(255), unique=True, nullable=False, index=True)
     hashed_password = Column(String(255), nullable=False)
     full_name = Column(String(150), nullable=False)
     phone = Column(String(20), nullable=True)
-    role = Column(String(30), nullable=False, default="farmer")
+    role = Column(String(30), nullable=False, default="farmer") # farmer, insurance_officer, admin
+    tenant_id = Column(String(50), nullable=False, default="AIC_INDIA") # Multi-tenant isolation
+    status = Column(String(30), nullable=False, default="active") # active, pending_verification, suspended, locked
     is_active = Column(Boolean, default=True)
+    last_login = Column(DateTime, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
@@ -26,8 +28,8 @@ class User(Base):
 class Farmer(Base):
     __tablename__ = "farmers"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id", ondelete="CASCADE"), unique=True)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4)
+    user_id = Column(Uuid, ForeignKey("users.id", ondelete="CASCADE"), unique=True)
     farmer_id_code = Column(String(50), unique=True, nullable=False)
     aadhar_hash = Column(String(64), nullable=True)
     village = Column(String(100), nullable=False)
@@ -45,8 +47,8 @@ class Farmer(Base):
 class Farm(Base):
     __tablename__ = "farms"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    farmer_id = Column(UUID(as_uuid=True), ForeignKey("farmers.id", ondelete="CASCADE"), nullable=False)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4)
+    farmer_id = Column(Uuid, ForeignKey("farmers.id", ondelete="CASCADE"), nullable=False)
     farm_name = Column(String(100), nullable=False)
     khasra_number = Column(String(50), nullable=False)
     declared_area_hectares = Column(Numeric(8, 4), nullable=False)
@@ -55,7 +57,7 @@ class Farm(Base):
     current_crop = Column(String(50), nullable=False)
     season = Column(String(20), nullable=False)
     soil_type = Column(String(50), nullable=True)
-    boundary_geojson = Column(JSONB, nullable=False)
+    boundary_geojson = Column(JSON, nullable=False)
     verification_status = Column(String(30), default="Pending")
     created_at = Column(DateTime, default=datetime.utcnow)
 
@@ -66,8 +68,8 @@ class Farm(Base):
 class Policy(Base):
     __tablename__ = "policies"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    farmer_id = Column(UUID(as_uuid=True), ForeignKey("farmers.id", ondelete="CASCADE"), nullable=False)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4)
+    farmer_id = Column(Uuid, ForeignKey("farmers.id", ondelete="CASCADE"), nullable=False)
     policy_number = Column(String(50), unique=True, nullable=False)
     scheme_name = Column(String(100), nullable=False)
     sum_insured_inr = Column(Numeric(12, 2), nullable=False)
@@ -83,11 +85,11 @@ class Policy(Base):
 class Claim(Base):
     __tablename__ = "claims"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4)
     claim_number = Column(String(50), unique=True, nullable=False, index=True)
-    farmer_id = Column(UUID(as_uuid=True), ForeignKey("farmers.id", ondelete="CASCADE"), nullable=False)
-    farm_id = Column(UUID(as_uuid=True), ForeignKey("farms.id", ondelete="CASCADE"), nullable=False)
-    policy_id = Column(UUID(as_uuid=True), ForeignKey("policies.id", ondelete="CASCADE"), nullable=False)
+    farmer_id = Column(Uuid, ForeignKey("farmers.id", ondelete="CASCADE"), nullable=False)
+    farm_id = Column(Uuid, ForeignKey("farms.id", ondelete="CASCADE"), nullable=False)
+    policy_id = Column(Uuid, ForeignKey("policies.id", ondelete="CASCADE"), nullable=False)
     loss_cause = Column(String(100), nullable=False)
     claimed_loss_percentage = Column(Numeric(5, 2), nullable=False)
     claimed_amount_inr = Column(Numeric(12, 2), nullable=False)
@@ -108,11 +110,11 @@ class Claim(Base):
 class ClaimEvent(Base):
     __tablename__ = "claim_events"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    claim_id = Column(UUID(as_uuid=True), ForeignKey("claims.id", ondelete="CASCADE"), nullable=False)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4)
+    claim_id = Column(Uuid, ForeignKey("claims.id", ondelete="CASCADE"), nullable=False)
     stage = Column(String(50), nullable=False)
     event_timestamp = Column(DateTime, nullable=False, default=datetime.utcnow)
-    actor_user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=True)
+    actor_user_id = Column(Uuid, ForeignKey("users.id"), nullable=True)
     notes = Column(Text, nullable=True)
     sla_status = Column(String(30), default="On Time")
     created_at = Column(DateTime, default=datetime.utcnow)
@@ -122,9 +124,9 @@ class ClaimEvent(Base):
 class Document(Base):
     __tablename__ = "documents"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    claim_id = Column(UUID(as_uuid=True), ForeignKey("claims.id", ondelete="CASCADE"), nullable=True)
-    farm_id = Column(UUID(as_uuid=True), ForeignKey("farms.id", ondelete="CASCADE"), nullable=True)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4)
+    claim_id = Column(Uuid, ForeignKey("claims.id", ondelete="CASCADE"), nullable=True)
+    farm_id = Column(Uuid, ForeignKey("farms.id", ondelete="CASCADE"), nullable=True)
     document_type = Column(String(50), nullable=False)
     file_name = Column(String(255), nullable=False)
     file_url = Column(String(500), nullable=False)
@@ -137,8 +139,8 @@ class Document(Base):
 class SatelliteData(Base):
     __tablename__ = "satellite_data"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    farm_id = Column(UUID(as_uuid=True), ForeignKey("farms.id", ondelete="CASCADE"), nullable=False)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4)
+    farm_id = Column(Uuid, ForeignKey("farms.id", ondelete="CASCADE"), nullable=False)
     observation_date = Column(Date, nullable=False)
     satellite_mission = Column(String(50), default="Sentinel-2 L2A")
     cloud_coverage_percent = Column(Numeric(5, 2), nullable=True)
@@ -154,7 +156,7 @@ class SatelliteData(Base):
 class WeatherData(Base):
     __tablename__ = "weather_data"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4)
     district = Column(String(100), nullable=False)
     record_date = Column(Date, nullable=False)
     rainfall_mm = Column(Numeric(6, 2), nullable=False)
@@ -167,8 +169,8 @@ class WeatherData(Base):
 class YieldPrediction(Base):
     __tablename__ = "yield_predictions"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    claim_id = Column(UUID(as_uuid=True), ForeignKey("claims.id", ondelete="CASCADE"), nullable=False)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4)
+    claim_id = Column(Uuid, ForeignKey("claims.id", ondelete="CASCADE"), nullable=False)
     crop_type = Column(String(50), nullable=False)
     historical_benchmark_yield_kg_ha = Column(Numeric(8, 2), nullable=True)
     reported_yield_kg_ha = Column(Numeric(8, 2), nullable=True)
@@ -184,12 +186,12 @@ class YieldPrediction(Base):
 class VerificationResult(Base):
     __tablename__ = "verification_results"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    claim_id = Column(UUID(as_uuid=True), ForeignKey("claims.id", ondelete="CASCADE"), nullable=False)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4)
+    claim_id = Column(Uuid, ForeignKey("claims.id", ondelete="CASCADE"), nullable=False)
     engine_name = Column(String(50), nullable=False)
     verdict = Column(String(50), nullable=False)
     score = Column(Numeric(5, 2), nullable=True)
-    details_json = Column(JSONB, nullable=False)
+    details_json = Column(JSON, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
 
     claim = relationship("Claim", back_populates="verification_results")
@@ -197,9 +199,9 @@ class VerificationResult(Base):
 class Assessment(Base):
     __tablename__ = "assessments"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    claim_id = Column(UUID(as_uuid=True), ForeignKey("claims.id", ondelete="CASCADE"), unique=True, nullable=False)
-    assessor_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=False)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4)
+    claim_id = Column(Uuid, ForeignKey("claims.id", ondelete="CASCADE"), unique=True, nullable=False)
+    assessor_id = Column(Uuid, ForeignKey("users.id"), nullable=False)
     decision = Column(String(50), nullable=False)
     approved_amount_inr = Column(Numeric(12, 2), nullable=True)
     remarks = Column(Text, nullable=False)
@@ -210,11 +212,11 @@ class Assessment(Base):
 class AuditLog(Base):
     __tablename__ = "audit_logs"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=True)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4)
+    user_id = Column(Uuid, ForeignKey("users.id"), nullable=True)
     action = Column(String(100), nullable=False)
     entity_type = Column(String(50), nullable=False)
     entity_id = Column(String(100), nullable=False)
     ip_address = Column(String(45), nullable=True)
-    payload = Column(JSONB, nullable=True)
+    payload = Column(JSON, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
