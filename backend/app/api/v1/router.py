@@ -18,6 +18,7 @@ api_router.include_router(documents.router, prefix="/documents", tags=["Document
 # Verification Engines
 api_router.include_router(engine_farm.router, prefix="/engines/farm", tags=["Engine 1: Farm Boundary Verification"])
 api_router.include_router(engine_yield.router, prefix="/engines/yield", tags=["Engine 2: Yield & Sentinel-2 Verification"])
+api_router.include_router(engine_yield.router, prefix="/yield", tags=["Engine 2: Yield & Sentinel-2 Verification (Alias)"])
 api_router.include_router(engine_audit.router, prefix="/engines/audit", tags=["Engine 3: Insurance Process Audit"])
 
 # Assessment Workspace, Reports & Notifications

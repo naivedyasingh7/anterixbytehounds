@@ -76,3 +76,12 @@ def get_credentials_status():
     """
     from app.services.satellite_service import get_satellite_credentials_telemetry
     return get_satellite_credentials_telemetry()
+
+@router.get("/live-feed")
+def get_live_satellite_feed(polygon_id: str = "6b020efc5395339c104f3e24"):
+    """
+    Real-time Sentinel-2 multi-spectral imagery and telemetry stream
+    using live configured API credentials (AgroMonitoring, Sentinel-2, MP Bhulekh, NASA Earthdata).
+    """
+    from app.services.satellite_service import get_live_sentinel_feed
+    return get_live_sentinel_feed(polygon_id=polygon_id)

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Layers, MapPin, UploadCloud, CheckCircle2, ArrowRight } from 'lucide-react';
-import { FarmMapViewer } from '../../components/maps/FarmMapViewer';
+import { FarmMapViewer, PRESET_REGIONS } from '../../components/maps/FarmMapViewer';
 import { registerFarm } from '../../services/api';
 
 export const RegisterFarm: React.FC = () => {
@@ -11,18 +11,40 @@ export const RegisterFarm: React.FC = () => {
   const [crop, setCrop] = useState('Wheat');
   const [season, setSeason] = useState('Rabi 2026');
   const [declaredArea, setDeclaredArea] = useState<number>(2.5);
-  const mappedArea = 2.462;
-  const variance = Math.abs((declaredArea - mappedArea) / declaredArea * 100).toFixed(2);
+  const [boundaryCoords, setBoundaryCoords] = useState<[number, number][]>(PRESET_REGIONS["bhopal_48_2"].coords);
+  const [mappedArea, setMappedArea] = useState<number>(PRESET_REGIONS["bhopal_48_2"].area);
+
+  const varianceNum = declaredArea > 0 ? Math.abs((declaredArea - mappedArea) / declaredArea * 100) : 0;
+  const variance = varianceNum.toFixed(2);
+  const isVerified = varianceNum <= 5.0;
+
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  const handleRegionChange = (coords: [number, number][], areaHa: number) => {
+    setBoundaryCoords(coords);
+    setMappedArea(areaHa);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+    
+    // Ensure polygon is closed for GeoJSON standard
+    const closedCoords = [...boundaryCoords];
+    if (closedCoords.length >= 3) {
+      const first = closedCoords[0];
+      const last = closedCoords[closedCoords.length - 1];
+      if (first[0] !== last[0] || first[1] !== last[1]) {
+        closedCoords.push([first[0], first[1]]);
+      }
+    }
+
     const boundary = {
       type: "Polygon",
-      coordinates: [[[77.4128, 23.2599], [77.4155, 23.2605], [77.4162, 23.2578], [77.4132, 23.2572], [77.4128, 23.2599]]]
+      coordinates: [closedCoords]
     };
+
     try {
       await registerFarm({
         farm_name: farmName,
@@ -168,17 +190,29 @@ export const RegisterFarm: React.FC = () => {
               <div>
                 <h3 className="text-xl font-serif font-normal text-[#1B1D1C] flex items-center gap-2">
                   <Layers className="w-5 h-5 text-[#8B5F4D]" />
-                  <span>2. Satellite Boundary Delineation (Engine 1)</span>
+                  <span>2. Satellite Boundary Delineation (Leaflet Engine)</span>
                 </h3>
-                <p className="text-xs text-[#68625B] mt-0.5">Interactive polygon vertices mapped on high-res Sentinel-2 / ESRI canvas</p>
+                <p className="text-xs text-[#68625B] mt-0.5">Click map to plot boundary vertices or drag pins to adjust region on high-res Sentinel-2 / ESRI canvas</p>
               </div>
-              <span className="text-[11px] font-mono text-[#5B7553] bg-[#EBF2EA] px-3 py-1 rounded-full border border-[#5B7553]/30 self-start">
-                Polygon Closed (5 Nodes)
+              <span className={`text-[11px] font-mono px-3 py-1 rounded-full border self-start ${
+                boundaryCoords.length >= 3 
+                  ? 'text-[#5B7553] bg-[#EBF2EA] border-[#5B7553]/30' 
+                  : 'text-amber-700 bg-amber-50 border-amber-300'
+              }`}>
+                {boundaryCoords.length >= 3 ? `Polygon Closed (${boundaryCoords.length} Vertices)` : `Incomplete (${boundaryCoords.length} Vertices, min 3)`}
               </span>
             </div>
 
             <div className="rounded-2xl overflow-hidden border border-[#EAE3D9]">
-              <FarmMapViewer height="320px" interactive={true} />
+              <FarmMapViewer 
+                height="380px" 
+                interactive={true} 
+                enableDrawing={true}
+                coordinates={boundaryCoords}
+                farmName={farmName}
+                khasra={khasraNumber}
+                onRegionChange={handleRegionChange}
+              />
             </div>
 
             {/* Area Comparison Widget */}
@@ -186,10 +220,14 @@ export const RegisterFarm: React.FC = () => {
               <div className="text-xs font-sans">
                 <span className="text-[#68625B]">Declared Area:</span> <b className="text-[#1B1D1C]">{declaredArea} Ha</b>
                 <span className="mx-2 text-[#CAB4AA]">|</span>
-                <span className="text-[#68625B]">PostGIS Geodesic:</span> <b className="text-[#5B7553]">{mappedArea} Ha</b>
+                <span className="text-[#68625B]">Leaflet Geodesic:</span> <b className="text-[#5B7553]">{mappedArea} Ha</b>
+                <span className="text-[#68625B] text-[11px] ml-1">({(mappedArea * 2.47105).toFixed(2)} Acres)</span>
               </div>
-              <div className="text-xs font-sans font-semibold text-[#5B7553]">
-                Variance: {variance}% (Status: Verified)
+              <div className={`text-xs font-sans font-semibold flex items-center gap-1.5 ${
+                isVerified ? 'text-[#5B7553]' : 'text-amber-800'
+              }`}>
+                <span>Variance: {variance}%</span>
+                <span>({isVerified ? 'Status: Verified ≤5%' : 'Status: Discrepancy >5%'})</span>
               </div>
             </div>
           </div>
