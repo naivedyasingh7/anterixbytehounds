@@ -1,0 +1,49 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "khasra_number": "48/2",
+        "farmer_name": "Rajesh Kumar Patel",
+        "declared_hectares": 2.50,
+        "village": "Berasia",
+        "district": "Bhopal"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [77.4128, 23.2599],
+            [77.4155, 23.2605],
+            [77.4162, 23.2578],
+            [77.4132, 23.2572],
+            [77.4128, 23.2599]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "khasra_number": "112/1",
+        "farmer_name": "Sunita Bai Chouhan",
+        "declared_hectares": 3.80,
+        "village": "Ashta",
+        "district": "Sehore"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [77.0850, 23.1950],
+            [77.0885, 23.1960],
+            [77.0890, 23.1925],
+            [77.0855, 23.1918],
+            [77.0850, 23.1950]
+          ]
+        ]
+      }
+    }
+  ]
+}
