@@ -11,7 +11,8 @@ export async function fetchClaims(filters?: { district?: string; crop?: string; 
     if (filters?.status) params.append('status', filters.status);
     if (filters?.search) params.append('search', filters.search);
 
-    const res = await fetch(`${API_BASE}/claims?${params.toString()}`);
+    const queryString = params.toString() ? `?${params.toString()}` : '';
+    const res = await fetch(`${API_BASE}/claims/${queryString}`);
     if (res.ok) return await res.json();
   } catch (e) {
     console.warn('API unreachable, falling back to mock dataset.');
@@ -58,7 +59,7 @@ export async function fetchClaimsMetrics() {
 
 export async function fetchFarms(): Promise<Farm[]> {
   try {
-    const res = await fetch(`${API_BASE}/farms`);
+    const res = await fetch(`${API_BASE}/farms/`);
     if (res.ok) return await res.json();
   } catch (e) {}
   return MOCK_FARMS_DATA;
@@ -66,7 +67,7 @@ export async function fetchFarms(): Promise<Farm[]> {
 
 export async function registerFarm(farmData: any): Promise<Farm> {
   try {
-    const res = await fetch(`${API_BASE}/farms`, {
+    const res = await fetch(`${API_BASE}/farms/`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(farmData)
@@ -95,7 +96,7 @@ export async function registerFarm(farmData: any): Promise<Farm> {
 
 export async function submitClaim(claimData: any): Promise<any> {
   try {
-    const res = await fetch(`${API_BASE}/claims`, {
+    const res = await fetch(`${API_BASE}/claims/`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(claimData)
