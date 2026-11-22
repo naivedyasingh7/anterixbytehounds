@@ -13,6 +13,8 @@ export const SubmitClaim: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [createdClaimId, setCreatedClaimId] = useState("CLM001");
+  const [uploadedPhoto, setUploadedPhoto] = useState<string | null>(null);
+  const [uploadedPhotoName, setUploadedPhotoName] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -124,13 +126,59 @@ export const SubmitClaim: React.FC = () => {
             <label className="block text-xs font-sans font-medium text-[#68625B] uppercase tracking-wider">
               Field Damage Photographs (Geotagged Evidence)
             </label>
-            <div className="border-2 border-dashed border-[#CAB4AA] rounded-2xl p-6 text-center space-y-2 hover:border-[#8B5F4D] transition bg-[#FBF9F5]">
-              <UploadCloud className="w-8 h-8 text-[#8B5F4D] mx-auto" />
-              <div className="text-xs font-sans text-[#1B1D1C]">
-                <span className="font-semibold text-[#8B5F4D] cursor-pointer">Upload ground inspection photos</span>
+            
+            <input
+              id="damage-photo-upload"
+              type="file"
+              accept="image/*"
+              onChange={(e) => {
+                if (e.target.files && e.target.files[0]) {
+                  const file = e.target.files[0];
+                  setUploadedPhoto(URL.createObjectURL(file));
+                  setUploadedPhotoName(file.name);
+                }
+              }}
+              className="hidden"
+            />
+
+            {uploadedPhoto ? (
+              <div className="p-4 rounded-2xl bg-[#FBF9F5] border border-[#5B7553]/40 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <img
+                    src={uploadedPhoto}
+                    alt="Damage Evidence"
+                    className="w-16 h-16 rounded-xl object-cover border border-[#CAB4AA] shadow-sm"
+                  />
+                  <div>
+                    <div className="text-xs font-serif font-medium text-[#1B1D1C] truncate max-w-[220px]">
+                      {uploadedPhotoName}
+                    </div>
+                    <div className="text-[11px] font-mono text-[#5B7553] flex items-center gap-1 mt-0.5">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      <span>GPS: 23.2599° N, 77.4128° E · Berasia</span>
+                    </div>
+                  </div>
+                </div>
+
+                <label
+                  htmlFor="damage-photo-upload"
+                  className="px-3.5 py-1.5 rounded-full border border-[#CAB4AA] text-[11px] font-sans font-medium text-[#8B5F4D] hover:bg-[#EAE3D9] cursor-pointer"
+                >
+                  Change
+                </label>
               </div>
-              <p className="text-[11px] font-sans text-[#68625B]">JPG with EXIF metadata (GPS coords will be cross-checked with Sentinel-2 orbit)</p>
-            </div>
+            ) : (
+              <label
+                htmlFor="damage-photo-upload"
+                className="block border-2 border-dashed border-[#CAB4AA] rounded-2xl p-6 text-center space-y-2 hover:border-[#8B5F4D] transition bg-[#FBF9F5] cursor-pointer"
+              >
+                <UploadCloud className="w-8 h-8 text-[#8B5F4D] mx-auto" />
+                <div className="text-xs font-sans text-[#1B1D1C]">
+                  <span className="font-semibold text-[#8B5F4D]">Upload ground inspection photos</span>
+                </div>
+                <p className="text-[11px] font-sans text-[#68625B]">JPG/PNG with EXIF metadata (GPS coords cross-checked against Khasra boundary)</p>
+              </label>
+            )}
           </div>
 
           <div className="flex justify-end gap-3 pt-4 border-t border-[#EAE3D9]">
