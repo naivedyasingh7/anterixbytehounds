@@ -1,6 +1,0 @@
-Claim ID,Farmer,District,Crop,Claimed Amount,Loss %,Loss Cause,Khasra,Status
-CLM004,Dinesh Sharma,Bhopal,Wheat,140000,75,Hailstorm Damage,33/1,Pending
-CLM005,Kavita Yadav,Sehore,Soybean,95000,50,Yellow Mosaic Virus,88/2,Pending
-CLM006,Suresh Patel,Raisen,Gram,110000,60,Dry Spell Wilt,104/5,Pending
-CLM007,Anita Meena,Bhopal,Mustard,85000,45,Frost Damage,12/1,Pending
-CLM008,Gopal Singh,Sehore,Paddy,160000,85,Flash Flood Inundation,59/3,Pending

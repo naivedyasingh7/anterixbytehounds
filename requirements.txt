@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+torch
+torchvision
+opencv-python
+numpy
+Pillow
+scikit-learn
+PyYAML
+matplotlib
+python-dotenv
+psycopg2-binary
+kagglehub

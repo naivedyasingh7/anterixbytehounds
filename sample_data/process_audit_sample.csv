@@ -1,6 +1,0 @@
-Claim ID,Farmer,Submission Date,Verification Date,Approval Date,Days Elapsed,Has Khasra,Has Sowing Cert,Has Photos,Remarks
-CLM-AUD-01,Rajesh Patel,2026-10-01,2026-10-04,2026-10-08,7,Yes,Yes,Yes,Normal processing
-CLM-AUD-02,Sunita Bai,2026-09-15,2026-09-22,2026-10-05,20,Yes,Yes,Yes,Minor delay in field survey
-CLM-AUD-03,Mohan Verma,2026-09-01,2026-10-12,Pending,42,No,No,Yes,CRITICAL DELAY: Missing Khasra & Sowing Certificate
-CLM-AUD-04,Kamal Kishore,2026-09-10,2026-09-18,Pending,28,Yes,No,Yes,Delayed: Pending Panchayat sowing record
-CLM-AUD-05,Deepak Rathore,2026-10-15,2026-10-18,2026-10-22,7,Yes,Yes,Yes,Smooth fast-track settlement

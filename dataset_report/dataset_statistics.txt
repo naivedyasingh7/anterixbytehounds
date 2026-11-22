@@ -1,0 +1,17 @@
+============================================================
+   DHARA AI - DATASET STATISTICAL REPORT   
+============================================================
+Total Scanned Files         : 67118
+Total Classes               : 29
+Largest Class               : Apple - Apple Scab (2520 images)
+Smallest Class              : Corn (Maize) - Cercospora Leaf Spot (2056 images)
+Average Images / Class      : 2314.41
+Class Imbalance Ratio       : 1.23x
+------------------------------------------------------------
+QUALITY METRICS:
+  Mean Blur Score           : 4033.18
+  Mean Brightness           : 122.19
+  Mean Contrast             : 42.82
+  Mean Sharpness            : 70.18
+  Mean Noise Score          : 7.78
+============================================================

@@ -1,0 +1,31 @@
+==================================================
+PRODUCTION MODEL ARCHITECTURE SUMMARY
+==================================================
+Model Architecture: convnext_tiny
+Total Parameters:   27,842,429
+Trainable Params:   22,301 (0.08%)
+Frozen Parameters:  27,820,128 (99.92%)
+Input Resolution:   224x224
+Channels Last:      True
+Output Classes:     29
+
+TRAINING ENGINE & HYPERPARAMETERS
+--------------------------------------------------
+Fine-Tune Stage:    head_only
+Unfrozen Blocks:    None
+Optimizer:          adamw
+Scheduler:          cosine (Warmup=True)
+Loss Function:      cross_entropy
+Label Smoothing:    0.1
+EMA Decay:          0.9999
+LR Classifier Head: 0.001
+LR Stage 4 Blocks:  2e-05
+LR Earlier Backbone:5e-06
+Weight Decay:       0.0001
+Gradient Clip:      1.0
+Accumulation Steps: 1
+Batch Size:         32
+Epochs:             20
+Class Imbalance:    weighted_loss
+Target Device:      mps
+==================================================

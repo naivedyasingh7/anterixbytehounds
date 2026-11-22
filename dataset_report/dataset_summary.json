@@ -1,0 +1,2652 @@
+{
+    "scan": {
+        "total_files_scanned": 67118,
+        "summary": {
+            "corrupted_count": 0,
+            "unreadable_count": 0,
+            "zero_byte_count": 0,
+            "unsupported_format_count": 0,
+            "wrong_extension_count": 0,
+            "duplicate_filenames_count": 0,
+            "exact_duplicates_count": 33,
+            "near_duplicates_count": 831,
+            "extremely_small_count": 0,
+            "grayscale_count": 0,
+            "alpha_channel_count": 0,
+            "unusual_aspect_ratio_count": 0,
+            "unique_dimensions_count": 1
+        },
+        "class_inspection": {
+            "num_classes": 29,
+            "class_counts": {
+                "Tomato - Yellow Leaf Curl Virus": 2451,
+                "Grape - Black Rot": 2360,
+                "Peach - Healthy": 2160,
+                "Apple - Cedar Apple Rust": 2200,
+                "Strawberry - Healthy": 2280,
+                "Tomato - Bacterial Spot": 2127,
+                "Grape - Esca (Black Measles)": 2400,
+                "Corn (Maize) - Common Rust": 2384,
+                "Tomato - Septoria Leaf Spot": 2184,
+                "Potato - Late Blight": 2424,
+                "Grape - Healthy": 2115,
+                "Tomato - Late Blight": 2314,
+                "Corn (Maize) - Healthy": 2324,
+                "Grape - Leaf Blight": 2152,
+                "Bell Pepper - Healthy": 2485,
+                "Cherry - Healthy": 2282,
+                "Apple - Apple Scab": 2520,
+                "Peach - Bacterial Spot": 2297,
+                "Strawberry - Leaf Scorch": 2218,
+                "Corn (Maize) - Cercospora Leaf Spot": 2056,
+                "Tomato - Healthy": 2407,
+                "Potato - Early Blight": 2424,
+                "Cherry - Powdery Mildew": 2104,
+                "Potato - Healthy": 2280,
+                "Apple - Healthy": 2510,
+                "Corn (Maize) - Northern Leaf Blight": 2385,
+                "Tomato - Early Blight": 2400,
+                "Apple - Black Rot": 2484,
+                "Bell Pepper - Bacterial Spot": 2391
+            },
+            "split_class_counts": {
+                "Test": {
+                    "Tomato - Yellow Leaf Curl Virus": 49,
+                    "Grape - Black Rot": 48,
+                    "Peach - Healthy": 44,
+                    "Apple - Cedar Apple Rust": 44,
+                    "Strawberry - Healthy": 46,
+                    "Tomato - Bacterial Spot": 43,
+                    "Grape - Esca (Black Measles)": 48,
+                    "Corn (Maize) - Common Rust": 48,
+                    "Tomato - Septoria Leaf Spot": 44,
+                    "Potato - Late Blight": 49,
+                    "Grape - Healthy": 43,
+                    "Tomato - Late Blight": 47,
+                    "Corn (Maize) - Healthy": 47,
+                    "Grape - Leaf Blight": 43,
+                    "Bell Pepper - Healthy": 50,
+                    "Cherry - Healthy": 46,
+                    "Apple - Apple Scab": 51,
+                    "Peach - Bacterial Spot": 46,
+                    "Strawberry - Leaf Scorch": 45,
+                    "Corn (Maize) - Cercospora Leaf Spot": 45,
+                    "Tomato - Healthy": 49,
+                    "Potato - Early Blight": 49,
+                    "Cherry - Powdery Mildew": 43,
+                    "Potato - Healthy": 46,
+                    "Apple - Healthy": 51,
+                    "Corn (Maize) - Northern Leaf Blight": 48,
+                    "Tomato - Early Blight": 48,
+                    "Apple - Black Rot": 50,
+                    "Bell Pepper - Bacterial Spot": 48
+                },
+                "Train": {
+                    "Tomato - Yellow Leaf Curl Virus": 1961,
+                    "Grape - Black Rot": 1888,
+                    "Peach - Healthy": 1728,
+                    "Apple - Cedar Apple Rust": 1760,
+                    "Strawberry - Healthy": 1824,
+                    "Tomato - Bacterial Spot": 1702,
+                    "Grape - Esca (Black Measles)": 1920,
+                    "Corn (Maize) - Common Rust": 1907,
+                    "Tomato - Septoria Leaf Spot": 1748,
+                    "Potato - Late Blight": 1939,
+                    "Grape - Healthy": 1692,
+                    "Tomato - Late Blight": 1851,
+                    "Corn (Maize) - Healthy": 1859,
+                    "Grape - Leaf Blight": 1722,
+                    "Bell Pepper - Healthy": 1988,
+                    "Cherry - Healthy": 1826,
+                    "Apple - Apple Scab": 2016,
+                    "Peach - Bacterial Spot": 1838,
+                    "Strawberry - Leaf Scorch": 1774,
+                    "Corn (Maize) - Cercospora Leaf Spot": 1642,
+                    "Tomato - Healthy": 1926,
+                    "Potato - Early Blight": 1939,
+                    "Cherry - Powdery Mildew": 1683,
+                    "Potato - Healthy": 1824,
+                    "Apple - Healthy": 2008,
+                    "Corn (Maize) - Northern Leaf Blight": 1908,
+                    "Tomato - Early Blight": 1920,
+                    "Apple - Black Rot": 1987,
+                    "Bell Pepper - Bacterial Spot": 1913
+                },
+                "Val": {
+                    "Tomato - Yellow Leaf Curl Virus": 441,
+                    "Grape - Black Rot": 424,
+                    "Peach - Healthy": 388,
+                    "Apple - Cedar Apple Rust": 396,
+                    "Strawberry - Healthy": 410,
+                    "Tomato - Bacterial Spot": 382,
+                    "Grape - Esca (Black Measles)": 432,
+                    "Corn (Maize) - Common Rust": 429,
+                    "Tomato - Septoria Leaf Spot": 392,
+                    "Potato - Late Blight": 436,
+                    "Grape - Healthy": 380,
+                    "Tomato - Late Blight": 416,
+                    "Corn (Maize) - Healthy": 418,
+                    "Grape - Leaf Blight": 387,
+                    "Bell Pepper - Healthy": 447,
+                    "Cherry - Healthy": 410,
+                    "Apple - Apple Scab": 453,
+                    "Peach - Bacterial Spot": 413,
+                    "Strawberry - Leaf Scorch": 399,
+                    "Corn (Maize) - Cercospora Leaf Spot": 369,
+                    "Tomato - Healthy": 432,
+                    "Potato - Early Blight": 436,
+                    "Cherry - Powdery Mildew": 378,
+                    "Potato - Healthy": 410,
+                    "Apple - Healthy": 451,
+                    "Corn (Maize) - Northern Leaf Blight": 429,
+                    "Tomato - Early Blight": 432,
+                    "Apple - Black Rot": 447,
+                    "Bell Pepper - Bacterial Spot": 430
+                }
+            },
+            "empty_classes": [],
+            "largest_class": {
+                "name": "Apple - Apple Scab",
+                "count": 2520
+            },
+            "smallest_class": {
+                "name": "Corn (Maize) - Cercospora Leaf Spot",
+                "count": 2056
+            },
+            "average_images_per_class": 2314.41,
+            "imbalance_ratio": 1.23
+        },
+        "issues": {
+            "corrupted": [],
+            "unreadable": [],
+            "zero_byte": [],
+            "unsupported": [],
+            "wrong_extension": [],
+            "duplicate_filenames": {},
+            "exact_duplicates": {
+                "5b9182b9ebfeedbec1dd9bbd42aa3a1f": [
+                    [
+                        "Dataset/Plant Village Dataset/Test/Corn (Maize) - Cercospora Leaf Spot/3c70ede6-fd2c-4e9c-8c2c-2d6a369564d4___RS_GLSp 4345_270deg.JPG",
+                        "Corn (Maize) - Cercospora Leaf Spot",
+                        "Test"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Test/Corn (Maize) - Cercospora Leaf Spot/.ipynb_checkpoints/3c70ede6-fd2c-4e9c-8c2c-2d6a369564d4___RS_GLSp 4345_270deg-checkpoint.JPG",
+                        "Corn (Maize) - Cercospora Leaf Spot",
+                        "Test"
+                    ]
+                ],
+                "32fc624375b61f21f3ce19fd77a3a063": [
+                    [
+                        "Dataset/Plant Village Dataset/Test/Corn (Maize) - Cercospora Leaf Spot/5f00e4d0-e48c-4b6b-9602-022fd38cf7e7___RS_GLSp 7331_90deg.JPG",
+                        "Corn (Maize) - Cercospora Leaf Spot",
+                        "Test"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Test/Corn (Maize) - Cercospora Leaf Spot/.ipynb_checkpoints/5f00e4d0-e48c-4b6b-9602-022fd38cf7e7___RS_GLSp 7331_90deg-checkpoint.JPG",
+                        "Corn (Maize) - Cercospora Leaf Spot",
+                        "Test"
+                    ]
+                ],
+                "6aafac7fa7f2efec0c80085a9d95b53e": [
+                    [
+                        "Dataset/Plant Village Dataset/Test/Corn (Maize) - Cercospora Leaf Spot/80a35c48-04ed-457d-a7e0-ac5179c7b53a___RS_GLSp 7292_270deg.JPG",
+                        "Corn (Maize) - Cercospora Leaf Spot",
+                        "Test"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Test/Corn (Maize) - Cercospora Leaf Spot/.ipynb_checkpoints/80a35c48-04ed-457d-a7e0-ac5179c7b53a___RS_GLSp 7292_270deg-checkpoint.JPG",
+                        "Corn (Maize) - Cercospora Leaf Spot",
+                        "Test"
+                    ]
+                ],
+                "d1bc7f2e512debec696245c362ed45e5": [
+                    [
+                        "Dataset/Plant Village Dataset/Test/Corn (Maize) - Cercospora Leaf Spot/919e2c3d-488e-440e-9841-60348cdb4adf___RS_GLSp 9322_270deg.JPG",
+                        "Corn (Maize) - Cercospora Leaf Spot",
+                        "Test"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Test/Corn (Maize) - Cercospora Leaf Spot/.ipynb_checkpoints/919e2c3d-488e-440e-9841-60348cdb4adf___RS_GLSp 9322_270deg-checkpoint.JPG",
+                        "Corn (Maize) - Cercospora Leaf Spot",
+                        "Test"
+                    ]
+                ],
+                "2e53ad1ec3f810e2ff4c83400dc69ec9": [
+                    [
+                        "Dataset/Plant Village Dataset/Test/Tomato - Healthy/505465db-407b-4e0a-8110-7479dad5261c___GH_HL Leaf 389.JPG",
+                        "Tomato - Healthy",
+                        "Test"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Val/Tomato - Healthy/37203047-d8ba-43f7-b31e-d496c41c569c___GH_HL Leaf 389.JPG",
+                        "Tomato - Healthy",
+                        "Val"
+                    ]
+                ],
+                "c338cf7ee1dbf595f935d4a05b429af2": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Septoria Leaf Spot/009bb542-f0c0-40f2-98a7-f547c5adec45___Matt.S_CG 1355.JPG",
+                        "Tomato - Septoria Leaf Spot",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Septoria Leaf Spot/.ipynb_checkpoints/009bb542-f0c0-40f2-98a7-f547c5adec45___Matt.S_CG 1355-checkpoint.JPG",
+                        "Tomato - Septoria Leaf Spot",
+                        "Train"
+                    ]
+                ],
+                "bf147105e4e9d1a3f4f804e87f88f92a": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Septoria Leaf Spot/00f16858-f392-4d9e-ad9f-efab8049a13f___JR_Sept.L.S 8368_flipTB.JPG",
+                        "Tomato - Septoria Leaf Spot",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Septoria Leaf Spot/.ipynb_checkpoints/00f16858-f392-4d9e-ad9f-efab8049a13f___JR_Sept.L.S 8368_flipTB-checkpoint.JPG",
+                        "Tomato - Septoria Leaf Spot",
+                        "Train"
+                    ]
+                ],
+                "9f7a51364f678aae26b11ee2ad1455a8": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Septoria Leaf Spot/029c0186-56f1-41de-bb6b-3743bdfb10ee___JR_Sept.L.S 8562.JPG",
+                        "Tomato - Septoria Leaf Spot",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Septoria Leaf Spot/.ipynb_checkpoints/029c0186-56f1-41de-bb6b-3743bdfb10ee___JR_Sept.L.S 8562-checkpoint.JPG",
+                        "Tomato - Septoria Leaf Spot",
+                        "Train"
+                    ]
+                ],
+                "bf12be065849d781b7da2e79091b1072": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/5de6da85-f8c4-48c4-b463-3e6bd78884cc___GHLB_PS Leaf 24 Day 16.jpg",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Val/Tomato - Late Blight/3fae9c64-18f0-4a67-9f97-554248bb1bed___GHLB_PS Leaf 24 Day 16.jpg",
+                        "Tomato - Late Blight",
+                        "Val"
+                    ]
+                ],
+                "ca06650efa30a3f6731df694f07b4690": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/e20107e7-137f-400e-817f-5dc4c58e5d70___GHLB2 Leaf 8677.JPG",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/5688ea99-c949-41d0-bbab-9cbf0ffb8bcd___GHLB2 Leaf 8677.JPG",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ]
+                ],
+                "0e0dcd876f5b32cac9da836b2e783d91": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/5f21282c-e2ef-4c4a-ace1-b5701fe7effc___GHLB2 Leaf 8999.JPG",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/e5d707cd-077c-43af-bda9-6138e516ff51___GHLB2 Leaf 8999.JPG",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ]
+                ],
+                "c1b24c8caaa06e756560a83d7358579e": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/d82b634e-9a19-497b-b698-aaf100d622a1___GHLB_PS Leaf 24 Day 13.jpg",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/861d8b00-57a4-46b0-b51a-09d102dbe119___GHLB_PS Leaf 24 Day 13.jpg",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ]
+                ],
+                "8730c6cb7afaf3858ff3bc54e5a0a421": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/1a69b38b-c4eb-42c4-9584-bcb14fb8db0c___GHLB2 Leaf 9011_flipLR.JPG",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/2c47b891-3c97-48f1-a2cc-5aa53d3a1148___GHLB2 Leaf 9011_flipLR.JPG",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ]
+                ],
+                "4bab4aa40d89e19ed72d8b8d501b1db8": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/c1775bad-7c02-41fb-bb7d-f8df91d60ac3___GHLB_PS Leaf 23.5 Day 13.jpg",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/98586693-fe1f-4ea0-8e27-4501b61cf09b___GHLB_PS Leaf 23.5 Day 13.jpg",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ]
+                ],
+                "df8febb8a41334667ed3cc4f6cb244e5": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/5de6da85-f8c4-48c4-b463-3e6bd78884cc___GHLB_PS Leaf 24 Day 16_flipLR.jpg",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/3fae9c64-18f0-4a67-9f97-554248bb1bed___GHLB_PS Leaf 24 Day 16_flipLR.jpg",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ]
+                ],
+                "1d87a50fa691cef6f476b20bb48cfaf8": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/1a69b38b-c4eb-42c4-9584-bcb14fb8db0c___GHLB2 Leaf 9011.JPG",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/2c47b891-3c97-48f1-a2cc-5aa53d3a1148___GHLB2 Leaf 9011.JPG",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ]
+                ],
+                "5bdbdc7333be3ab35ef81ec17ce14816": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/d81682aa-746b-4e07-af2b-52ebb6f4c017___GHLB2 Leaf 102.JPG",
+                        "Tomato - Late Blight",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Val/Tomato - Late Blight/d6e6897a-5083-4914-9903-804c5684a956___GHLB2 Leaf 102.JPG",
+                        "Tomato - Late Blight",
+                        "Val"
+                    ]
+                ],
+                "4b73700b68ce8704f6b4549a2846dede": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Healthy/d2ce7896-6fa4-45e6-96c5-d162da0e3e1c___GH_HL Leaf 220.JPG",
+                        "Tomato - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Healthy/9662364c-aaba-45e3-b907-10792d60578c___GH_HL Leaf 220.JPG",
+                        "Tomato - Healthy",
+                        "Train"
+                    ]
+                ],
+                "ea0a44df2e4e44c6ccacc31f067a6284": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Healthy/cfd491d6-4af5-4728-8f0e-0d330a07174a___GH_HL Leaf 482.2.JPG",
+                        "Tomato - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Val/Tomato - Healthy/1af0bfe1-4bcf-4b8b-be66-5d0953eb647e___GH_HL Leaf 482.2.JPG",
+                        "Tomato - Healthy",
+                        "Val"
+                    ]
+                ],
+                "6e48e89e89da343b6b90ccda5b18d698": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Healthy/488feb1c-4b9f-44e7-8aa6-4103a9601f5f___GH_HL Leaf 434.JPG",
+                        "Tomato - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Healthy/a5de43e7-fc2f-4a14-a8e6-c0f2f94c84f1___GH_HL Leaf 434.JPG",
+                        "Tomato - Healthy",
+                        "Train"
+                    ]
+                ],
+                "3dab5eb1192b5c43fd3015490cf0b18f": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Healthy/37aad83b-7ff8-4b35-b3ed-fb8e0f54910b___GH_HL Leaf 342.1.JPG",
+                        "Tomato - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Val/Tomato - Healthy/e786ac89-29fe-47e3-b49e-b9a9ee7edd9d___GH_HL Leaf 342.1.JPG",
+                        "Tomato - Healthy",
+                        "Val"
+                    ]
+                ],
+                "32cb22521edc69a5503a6749446dd522": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Healthy/068e324c-faf6-40d6-8f83-578907f1cac5___GH_HL Leaf 466.1.JPG",
+                        "Tomato - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Tomato - Healthy/34c81c57-e1fa-49dd-a49d-34fe8b2385fe___GH_HL Leaf 466.1.JPG",
+                        "Tomato - Healthy",
+                        "Train"
+                    ]
+                ],
+                "8bbefab9461168ef9946618480d2f0ad": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/3d075f90-7002-4c45-abc0-4f35ee49aa79___RS_HL 6272.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/acb21cc2-8d65-4880-a7bb-dcc1eab1564b___RS_HL 6272.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ]
+                ],
+                "48f5d94e58351849b9f219c674323d58": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/ced4e27a-5eff-4190-a33a-cdc3d84c811e___RS_HL 6270.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/dc18b924-f172-445d-8fed-61445d437aaa___RS_HL 6270.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ]
+                ],
+                "67a0fed9ae5a338656a557335fec59d9": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/ced4e27a-5eff-4190-a33a-cdc3d84c811e___RS_HL 6270_flipTB.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/dc18b924-f172-445d-8fed-61445d437aaa___RS_HL 6270_flipTB.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ]
+                ],
+                "68f05a541bf01c0fcfbc7f9445f8a147": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/1ab5e019-e5f0-4d8e-a252-94cb0aab8b0a___RS_HL 6269.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/3673d121-b5de-481c-b057-d4ee5b4959b1___RS_HL 6269.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ]
+                ],
+                "35302bc2333c76c20452dfd38586f817": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/14896dc0-688d-456f-b5ec-a037695b0193___RS_HL 6268_flipTB.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/c21cf428-bfc3-4710-b5d2-69d1c0e94748___RS_HL 6268_flipTB.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ]
+                ],
+                "fb72d1f9dbd2af9a9ee3fc3421ecf6a4": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/f2cda910-55c7-46d7-b1a2-9a3bb9792148___RS_HL 6274.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/fdbfa6f7-f887-442d-8df1-1f0cf839fc4d___RS_HL 6274.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ]
+                ],
+                "161940bd6e73cf648974cc7213cffb8f": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/c21cf428-bfc3-4710-b5d2-69d1c0e94748___RS_HL 6268.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Val/Apple - Healthy/14896dc0-688d-456f-b5ec-a037695b0193___RS_HL 6268.JPG",
+                        "Apple - Healthy",
+                        "Val"
+                    ]
+                ],
+                "61cabcbf7a2412e44ce0bcee3c384a25": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/9b75de13-d4b0-4b3f-988c-3e9926eef957___RS_HL 6273.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/5192db55-4aa7-421c-92d4-c2dac79e7379___RS_HL 6273.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ]
+                ],
+                "926f8ebcfc60d44649018c5154c8fcec": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/13298d36-4425-437d-ae8e-c7d70e200084___RS_HL 6271.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Val/Apple - Healthy/11beda66-01e9-4bfd-be37-c0f8646d1478___RS_HL 6271.JPG",
+                        "Apple - Healthy",
+                        "Val"
+                    ]
+                ],
+                "cdde9ba68b641da456e54531bf99229a": [
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/f2cda910-55c7-46d7-b1a2-9a3bb9792148___RS_HL 6274_flipTB.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Train/Apple - Healthy/fdbfa6f7-f887-442d-8df1-1f0cf839fc4d___RS_HL 6274_flipTB.JPG",
+                        "Apple - Healthy",
+                        "Train"
+                    ]
+                ],
+                "3b227920ba50ce0a4602b258f624e935": [
+                    [
+                        "Dataset/Plant Village Dataset/Val/Tomato - Late Blight/48c55974-9fe9-4f4b-94f7-c8cd127d1e05___GHLB_PS Leaf 23.7 Day 13.jpg",
+                        "Tomato - Late Blight",
+                        "Val"
+                    ],
+                    [
+                        "Dataset/Plant Village Dataset/Val/Tomato - Late Blight/bd4f09bd-ee85-4ab1-bce0-8cde3fdd7f1b___GHLB_PS Leaf 23.7 Day 13.jpg",
+                        "Tomato - Late Blight",
+                        "Val"
+                    ]
+                ]
+            },
+            "near_duplicates": [
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/26f351fc-7166-4eea-971e-1bca2c99cb80___Rutg._HL 2411.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Peach - Healthy/26f351fc-7166-4eea-971e-1bca2c99cb80___Rutg._HL 2411_newPixel25.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/82e60026-cb82-4ccf-a39b-820080c78c5e___Rutg._HL 2399.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Peach - Healthy/82e60026-cb82-4ccf-a39b-820080c78c5e___Rutg._HL 2399_newPixel25.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/19335371-d443-4629-bb10-ef4e0b7215c0___FREC_C.Rust 0064.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/19335371-d443-4629-bb10-ef4e0b7215c0___FREC_C.Rust 0064_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/80bb8697-bfab-449b-b870-e1ed2089df58___RS_HL 1827_new200degFlipTB.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/80bb8697-bfab-449b-b870-e1ed2089df58___RS_HL 1827_new30degFlipLR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/ac7886c0-246e-4bae-b68d-9e7fbf237852___Rutg._HL 3602_newPixel25.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Peach - Healthy/ac7886c0-246e-4bae-b68d-9e7fbf237852___Rutg._HL 3602.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/b596ae46-5248-4dc0-8028-6d2f3f43504c___Rutg._HL 3553.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Peach - Healthy/b596ae46-5248-4dc0-8028-6d2f3f43504c___Rutg._HL 3553_newPixel25.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/8306d4f0-6a4f-4f02-86ca-72b1a950f420___FREC_C.Rust 0175.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/8306d4f0-6a4f-4f02-86ca-72b1a950f420___FREC_C.Rust 0175_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/fec27618-f75c-4a6e-b2e7-d290fcb5b9bd___FREC_C.Rust 3550.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/fec27618-f75c-4a6e-b2e7-d290fcb5b9bd___FREC_C.Rust 3550_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Cherry - Healthy/eea5ee8e-b2a8-4116-94e4-63e573b1e63b___JR_HL 4264_flipTB.JPG",
+                    "class1": "Cherry - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Cherry - Healthy/de0e3d2a-9be2-4f7d-98d1-9218ca397c33___JR_HL 4263_flipTB.JPG",
+                    "class2": "Cherry - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Strawberry - Healthy/a8e5f630-3a7c-4b71-8b14-0ecdfda521ac___RS_HL 4719_new30degFlipLR.JPG",
+                    "class1": "Strawberry - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/c3caa84b-6078-4489-80ac-919d92d25ff7___RS_HL 1772_new200degFlipTB.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Bell Pepper - Healthy/0c102dad-d31f-469b-89d1-6fe7bf93708c___JR_HL 7689_new30degFlipLR.JPG",
+                    "class1": "Bell Pepper - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/73c50901-aab5-4f70-bf2a-5d1b9d235260___JR_FrgE.S 2798_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/0f4ebc5a-d646-436a-919d-961342997cde___RS_HL 4183_new30degFlipTB.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/0f4ebc5a-d646-436a-919d-961342997cde___RS_HL 4183_new200degFlipLR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/aa04db6d-645f-4e8a-88dc-c9f9396f0800___RS_HL 1975_new30degFlipTB.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/7b417a00-eed4-4192-9ab1-709859e6556a___JR_FrgE.S 8650_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/4a08efaa-28cc-4356-8769-4002f4b299ef___RS_HL 1850_new30degFlipTB.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/789c7185-b853-4638-b621-03ee71ce0c7e___JR_FrgE.S 8641_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/f66af6c0-6fc6-4020-b1de-a73685d497c2___RS_HL 4181_new200degFlipTB.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/8c1e1281-5937-4559-a02f-02817de6e122___RS_HL 4173_new200degFlipLR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/52dd2fdd-6966-450c-a42b-ee14428d4271___RS_HL 1955_new200degFlipLR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/52dd2fdd-6966-450c-a42b-ee14428d4271___RS_HL 1955_new30degFlipTB.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/23f4d3b1-23f4-43fb-96c2-dae37224ec74___RS_HL 1803_new200degFlipLR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/7b417a00-eed4-4192-9ab1-709859e6556a___JR_FrgE.S 8650_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/b925ad3e-fc49-497d-a6eb-115f0de20800___RS_HL 4170_new30degFlipTB.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/7b417a00-eed4-4192-9ab1-709859e6556a___JR_FrgE.S 8650_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/77c75478-e1f0-4aaa-9cbc-af1fed928a74___RS_HL 1748_new30degFlipTB.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/1106c3fc-92cb-41a6-a6c6-8f08b9b45108___RS_HL 1914_new30degFlipTB.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/929107f1-4ae9-4dae-8319-ae7cf4804236___RS_HL 1932_new30degFlipTB.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/929107f1-4ae9-4dae-8319-ae7cf4804236___RS_HL 1932_new200degFlipLR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/99cce45c-9aaf-4d6d-bf66-491132557c12___JR_FrgE.S 8629_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/8f866e9b-a1e4-4b34-89f0-74f2ddc641d1___JR_FrgE.S 8738_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/3ed38c3a-4c0a-4682-b39b-e0f7d1bf361b___JR_FrgE.S 2859_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/7c9765f6-d792-4621-a01e-0a1b4e550ada___JR_FrgE.S 2862_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/30aebb07-bde6-44c8-bee2-a06ff42a948d___JR_FrgE.S 3071_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/fb8255a6-e05d-44d3-a115-80c1e55009bd___JR_FrgE.S 3074_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/7add2958-0ee2-42e3-a99f-4b7a8e51db04___JR_FrgE.S 8745_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/1bb4d1d5-ca06-49b6-8f89-ed0d6c1d68af___JR_FrgE.S 8777_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/abdb807d-552f-433d-bb3e-b73494bbff15___JR_FrgE.S 8780_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Black Rot/02859ed3-f56a-4315-82a5-c1cb72717225___JR_FrgE.S 8584_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/6dfd829f-aca0-459d-aa67-ed4636a66033___JR_FrgE.S 8653_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Black Rot/12e9d8e2-e5a4-4d4b-933f-7cbc07557736___JR_FrgE.S 8767_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/7c9765f6-d792-4621-a01e-0a1b4e550ada___JR_FrgE.S 2862_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/ec91d717-d4b1-41a1-9477-f646db7a39f9___JR_FrgE.S 8709_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/af1789f1-b904-40db-bb01-dc3b08141319___JR_FrgE.S 8809_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/b7816ede-6659-4cdf-8b46-d36927981cff___JR_FrgE.S 8677_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/60e1b273-cedb-4003-a197-014832ed51fa___JR_FrgE.S 8684_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/ec91d717-d4b1-41a1-9477-f646db7a39f9___JR_FrgE.S 8709_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/1bb4d1d5-ca06-49b6-8f89-ed0d6c1d68af___JR_FrgE.S 8777_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Black Rot/b1fb1490-dd67-4f69-97a4-a770ab7c8301___JR_FrgE.S 8587_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/fa8eff59-b9f9-45d9-a8f4-eca6fa5a8896___JR_FrgE.S 8647_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/36836204-c6de-472e-90e4-6787ff74965e___JR_FrgE.S 8757_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/8f866e9b-a1e4-4b34-89f0-74f2ddc641d1___JR_FrgE.S 8738_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/58053fa6-04df-4c96-901e-924bdbcaaf1e___JR_FrgE.S 8774_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/58053fa6-04df-4c96-901e-924bdbcaaf1e___JR_FrgE.S 8774_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/14896f6f-ae86-4879-958b-7422b957e104___JR_FrgE.S 8768_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/58053fa6-04df-4c96-901e-924bdbcaaf1e___JR_FrgE.S 8774_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Black Rot/b1fb1490-dd67-4f69-97a4-a770ab7c8301___JR_FrgE.S 8587_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Test/Cherry - Healthy/93c3cace-b855-4282-917b-8dcd30e8c1d7___JR_HL 9702_flipTB.JPG",
+                    "class1": "Cherry - Healthy",
+                    "split1": "Test",
+                    "img2": "Dataset/Plant Village Dataset/Train/Cherry - Healthy/314c9e52-d530-4d1e-8115-f2ddc4b991f7___JR_HL 9860_flipTB.JPG",
+                    "class2": "Cherry - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/4dc8e2a8-4374-488a-afc6-fd0ea7f15c88___FREC_C.Rust 3991_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/4dc8e2a8-4374-488a-afc6-fd0ea7f15c88___FREC_C.Rust 3991.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/d2465b2c-5b95-4557-b086-211e6e7a73d2___FREC_C.Rust 0045_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/d2465b2c-5b95-4557-b086-211e6e7a73d2___FREC_C.Rust 0045.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/3fe25d8e-4497-49bd-b4e0-9c7dd3c3c6cd___FREC_C.Rust 9960_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/3fe25d8e-4497-49bd-b4e0-9c7dd3c3c6cd___FREC_C.Rust 9960.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/87ea6ae6-eaf6-468d-85cd-cded92ba526f___FREC_C.Rust 9963_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/87ea6ae6-eaf6-468d-85cd-cded92ba526f___FREC_C.Rust 9963.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Bacterial Spot/8f6373d0-3b5a-4c5f-8b45-e5efe5a2fb5f___GCREC_Bact.Sp 5711.JPG",
+                    "class1": "Tomato - Bacterial Spot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Cherry - Healthy/41a30be4-4d7a-43ef-8f2a-5ada38561423___JR_HL 9641_180deg.JPG",
+                    "class2": "Cherry - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Apple Scab/add9ce00-e304-4632-82f2-ddc86a6be5f6___FREC_Scab 3472.JPG",
+                    "class1": "Apple - Apple Scab",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Apple Scab/2dd8b8f8-46b0-4bc6-b817-ea7163f4b28b___FREC_Scab 3473.JPG",
+                    "class2": "Apple - Apple Scab",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/02b4afdf-e1de-4c0e-a38d-3f19afeb9ea9___RS_HL 0493_newPixel25.JPG",
+                    "class1": "Tomato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/02b4afdf-e1de-4c0e-a38d-3f19afeb9ea9___RS_HL 0493.JPG",
+                    "class2": "Tomato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Corn (Maize) - Northern Leaf Blight/b7cbd856-9fad-43a3-9b98-64b7b31c0f76___RS_NLB 4065_180deg.JPG",
+                    "class1": "Corn (Maize) - Northern Leaf Blight",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Corn (Maize) - Northern Leaf Blight/9617c741-671f-4193-bf4d-de62642d7d85___RS_NLB 4064_180deg.JPG",
+                    "class2": "Corn (Maize) - Northern Leaf Blight",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/1ef09571-8a75-4c3e-8275-321d0d670509___Rutg._HL 2465_newPixel25.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Peach - Healthy/1ef09571-8a75-4c3e-8275-321d0d670509___Rutg._HL 2465.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/b0c65d2c-f705-4eb7-9b93-186bcc21a357___Rutg._HL 3541_newPixel25.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Peach - Healthy/b0c65d2c-f705-4eb7-9b93-186bcc21a357___Rutg._HL 3541.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Test/Apple - Black Rot/d270d610-6fb5-4ae1-9a00-ad72b3e98526___JR_FrgE.S 8635_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Test",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/6f4b9acd-f34d-4771-a6bc-2001de2dd1d3___RS_HL 1898_new200degFlipLR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/7d2062c0-076d-4b98-b9f4-681f9b728cd9___JR_FrgE.S 8633_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/7e56a062-a114-49ac-b029-292e4f0a68ff___JR_FrgE.S 8783_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/7e56a062-a114-49ac-b029-292e4f0a68ff___JR_FrgE.S 8783_new30degFlipLR.JPG",
+                    "class1": "Apple - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/cb323687-3c3a-41d0-b5f8-445f15d9aa76___JR_FrgE.S 8688_new30degFlipLR.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/052e3deb-0499-4685-bc39-cea7f1df0700___FREC_C.Rust 3742_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/052e3deb-0499-4685-bc39-cea7f1df0700___FREC_C.Rust 3742.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/79e57aaf-f825-4818-9594-621327134e0b___FREC_C.Rust 4219_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/79e57aaf-f825-4818-9594-621327134e0b___FREC_C.Rust 4219.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/8e50e865-0621-442a-945d-f402f328151b___FREC_C.Rust 3699_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/8e50e865-0621-442a-945d-f402f328151b___FREC_C.Rust 3699.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/bdf1ac66-9dd3-4590-8e49-ee0e754a69f5___FREC_C.Rust 0151.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/bdf1ac66-9dd3-4590-8e49-ee0e754a69f5___FREC_C.Rust 0151_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/0eb4ba9a-6626-4e46-b561-c226b495073d___RS_HL 9862_newPixel25.JPG",
+                    "class1": "Tomato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/0eb4ba9a-6626-4e46-b561-c226b495073d___RS_HL 9862.JPG",
+                    "class2": "Tomato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/949d3f98-9992-4f2d-8384-a74d3e9a4ae8___FREC_C.Rust 0197_newPixel25.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/949d3f98-9992-4f2d-8384-a74d3e9a4ae8___FREC_C.Rust 0197.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/3b1e5132-71dd-4e75-b04a-513a3851ca02___FREC_C.Rust 4439.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/3b1e5132-71dd-4e75-b04a-513a3851ca02___FREC_C.Rust 4439_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/4b8bc1e8-30e5-41ef-871e-0661d521418d___RS_HL 0445_newPixel25.JPG",
+                    "class1": "Tomato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/4b8bc1e8-30e5-41ef-871e-0661d521418d___RS_HL 0445.JPG",
+                    "class2": "Tomato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/aedd3442-b50a-4df3-aed3-dbcfd371f925___Rutg._HL 3550_newPixel25.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Peach - Healthy/aedd3442-b50a-4df3-aed3-dbcfd371f925___Rutg._HL 3550.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Corn (Maize) - Healthy/d2eeaaf5-97f6-4fc0-a2b5-09e98e483648___R.S_HL 0630 copy_flipLR.jpg",
+                    "class1": "Corn (Maize) - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Corn (Maize) - Healthy/f73f38b8-0938-44f2-a229-6baa3114fe40___R.S_HL 0630 copy 3_flipLR.jpg",
+                    "class2": "Corn (Maize) - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Cherry - Powdery Mildew/2b61ad8d-5292-4ac0-aced-1c295a38e2d0___FREC_Pwd.M 0427_flipLR.JPG",
+                    "class1": "Cherry - Powdery Mildew",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Cherry - Powdery Mildew/52aea538-85d0-461c-8956-25af2d74a1ac___FREC_Pwd.M 0426_flipLR.JPG",
+                    "class2": "Cherry - Powdery Mildew",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/b3e112e1-5168-46b3-9e6b-80f8981f82b2___Rutg._HL 3545_newPixel25.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Peach - Healthy/b3e112e1-5168-46b3-9e6b-80f8981f82b2___Rutg._HL 3545.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Corn (Maize) - Healthy/49ecc957-9ec7-45f7-a3c9-d1e63cf224df___R.S_HL 0607 copy 2_flipLR.jpg",
+                    "class1": "Corn (Maize) - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Corn (Maize) - Healthy/6aaf943e-fb16-4f8f-86c5-dc36724e25e5___R.S_HL 0607_flipLR.JPG",
+                    "class2": "Corn (Maize) - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/5d4e82f2-d720-45fa-b913-13773583ee0f___FREC_C.Rust 4181.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/5d4e82f2-d720-45fa-b913-13773583ee0f___FREC_C.Rust 4181_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/98db1965-ab83-41ac-bd9b-a029d42a236c___FREC_C.Rust 9878_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/98db1965-ab83-41ac-bd9b-a029d42a236c___FREC_C.Rust 9878.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/5cc20b25-edc1-4ec9-afc8-c19a5ef1cfda___FREC_C.Rust 3540.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/5cc20b25-edc1-4ec9-afc8-c19a5ef1cfda___FREC_C.Rust 3540_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/e8d0f3de-312b-4316-aca4-798a51ebd423___GH_HL Leaf 520.1.JPG",
+                    "class1": "Tomato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Tomato - Healthy/96d85e53-b980-42f7-8e3d-cd6f7ec9c287___GH_HL Leaf 520.5.JPG",
+                    "class2": "Tomato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/5227377f-ffad-4c90-8bd6-a778cae82e1f___Rutg._HL 3599.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Peach - Healthy/5227377f-ffad-4c90-8bd6-a778cae82e1f___Rutg._HL 3599_newPixel25.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/9f7d070e-f51d-4b14-86e4-6f059ea4eca7___FREC_C.Rust 0210.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/9f7d070e-f51d-4b14-86e4-6f059ea4eca7___FREC_C.Rust 0210_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/c70b9d48-a03d-4a6b-a58a-d34c21537e86___Rutg._HL 3707_newPixel25.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Peach - Healthy/c70b9d48-a03d-4a6b-a58a-d34c21537e86___Rutg._HL 3707.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/474e5f3b-b421-4f14-90b6-7b09cfca524f___Rutg._HL 2448.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Peach - Healthy/474e5f3b-b421-4f14-90b6-7b09cfca524f___Rutg._HL 2448_newPixel25.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/0fbdccdc-fb96-475a-92bb-65734592c895___FREC_C.Rust 3619_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/0fbdccdc-fb96-475a-92bb-65734592c895___FREC_C.Rust 3619.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/3c412dc8-dbe2-43db-92ba-28ce72f835f6___FREC_C.Rust 9930.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/3c412dc8-dbe2-43db-92ba-28ce72f835f6___FREC_C.Rust 9930_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/2a8f7c7a-fbd4-4669-90eb-61ee118db2a7___RS_HL 0126_newPixel25.JPG",
+                    "class1": "Tomato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Tomato - Healthy/2a8f7c7a-fbd4-4669-90eb-61ee118db2a7___RS_HL 0126.JPG",
+                    "class2": "Tomato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/f5a27cbb-be27-4416-b9ae-a811e885c131___FREC_C.Rust 3788.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Val",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/f5a27cbb-be27-4416-b9ae-a811e885c131___FREC_C.Rust 3788_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/5b0cb1a1-e3ef-4503-8833-a8b013ab6e92___FREC_C.Rust 3599.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/5b0cb1a1-e3ef-4503-8833-a8b013ab6e92___FREC_C.Rust 3599_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Strawberry - Healthy/a41cf942-f28c-49a8-8c6f-090bed625de2___RS_HL 2219_new30degFlipLR.JPG",
+                    "class1": "Strawberry - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/e34e563f-7a4a-4b44-bdf2-b6f96cbcd929___RS_HL 5370_new200degFlipLR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/91c6f875-414d-4449-937c-488718a84921___FREC_C.Rust 3756.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/91c6f875-414d-4449-937c-488718a84921___FREC_C.Rust 3756_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/9ace7aaf-8950-43b5-bafb-2c63f8839c20___FREC_C.Rust 9867_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/9ace7aaf-8950-43b5-bafb-2c63f8839c20___FREC_C.Rust 9867.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/43850a33-b2c2-4d67-aa90-685f8f76da3a___FREC_C.Rust 3664_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/43850a33-b2c2-4d67-aa90-685f8f76da3a___FREC_C.Rust 3664.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Val/Tomato - Healthy/3b1ba616-6a8f-44e9-948f-5c056eb565c8___RS_HL 9980.JPG",
+                    "class1": "Tomato - Healthy",
+                    "split1": "Val",
+                    "img2": "Dataset/Plant Village Dataset/Val/Tomato - Healthy/3b1ba616-6a8f-44e9-948f-5c056eb565c8___RS_HL 9980_newPixel25.JPG",
+                    "class2": "Tomato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/4804aad1-a744-4ffc-85ff-db4e37f856b9___Rutg._HL 3662_270deg.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Peach - Bacterial Spot/2f534db9-dcd3-4cc5-9b57-e352f9780bfe___Rut._Bact.S 0796.JPG",
+                    "class2": "Peach - Bacterial Spot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/0cc78dac-a333-4a05-b749-660dce8e16b9___Rutg._HL 2495.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Peach - Healthy/0cc78dac-a333-4a05-b749-660dce8e16b9___Rutg._HL 2495_newPixel25.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/15fa9ad3-5775-47e7-a8eb-4218000625c9___Rutg._HL 3605_newPixel25.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Peach - Healthy/15fa9ad3-5775-47e7-a8eb-4218000625c9___Rutg._HL 3605.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/46aef257-999e-4158-9107-c5f5c7c8016a___FREC_C.Rust 4147_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/46aef257-999e-4158-9107-c5f5c7c8016a___FREC_C.Rust 4147.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/cc887bc3-fb12-407d-9a11-d8f829e3d6a0___FREC_C.Rust 0127.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/cc887bc3-fb12-407d-9a11-d8f829e3d6a0___FREC_C.Rust 0127_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/9b3023a6-f35a-46b4-be98-022eb2ac42e4___FREC_C.Rust 9801_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/9b3023a6-f35a-46b4-be98-022eb2ac42e4___FREC_C.Rust 9801.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Bacterial Spot/2b1247ef-594a-4ada-9377-1f46af51859c___GCREC_Bact.Sp 3095.JPG",
+                    "class1": "Tomato - Bacterial Spot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Tomato - Bacterial Spot/dfca025b-a6d9-431a-977e-4bd174daa3a1___GCREC_Bact.Sp 5948.JPG",
+                    "class2": "Tomato - Bacterial Spot",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Late Blight/ff7160f9-f8d7-4576-82b8-009bf1b63b3b___RS_LB 4974.JPG",
+                    "class1": "Potato - Late Blight",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/5a3fc4bb-a78c-4276-8934-f0b037ffb860___RS_HL 5412_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/3ad1409d-5f43-469d-ab2a-fdffbd064f69___RS_HL 9931_newPixel25.JPG",
+                    "class1": "Tomato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/3ad1409d-5f43-469d-ab2a-fdffbd064f69___RS_HL 9931.JPG",
+                    "class2": "Tomato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Cherry - Powdery Mildew/910283ff-e130-48c1-9a7d-a379a90e8bf4___FREC_Pwd.M 0381_flipLR.JPG",
+                    "class1": "Cherry - Powdery Mildew",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Cherry - Powdery Mildew/c327e44c-a0df-4811-89da-af4a761aeefb___FREC_Pwd.M 0380_flipLR.JPG",
+                    "class2": "Cherry - Powdery Mildew",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Cherry - Powdery Mildew/38b9665e-5c2e-4f30-9909-015cf9b3a4ef___FREC_Pwd.M 0481.JPG",
+                    "class1": "Cherry - Powdery Mildew",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Cherry - Powdery Mildew/f3ca4413-77d8-4e46-8c5b-399a1d34c8f9___FREC_Pwd.M 0482.JPG",
+                    "class2": "Cherry - Powdery Mildew",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/4ae82355-6885-40e7-9807-dabe46ed3441___RS_HL 5410_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/4ae82355-6885-40e7-9807-dabe46ed3441___RS_HL 5410_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/5a3fc4bb-a78c-4276-8934-f0b037ffb860___RS_HL 5412.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/5a3fc4bb-a78c-4276-8934-f0b037ffb860___RS_HL 5412_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/849aa978-c7b9-4344-9ca8-129219a65f8e___RS_HL 1874_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/849aa978-c7b9-4344-9ca8-129219a65f8e___RS_HL 1874_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/849aa978-c7b9-4344-9ca8-129219a65f8e___RS_HL 1874_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/849aa978-c7b9-4344-9ca8-129219a65f8e___RS_HL 1874.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/af15ac00-67ff-4114-ace8-6dca48b94665___RS_HL 1865_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/af15ac00-67ff-4114-ace8-6dca48b94665___RS_HL 1865_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/af15ac00-67ff-4114-ace8-6dca48b94665___RS_HL 1865_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/af15ac00-67ff-4114-ace8-6dca48b94665___RS_HL 1865.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/849aa978-c7b9-4344-9ca8-129219a65f8e___RS_HL 1874_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/849aa978-c7b9-4344-9ca8-129219a65f8e___RS_HL 1874_newPixel25.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/c548fe0e-21c2-4241-b806-1e438a1213bd___RS_HL 1770.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/c548fe0e-21c2-4241-b806-1e438a1213bd___RS_HL 1770_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/5a3fc4bb-a78c-4276-8934-f0b037ffb860___RS_HL 5412_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/5a3fc4bb-a78c-4276-8934-f0b037ffb860___RS_HL 5412_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/762672f4-17e6-4fd6-84f1-3bcb091b3ca5___RS_HL 5417.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/762672f4-17e6-4fd6-84f1-3bcb091b3ca5___RS_HL 5417_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/762672f4-17e6-4fd6-84f1-3bcb091b3ca5___RS_HL 5417.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/762672f4-17e6-4fd6-84f1-3bcb091b3ca5___RS_HL 5417_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/f66af6c0-6fc6-4020-b1de-a73685d497c2___RS_HL 4181_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/f66af6c0-6fc6-4020-b1de-a73685d497c2___RS_HL 4181_newPixel25.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/f66af6c0-6fc6-4020-b1de-a73685d497c2___RS_HL 4181_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/f66af6c0-6fc6-4020-b1de-a73685d497c2___RS_HL 4181.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/c548fe0e-21c2-4241-b806-1e438a1213bd___RS_HL 1770_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/c548fe0e-21c2-4241-b806-1e438a1213bd___RS_HL 1770_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/762672f4-17e6-4fd6-84f1-3bcb091b3ca5___RS_HL 5417_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/762672f4-17e6-4fd6-84f1-3bcb091b3ca5___RS_HL 5417_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/849aa978-c7b9-4344-9ca8-129219a65f8e___RS_HL 1874.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/849aa978-c7b9-4344-9ca8-129219a65f8e___RS_HL 1874_newPixel25.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/ef7005dc-1d44-412e-b858-145a2d7a6fa9___RS_HL 1951_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/ef7005dc-1d44-412e-b858-145a2d7a6fa9___RS_HL 1951.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/ef7005dc-1d44-412e-b858-145a2d7a6fa9___RS_HL 1951_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/ef7005dc-1d44-412e-b858-145a2d7a6fa9___RS_HL 1951_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/dbe4f332-9189-4b76-b30c-f0c9a55e48d3___RS_HL 1841_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/dbe4f332-9189-4b76-b30c-f0c9a55e48d3___RS_HL 1841.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/f66af6c0-6fc6-4020-b1de-a73685d497c2___RS_HL 4181_newPixel25.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/f66af6c0-6fc6-4020-b1de-a73685d497c2___RS_HL 4181.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/dbe4f332-9189-4b76-b30c-f0c9a55e48d3___RS_HL 1841_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/dbe4f332-9189-4b76-b30c-f0c9a55e48d3___RS_HL 1841.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Healthy/298c8daf-43cc-4f65-b2db-65623425e5f8___RS_HL 6103.JPG",
+                    "class1": "Apple - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Healthy/9fc6acc1-0394-498d-b51c-d2e92febae55___RS_HL 6013.JPG",
+                    "class2": "Apple - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Val/Potato - Healthy/4ae82355-6885-40e7-9807-dabe46ed3441___RS_HL 5410_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Val",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/4ae82355-6885-40e7-9807-dabe46ed3441___RS_HL 5410.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Val/Potato - Healthy/ef7005dc-1d44-412e-b858-145a2d7a6fa9___RS_HL 1951.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Val",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/ef7005dc-1d44-412e-b858-145a2d7a6fa9___RS_HL 1951_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/0321e067-d13b-47d0-b3a6-76ba6f357d02___FREC_C.Rust 3667_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/0321e067-d13b-47d0-b3a6-76ba6f357d02___FREC_C.Rust 3667.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/d7fb4740-9707-484f-9809-b7efa8f7851d___FREC_C.Rust 4344.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/d7fb4740-9707-484f-9809-b7efa8f7851d___FREC_C.Rust 4344_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/3af5d6d0-8faa-4cd1-92a9-306f3e00b5dd___Rutg._HL 2427_newPixel25.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Peach - Healthy/3af5d6d0-8faa-4cd1-92a9-306f3e00b5dd___Rutg._HL 2427.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/2c741e7d-d03b-4903-8e42-1e43f5ad7286___RS_HL 0131_newPixel25.JPG",
+                    "class1": "Tomato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/2c741e7d-d03b-4903-8e42-1e43f5ad7286___RS_HL 0131.JPG",
+                    "class2": "Tomato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/f0fdde26-78b4-46f0-9eb8-7c2a743d34aa___RS_HL 4165_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/f0fdde26-78b4-46f0-9eb8-7c2a743d34aa___RS_HL 4165_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/f0fdde26-78b4-46f0-9eb8-7c2a743d34aa___RS_HL 4165_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/f0fdde26-78b4-46f0-9eb8-7c2a743d34aa___RS_HL 4165.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/f0fdde26-78b4-46f0-9eb8-7c2a743d34aa___RS_HL 4165_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/f0fdde26-78b4-46f0-9eb8-7c2a743d34aa___RS_HL 4165.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Grape - Black Rot/ae42a097-ae73-4526-af1e-496bb0b50b32___FAM_B.Rot 3038.JPG",
+                    "class1": "Grape - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Grape - Black Rot/00090b0f-c140-4e77-8d20-d39f67b75fcc___FAM_B.Rot 0376.JPG",
+                    "class2": "Grape - Black Rot",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Grape - Black Rot/926fc452-91e5-4683-89bb-0256103e15e1___FAM_B.Rot 0635_flipLR.JPG",
+                    "class1": "Grape - Black Rot",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Grape - Esca (Black Measles)/ab820717-e42b-490f-aa9e-a7320d3f3727___FAM_B.Msls 1335.JPG",
+                    "class2": "Grape - Esca (Black Measles)",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/789d2e40-b2fc-45d0-81e6-b210f09ac71e___Rutg._HL 2463.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Peach - Healthy/789d2e40-b2fc-45d0-81e6-b210f09ac71e___Rutg._HL 2463_newPixel25.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/68a4878f-c220-49ff-a858-5b026e56e7b0___FREC_C.Rust 9844_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/68a4878f-c220-49ff-a858-5b026e56e7b0___FREC_C.Rust 9844.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/0cd24b0c-0a9d-483f-8734-5c08988e029f___FREC_C.Rust 3762_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/0cd24b0c-0a9d-483f-8734-5c08988e029f___FREC_C.Rust 3762.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/0cd24b0c-0a9d-483f-8734-5c08988e029f___FREC_C.Rust 3762_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/0cd24b0c-0a9d-483f-8734-5c08988e029f___FREC_C.Rust 3762_newPixel25.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/56cc0223-46b0-44d3-ba43-66d3def44f1d___FREC_C.Rust 3834.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/56cc0223-46b0-44d3-ba43-66d3def44f1d___FREC_C.Rust 3834_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/9e83b384-97cc-4b00-a283-cbed301e876a___FREC_C.Rust 4052.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/9e83b384-97cc-4b00-a283-cbed301e876a___FREC_C.Rust 4052_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/0cd24b0c-0a9d-483f-8734-5c08988e029f___FREC_C.Rust 3762.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/0cd24b0c-0a9d-483f-8734-5c08988e029f___FREC_C.Rust 3762_newPixel25.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/821d427b-7aff-475c-8d76-6c984e09463f___FREC_C.Rust 3760_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/821d427b-7aff-475c-8d76-6c984e09463f___FREC_C.Rust 3760.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Late Blight/fe72d959-6788-4b19-9285-e0b2919dc718___RS_LB 2516_flipTB.JPG",
+                    "class1": "Potato - Late Blight",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Black Rot/17a083f1-5ba6-4f0c-917a-738b568f22ef___JR_FrgE.S 8612.JPG",
+                    "class2": "Apple - Black Rot",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Grape - Healthy/7664a68e-5bf7-4ca4-988d-12d9360bb512___Mt.N.V_HL 9095_270deg.JPG",
+                    "class1": "Grape - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Grape - Healthy/7276406c-b1ce-4c23-af0a-2c1c38e6e1a2___Mt.N.V_HL 9099_270deg.JPG",
+                    "class2": "Grape - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Bell Pepper - Healthy/3b8c55fd-ddd6-4ab6-94e8-3be93b1728eb___JR_HL 5963_flipTB.JPG",
+                    "class1": "Bell Pepper - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Early Blight/f15637d3-829d-46f9-b45e-1e1768d6b8c9___RS_Early.B 7635_180deg.JPG",
+                    "class2": "Potato - Early Blight",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Cherry - Healthy/b255bae1-b650-413d-9444-dff61de6bd33___JR_HL 9724_180deg.JPG",
+                    "class1": "Cherry - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Cherry - Healthy/a02b4505-3eca-4e10-bed7-4988f600ac27___JR_HL 9769.JPG",
+                    "class2": "Cherry - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Cherry - Healthy/4cd2bd7d-899b-40b3-b3a1-ad8e0a61fa68___JR_HL 4246.JPG",
+                    "class1": "Cherry - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Cherry - Healthy/0de1122b-b2f0-4ae4-bd30-1893331a9ea1___JR_HL 9681.JPG",
+                    "class2": "Cherry - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Cherry - Healthy/9b806380-3a4c-44af-8f88-8f9e52fc1428___JR_HL 9736_180deg.JPG",
+                    "class1": "Cherry - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Cherry - Healthy/a9a9f8a7-02d8-409e-800a-03d8fc721251___JR_HL 9697.JPG",
+                    "class2": "Cherry - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/2b91175f-d3de-47dd-b386-5fd639e8b531___RS_HL 0216.JPG",
+                    "class1": "Tomato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/2b91175f-d3de-47dd-b386-5fd639e8b531___RS_HL 0216_newPixel25.JPG",
+                    "class2": "Tomato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/1e1aa3d8-d12f-47e1-b316-b8656ab3f2b6___RS_HL 0075.JPG",
+                    "class1": "Tomato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Tomato - Healthy/1e1aa3d8-d12f-47e1-b316-b8656ab3f2b6___RS_HL 0075_newPixel25.JPG",
+                    "class2": "Tomato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Early Blight/f15637d3-829d-46f9-b45e-1e1768d6b8c9___RS_Early.B 7635_180deg.JPG",
+                    "class1": "Potato - Early Blight",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/dca8ac5c-b925-435a-a5e9-da09fa8938a1___RS_HL 4182_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/dca8ac5c-b925-435a-a5e9-da09fa8938a1___RS_HL 4182_90deg.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/dca8ac5c-b925-435a-a5e9-da09fa8938a1___RS_HL 4182_flipTB.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/dca8ac5c-b925-435a-a5e9-da09fa8938a1___RS_HL 4182_newPixel25.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/dca8ac5c-b925-435a-a5e9-da09fa8938a1___RS_HL 4182_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/57e262fc-e0ba-44db-a967-5ba6f1826e49___RS_HL 1897.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/57e262fc-e0ba-44db-a967-5ba6f1826e49___RS_HL 1897_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/57e262fc-e0ba-44db-a967-5ba6f1826e49___RS_HL 1897.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/57e262fc-e0ba-44db-a967-5ba6f1826e49___RS_HL 1897_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/b925ad3e-fc49-497d-a6eb-115f0de20800___RS_HL 4170_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/b925ad3e-fc49-497d-a6eb-115f0de20800___RS_HL 4170.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/22322780-95b4-4b45-b626-26b22965d55e___RS_HL 1880_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/22322780-95b4-4b45-b626-26b22965d55e___RS_HL 1880.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/22322780-95b4-4b45-b626-26b22965d55e___RS_HL 1880_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/22322780-95b4-4b45-b626-26b22965d55e___RS_HL 1880_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/4bbccfb6-5720-4c80-9b37-0c3ed8999c9f___RS_HL 1791_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/4bbccfb6-5720-4c80-9b37-0c3ed8999c9f___RS_HL 1791_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/4bbccfb6-5720-4c80-9b37-0c3ed8999c9f___RS_HL 1791_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/4bbccfb6-5720-4c80-9b37-0c3ed8999c9f___RS_HL 1791.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/8b2ce6b6-f00a-4f25-ac6d-4249dd7dc5f6___RS_HL 1890.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/8b2ce6b6-f00a-4f25-ac6d-4249dd7dc5f6___RS_HL 1890_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/b925ad3e-fc49-497d-a6eb-115f0de20800___RS_HL 4170.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/b925ad3e-fc49-497d-a6eb-115f0de20800___RS_HL 4170_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/4bbccfb6-5720-4c80-9b37-0c3ed8999c9f___RS_HL 1791_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/4bbccfb6-5720-4c80-9b37-0c3ed8999c9f___RS_HL 1791.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/8b2ce6b6-f00a-4f25-ac6d-4249dd7dc5f6___RS_HL 1890_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/8b2ce6b6-f00a-4f25-ac6d-4249dd7dc5f6___RS_HL 1890_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/1dcfeaa9-006d-470c-b3e5-d67609d07d4e___RS_HL 1808_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/1dcfeaa9-006d-470c-b3e5-d67609d07d4e___RS_HL 1808_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/142fb983-2166-4a0f-b99b-a6c21e99987e___RS_HL 5398_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/142fb983-2166-4a0f-b99b-a6c21e99987e___RS_HL 5398_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/142fb983-2166-4a0f-b99b-a6c21e99987e___RS_HL 5398_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/142fb983-2166-4a0f-b99b-a6c21e99987e___RS_HL 5398.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/b0fe9fe9-52e7-40e4-b4c0-769f1a0c7fb9___RS_HL 4175_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/b0fe9fe9-52e7-40e4-b4c0-769f1a0c7fb9___RS_HL 4175_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/b0fe9fe9-52e7-40e4-b4c0-769f1a0c7fb9___RS_HL 4175_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/b0fe9fe9-52e7-40e4-b4c0-769f1a0c7fb9___RS_HL 4175.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/b0fe9fe9-52e7-40e4-b4c0-769f1a0c7fb9___RS_HL 4175_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/b0fe9fe9-52e7-40e4-b4c0-769f1a0c7fb9___RS_HL 4175.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/1f9870b3-899e-46fb-98c9-cfc2ce92895b___RS_HL 1816_new90degFlipLR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Strawberry - Leaf Scorch/5cf747a2-76b2-4949-83eb-e25812327d41___RS_L.Scorch 1427_flipLR.JPG",
+                    "class2": "Strawberry - Leaf Scorch",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/144d2475-21ab-4bdc-a67c-9672a9b711e6___RS_HL 5376_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/144d2475-21ab-4bdc-a67c-9672a9b711e6___RS_HL 5376_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/14484ea5-9c34-427c-abe4-2743265aced0___RS_HL 4204_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/14484ea5-9c34-427c-abe4-2743265aced0___RS_HL 4204_newPixel25.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/a8d687be-3777-403f-bae7-5c8c19340b3f___RS_HL 1738_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/a8d687be-3777-403f-bae7-5c8c19340b3f___RS_HL 1738_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/a8d687be-3777-403f-bae7-5c8c19340b3f___RS_HL 1738_newGRR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/a8d687be-3777-403f-bae7-5c8c19340b3f___RS_HL 1738.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/1dcfeaa9-006d-470c-b3e5-d67609d07d4e___RS_HL 1808.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/1dcfeaa9-006d-470c-b3e5-d67609d07d4e___RS_HL 1808_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/dca8ac5c-b925-435a-a5e9-da09fa8938a1___RS_HL 4182.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/dca8ac5c-b925-435a-a5e9-da09fa8938a1___RS_HL 4182_newGGR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/dca8ac5c-b925-435a-a5e9-da09fa8938a1___RS_HL 4182.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/dca8ac5c-b925-435a-a5e9-da09fa8938a1___RS_HL 4182_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Healthy/57e262fc-e0ba-44db-a967-5ba6f1826e49___RS_HL 1897_newGGR.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Potato - Healthy/57e262fc-e0ba-44db-a967-5ba6f1826e49___RS_HL 1897_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Healthy/51cb81e8-dd15-40cd-b4f2-5287379dfe74___RS_HL 6104.JPG",
+                    "class1": "Apple - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Cherry - Healthy/3aaba56c-080d-4a21-b2d8-8fe69189a720___JR_HL 4244.JPG",
+                    "class2": "Cherry - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Val/Potato - Healthy/7e7b6ab4-9adb-4a3b-abfb-8716b0039879___RS_HL 1921.JPG",
+                    "class1": "Potato - Healthy",
+                    "split1": "Val",
+                    "img2": "Dataset/Plant Village Dataset/Val/Potato - Healthy/7e7b6ab4-9adb-4a3b-abfb-8716b0039879___RS_HL 1921_newGRR.JPG",
+                    "class2": "Potato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Test/Apple - Cedar Apple Rust/3e123b1b-a57d-4689-8211-e270c19fd4a9___FREC_C.Rust 9962.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Test",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/3e123b1b-a57d-4689-8211-e270c19fd4a9___FREC_C.Rust 9962_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/fcd5573f-73c7-4cbc-9856-24c858a49ed9___Rutg._HL 3711.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Peach - Healthy/fcd5573f-73c7-4cbc-9856-24c858a49ed9___Rutg._HL 3711_newPixel25.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/85eb91f6-f8f0-438e-afbc-ca12551ee404___FREC_C.Rust 9884_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/85eb91f6-f8f0-438e-afbc-ca12551ee404___FREC_C.Rust 9884.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/ee625c73-927a-4959-ac97-d98a753ae99c___FREC_C.Rust 9904_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/ee625c73-927a-4959-ac97-d98a753ae99c___FREC_C.Rust 9904.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/2a11ceb9-41c9-4f2e-bed9-ef1c1c7d479b___RS_HL 0371_newPixel25.JPG",
+                    "class1": "Tomato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Tomato - Healthy/2a11ceb9-41c9-4f2e-bed9-ef1c1c7d479b___RS_HL 0371.JPG",
+                    "class2": "Tomato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Val/Peach - Healthy/3605c81a-d0c3-4c15-a0e7-1c29c00ae183___Rutg._HL 3577_newPixel25.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Val",
+                    "img2": "Dataset/Plant Village Dataset/Val/Peach - Healthy/3605c81a-d0c3-4c15-a0e7-1c29c00ae183___Rutg._HL 3577.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Peach - Healthy/500b93fd-f11f-4170-8752-966068f57188___Rutg._HL 2502.JPG",
+                    "class1": "Peach - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Peach - Healthy/500b93fd-f11f-4170-8752-966068f57188___Rutg._HL 2502_newPixel25.JPG",
+                    "class2": "Peach - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/7ba80ce1-562a-404b-a8e9-273cd917081a___FREC_C.Rust 9833.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/7ba80ce1-562a-404b-a8e9-273cd917081a___FREC_C.Rust 9833_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/6fe0e179-4491-4257-a1d3-9cff9e9e2d27___FREC_C.Rust 0225.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/6fe0e179-4491-4257-a1d3-9cff9e9e2d27___FREC_C.Rust 0225_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/ffd73dc5-8b5b-4d7b-b44d-640ae3489190___FREC_C.Rust 9944.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/ffd73dc5-8b5b-4d7b-b44d-640ae3489190___FREC_C.Rust 9944_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/1d1017be-8cd6-4967-894b-1b9fb89d7d6e___RS_HL 0270.JPG",
+                    "class1": "Tomato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Tomato - Healthy/1d1017be-8cd6-4967-894b-1b9fb89d7d6e___RS_HL 0270_newPixel25.JPG",
+                    "class2": "Tomato - Healthy",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/b5a75c29-c79a-4db0-8976-e33e48628ccb___FREC_C.Rust 9966.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/b5a75c29-c79a-4db0-8976-e33e48628ccb___FREC_C.Rust 9966_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/fdaecc2c-c48c-447d-9cdc-5d52efdc979a___FREC_C.Rust 3858.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Apple - Cedar Apple Rust/fdaecc2c-c48c-447d-9cdc-5d52efdc979a___FREC_C.Rust 3858_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/c5912efe-a2cc-4203-bc9c-bdc58adcf6a3___FREC_C.Rust 9821.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/c5912efe-a2cc-4203-bc9c-bdc58adcf6a3___FREC_C.Rust 9821_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/3e4303ad-6293-4522-821b-ef5dd3b658ce___FREC_C.Rust 3686.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/3e4303ad-6293-4522-821b-ef5dd3b658ce___FREC_C.Rust 3686_newGRR.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/af89cf7a-446b-4a39-b454-99a611c10ed2___FREC_C.Rust 3862_newGRR.JPG",
+                    "class1": "Apple - Cedar Apple Rust",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Apple - Cedar Apple Rust/af89cf7a-446b-4a39-b454-99a611c10ed2___FREC_C.Rust 3862.JPG",
+                    "class2": "Apple - Cedar Apple Rust",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Strawberry - Healthy/38292ca8-c7fe-4ba5-837f-c98c714ab099___RS_HL 4608_90deg.JPG",
+                    "class1": "Strawberry - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Strawberry - Healthy/5d541b79-2861-493a-b121-c4f0a60be3d2___RS_HL 4607_90deg.JPG",
+                    "class2": "Strawberry - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Grape - Esca (Black Measles)/4a534102-3e9e-4f82-b2c9-c6e8471f35e0___FAM_B.Msls 4300.JPG",
+                    "class1": "Grape - Esca (Black Measles)",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Grape - Esca (Black Measles)/b5a6cca1-c243-4cfd-87db-fe6146c66740___FAM_B.Msls 1215.JPG",
+                    "class2": "Grape - Esca (Black Measles)",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Potato - Late Blight/bb3049f8-7377-4610-b13f-8daf6753bda7___RS_LB 4031_180deg.JPG",
+                    "class1": "Potato - Late Blight",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Bell Pepper - Healthy/5bb2ecb4-acf6-464c-a62e-c76a110fe22c___JR_HL 8890_180deg.JPG",
+                    "class2": "Bell Pepper - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Bell Pepper - Healthy/1b574484-60cd-4ae4-83ed-511a5ae07ea8___JR_HL 7849.JPG",
+                    "class1": "Bell Pepper - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Bell Pepper - Healthy/565744a9-b6ab-46c2-bc42-f92731c6ff4c___JR_HL 7850.JPG",
+                    "class2": "Bell Pepper - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Bell Pepper - Healthy/21d172cd-9cac-4bad-bdcb-4f72eb265f5a___JR_HL 8422.JPG",
+                    "class1": "Bell Pepper - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Bell Pepper - Healthy/4a4478b6-4d10-4973-b884-548ff3e1b444___JR_HL 8428.JPG",
+                    "class2": "Bell Pepper - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Bell Pepper - Healthy/4f770d4f-fd8b-4987-8a9b-e813e0c7a61b___JR_HL 8093_flipTB.JPG",
+                    "class1": "Bell Pepper - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Bell Pepper - Healthy/4a72152d-9d9e-446a-8757-3ad7b3178dde___JR_HL 8091_flipTB.JPG",
+                    "class2": "Bell Pepper - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Bell Pepper - Healthy/ca1c9cb1-75e6-4937-85ec-814aaac3bc32___JR_HL 8620.JPG",
+                    "class1": "Bell Pepper - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Bell Pepper - Healthy/9ec19588-69dc-438b-b257-7a987ff403e2___JR_HL 8621.JPG",
+                    "class2": "Bell Pepper - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Cherry - Healthy/326920ea-c28f-4444-a893-e3b00ecc5915___JR_HL 4198_flipTB.JPG",
+                    "class1": "Cherry - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Cherry - Healthy/fc3797d0-32dc-4871-ab1f-d6def737a0a5___JR_HL 4199_flipTB.JPG",
+                    "class2": "Cherry - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Apple - Apple Scab/675f0b56-9d0b-45b3-8c8e-820efae75274___FREC_Scab 3006_270deg.JPG",
+                    "class1": "Apple - Apple Scab",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Cherry - Powdery Mildew/994dde28-a70f-4fd9-86db-49151166eb1d___FREC_Pwd.M 4477_flipLR.JPG",
+                    "class2": "Cherry - Powdery Mildew",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/1d46ec32-bf0a-4d44-a149-c6fc12920d57___RS_HL 0060_newPixel25.JPG",
+                    "class1": "Tomato - Healthy",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/1d46ec32-bf0a-4d44-a149-c6fc12920d57___RS_HL 0060.JPG",
+                    "class2": "Tomato - Healthy",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Cherry - Powdery Mildew/c33d7542-45be-47a0-a9cb-93980b16ba1e___FREC_Pwd.M 0347.JPG",
+                    "class1": "Cherry - Powdery Mildew",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Cherry - Powdery Mildew/176d6faf-285c-4bf0-a643-cdfa9b4c741d___FREC_Pwd.M 0348.JPG",
+                    "class2": "Cherry - Powdery Mildew",
+                    "split2": "Train",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Cherry - Powdery Mildew/c33d7542-45be-47a0-a9cb-93980b16ba1e___FREC_Pwd.M 0347.JPG",
+                    "class1": "Cherry - Powdery Mildew",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Cherry - Powdery Mildew/341d8850-26e0-4ac5-a560-da2be3fc4b24___FREC_Pwd.M 0349.JPG",
+                    "class2": "Cherry - Powdery Mildew",
+                    "split2": "Val",
+                    "hamming_distance": 4
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Cherry - Powdery Mildew/176d6faf-285c-4bf0-a643-cdfa9b4c741d___FREC_Pwd.M 0348.JPG",
+                    "class1": "Cherry - Powdery Mildew",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Val/Cherry - Powdery Mildew/341d8850-26e0-4ac5-a560-da2be3fc4b24___FREC_Pwd.M 0349.JPG",
+                    "class2": "Cherry - Powdery Mildew",
+                    "split2": "Val",
+                    "hamming_distance": 2
+                },
+                {
+                    "img1": "Dataset/Plant Village Dataset/Train/Cherry - Powdery Mildew/afc7e0e1-0524-4de8-8409-ba6e501c8d54___FREC_Pwd.M 0515_flipLR.JPG",
+                    "class1": "Cherry - Powdery Mildew",
+                    "split1": "Train",
+                    "img2": "Dataset/Plant Village Dataset/Train/Cherry - Powdery Mildew/900cf5aa-c000-45d4-8e30-743c195b1ccd___FREC_Pwd.M 0516_flipLR.JPG",
+                    "class2": "Cherry - Powdery Mildew",
+                    "split2": "Train",
+                    "hamming_distance": 4
+                }
+            ],
+            "extremely_small": [],
+            "grayscale": [],
+            "alpha_channel": [],
+            "unusual_aspect_ratio": []
+        }
+    },
+    "quality_summary": {
+        "total_images_analyzed": 67118,
+        "suspicious_images_count": 5662,
+        "clean_images_count": 61456,
+        "metrics": {
+            "blur": {
+                "mean": 4033.18,
+                "min": 4.66,
+                "max": 32269.42
+            },
+            "brightness": {
+                "mean": 122.19,
+                "min": 8.25,
+                "max": 252.51
+            },
+            "contrast": {
+                "mean": 42.82,
+                "min": 7.7,
+                "max": 93.92
+            },
+            "sharpness": {
+                "mean": 70.18,
+                "min": 6.35,
+                "max": 220.19
+            },
+            "noise": {
+                "mean": 7.78,
+                "min": 0.18,
+                "max": 25.42
+            }
+        }
+    },
+    "verification": {
+        "verification_passed": false,
+        "splits_detected": [
+            "test",
+            "train",
+            "val"
+        ],
+        "split_classes": {
+            "test": [
+                "Apple - Apple Scab",
+                "Apple - Black Rot",
+                "Apple - Cedar Apple Rust",
+                "Apple - Healthy",
+                "Bell Pepper - Bacterial Spot",
+                "Bell Pepper - Healthy",
+                "Cherry - Healthy",
+                "Cherry - Powdery Mildew",
+                "Corn (Maize) - Cercospora Leaf Spot",
+                "Corn (Maize) - Common Rust",
+                "Corn (Maize) - Healthy",
+                "Corn (Maize) - Northern Leaf Blight",
+                "Grape - Black Rot",
+                "Grape - Esca (Black Measles)",
+                "Grape - Healthy",
+                "Grape - Leaf Blight",
+                "Peach - Bacterial Spot",
+                "Peach - Healthy",
+                "Potato - Early Blight",
+                "Potato - Healthy",
+                "Potato - Late Blight",
+                "Strawberry - Healthy",
+                "Strawberry - Leaf Scorch",
+                "Tomato - Bacterial Spot",
+                "Tomato - Early Blight",
+                "Tomato - Healthy",
+                "Tomato - Late Blight",
+                "Tomato - Septoria Leaf Spot",
+                "Tomato - Yellow Leaf Curl Virus"
+            ],
+            "train": [
+                "Apple - Apple Scab",
+                "Apple - Black Rot",
+                "Apple - Cedar Apple Rust",
+                "Apple - Healthy",
+                "Bell Pepper - Bacterial Spot",
+                "Bell Pepper - Healthy",
+                "Cherry - Healthy",
+                "Cherry - Powdery Mildew",
+                "Corn (Maize) - Cercospora Leaf Spot",
+                "Corn (Maize) - Common Rust",
+                "Corn (Maize) - Healthy",
+                "Corn (Maize) - Northern Leaf Blight",
+                "Grape - Black Rot",
+                "Grape - Esca (Black Measles)",
+                "Grape - Healthy",
+                "Grape - Leaf Blight",
+                "Peach - Bacterial Spot",
+                "Peach - Healthy",
+                "Potato - Early Blight",
+                "Potato - Healthy",
+                "Potato - Late Blight",
+                "Strawberry - Healthy",
+                "Strawberry - Leaf Scorch",
+                "Tomato - Bacterial Spot",
+                "Tomato - Early Blight",
+                "Tomato - Healthy",
+                "Tomato - Late Blight",
+                "Tomato - Septoria Leaf Spot",
+                "Tomato - Yellow Leaf Curl Virus"
+            ],
+            "val": [
+                "Apple - Apple Scab",
+                "Apple - Black Rot",
+                "Apple - Cedar Apple Rust",
+                "Apple - Healthy",
+                "Bell Pepper - Bacterial Spot",
+                "Bell Pepper - Healthy",
+                "Cherry - Healthy",
+                "Cherry - Powdery Mildew",
+                "Corn (Maize) - Cercospora Leaf Spot",
+                "Corn (Maize) - Common Rust",
+                "Corn (Maize) - Healthy",
+                "Corn (Maize) - Northern Leaf Blight",
+                "Grape - Black Rot",
+                "Grape - Esca (Black Measles)",
+                "Grape - Healthy",
+                "Grape - Leaf Blight",
+                "Peach - Bacterial Spot",
+                "Peach - Healthy",
+                "Potato - Early Blight",
+                "Potato - Healthy",
+                "Potato - Late Blight",
+                "Strawberry - Healthy",
+                "Strawberry - Leaf Scorch",
+                "Tomato - Bacterial Spot",
+                "Tomato - Early Blight",
+                "Tomato - Healthy",
+                "Tomato - Late Blight",
+                "Tomato - Septoria Leaf Spot",
+                "Tomato - Yellow Leaf Curl Virus"
+            ]
+        },
+        "missing_classes_per_split": {
+            "test": [],
+            "train": [],
+            "val": []
+        },
+        "class_mismatches": [],
+        "data_leakage": {
+            "has_leakage": true,
+            "leakage_clusters_count": 7,
+            "leakage_records": [
+                {
+                    "md5": "2e53ad1ec3f810e2ff4c83400dc69ec9",
+                    "splits": [
+                        "Val",
+                        "Test"
+                    ],
+                    "files": [
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Test/Tomato - Healthy/505465db-407b-4e0a-8110-7479dad5261c___GH_HL Leaf 389.JPG",
+                            "split": "Test",
+                            "class_name": "Tomato - Healthy"
+                        },
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Val/Tomato - Healthy/37203047-d8ba-43f7-b31e-d496c41c569c___GH_HL Leaf 389.JPG",
+                            "split": "Val",
+                            "class_name": "Tomato - Healthy"
+                        }
+                    ]
+                },
+                {
+                    "md5": "bf12be065849d781b7da2e79091b1072",
+                    "splits": [
+                        "Val",
+                        "Train"
+                    ],
+                    "files": [
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/5de6da85-f8c4-48c4-b463-3e6bd78884cc___GHLB_PS Leaf 24 Day 16.jpg",
+                            "split": "Train",
+                            "class_name": "Tomato - Late Blight"
+                        },
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Val/Tomato - Late Blight/3fae9c64-18f0-4a67-9f97-554248bb1bed___GHLB_PS Leaf 24 Day 16.jpg",
+                            "split": "Val",
+                            "class_name": "Tomato - Late Blight"
+                        }
+                    ]
+                },
+                {
+                    "md5": "5bdbdc7333be3ab35ef81ec17ce14816",
+                    "splits": [
+                        "Val",
+                        "Train"
+                    ],
+                    "files": [
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Train/Tomato - Late Blight/d81682aa-746b-4e07-af2b-52ebb6f4c017___GHLB2 Leaf 102.JPG",
+                            "split": "Train",
+                            "class_name": "Tomato - Late Blight"
+                        },
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Val/Tomato - Late Blight/d6e6897a-5083-4914-9903-804c5684a956___GHLB2 Leaf 102.JPG",
+                            "split": "Val",
+                            "class_name": "Tomato - Late Blight"
+                        }
+                    ]
+                },
+                {
+                    "md5": "ea0a44df2e4e44c6ccacc31f067a6284",
+                    "splits": [
+                        "Val",
+                        "Train"
+                    ],
+                    "files": [
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/cfd491d6-4af5-4728-8f0e-0d330a07174a___GH_HL Leaf 482.2.JPG",
+                            "split": "Train",
+                            "class_name": "Tomato - Healthy"
+                        },
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Val/Tomato - Healthy/1af0bfe1-4bcf-4b8b-be66-5d0953eb647e___GH_HL Leaf 482.2.JPG",
+                            "split": "Val",
+                            "class_name": "Tomato - Healthy"
+                        }
+                    ]
+                },
+                {
+                    "md5": "3dab5eb1192b5c43fd3015490cf0b18f",
+                    "splits": [
+                        "Val",
+                        "Train"
+                    ],
+                    "files": [
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Train/Tomato - Healthy/37aad83b-7ff8-4b35-b3ed-fb8e0f54910b___GH_HL Leaf 342.1.JPG",
+                            "split": "Train",
+                            "class_name": "Tomato - Healthy"
+                        },
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Val/Tomato - Healthy/e786ac89-29fe-47e3-b49e-b9a9ee7edd9d___GH_HL Leaf 342.1.JPG",
+                            "split": "Val",
+                            "class_name": "Tomato - Healthy"
+                        }
+                    ]
+                },
+                {
+                    "md5": "161940bd6e73cf648974cc7213cffb8f",
+                    "splits": [
+                        "Val",
+                        "Train"
+                    ],
+                    "files": [
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Train/Apple - Healthy/c21cf428-bfc3-4710-b5d2-69d1c0e94748___RS_HL 6268.JPG",
+                            "split": "Train",
+                            "class_name": "Apple - Healthy"
+                        },
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Val/Apple - Healthy/14896dc0-688d-456f-b5ec-a037695b0193___RS_HL 6268.JPG",
+                            "split": "Val",
+                            "class_name": "Apple - Healthy"
+                        }
+                    ]
+                },
+                {
+                    "md5": "926f8ebcfc60d44649018c5154c8fcec",
+                    "splits": [
+                        "Val",
+                        "Train"
+                    ],
+                    "files": [
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Train/Apple - Healthy/13298d36-4425-437d-ae8e-c7d70e200084___RS_HL 6271.JPG",
+                            "split": "Train",
+                            "class_name": "Apple - Healthy"
+                        },
+                        {
+                            "filepath": "Dataset/Plant Village Dataset/Val/Apple - Healthy/11beda66-01e9-4bfd-be37-c0f8646d1478___RS_HL 6271.JPG",
+                            "split": "Val",
+                            "class_name": "Apple - Healthy"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
